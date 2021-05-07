@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .header {
+            height: 30px;
+            background-color: black;
+            min-width: 600px;
+        }
+        
+        section {
+            width: 600px;
+            margin: auto;
+            color: white;
+            line-height: 30px;
+        }
+        
+        p {
+            width: 600px;
+            margin: 20px auto;
+        }
+        
+        ul {
+            width: 600px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        ul li {
+            list-style: none;
+            float: left;
+            width: 180px;
+            height: 40px;
+            background-color: pink;
+            border: 3px solid black;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            text-align: center;
+            line-height: 34px;
+        }
+        
+        ul li:nth-child(3n) {
+            margin-right: 0;
+        }
+        
+        ul li:hover {
+            background-color: red;
+        }
+        
+        .p {
+            margin: 0 auto;
+        }
+        
+        .p:not(.p:last-of-type) {
+            border-bottom: 1px dotted #000;
+        }
+        
+        section.s {
+            width: 100%;
+            text-align: center;
+            height: 50px;
+            margin-top: 50px;
+            background-color: green;
+            line-height: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <section>
+            helloworld请调整浏览器窗口大小查看效果
+        </section>
+    </div>
+    <p>
+        页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px
+    </p>
+
+
+    <ul>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+    </ul>
+    <p class="p">link</p>
+    <p class="p">link</p>
+    <p class="p">link</p>
+    <p class="p">link</p>
+    <p class="p">link</p>
+    <section class="s">©版权所有<br>本页所有布局均使用块元素</section>
+
+
+
+</body>
+
+</html>
