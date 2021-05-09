@@ -50,12 +50,14 @@
             line-height: 34px;
         }
         
-        ul li:nth-child(3n) {
+        ul li:nth-child(3n),
+        .d2 span:nth-child(3n) {
             margin-right: 0;
         }
         
         ul li:hover,
-        #d1 div:hover {
+        #d1 div:hover,
+        .d2 span:hover {
             background-color: red;
         }
         
@@ -105,6 +107,26 @@
         #d1 div:nth-child(4n+5) {
             margin-top: -220px;
         }
+        
+        .d2 {
+            font-size: 0;
+            width: 600px;
+            margin: 0 auto;
+        }
+        
+        .d2 span {
+            display: inline-block;
+            width: 180px;
+            height: 40px;
+            background-color: pink;
+            border: 3px solid black;
+            vertical-align: top;
+            text-align: center;
+            line-height: 34PX;
+            font-size: 16px;
+            margin-right: 30px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 
@@ -146,6 +168,23 @@
         <div>产品</div>
         <div>产品</div>
         <div>产品</div>
+    </div>
+
+    <div class="d2">
+        <span>产品1</span>
+        <span>产品2</span>
+        <span>产品2</span>
+        <span>产品2</span>
+        <span>产品2</span>
+        <span>产品2</span>
+        <span>产品2</span>
+        <span>产品2</span>
+        <span>产品2</span>
+        <span>产品2</span>
+        <span>产品2</span>
+        <span>产品2</span>
+
+
     </div>
     <p class="p">link</p>
     <p class="p">link</p>
