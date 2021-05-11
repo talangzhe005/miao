@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qq邮箱</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        html,
+        body,
+        div {
+            height: 100%;
+            font-size: 0;
+        }
+        
+        .a {
+            display: inline-block;
+            height: 65px;
+            width: 100%;
+            background-color: #909876;
+            vertical-align: top;
+        }
+        
+        .b {
+            display: inline-block;
+            width: 200px;
+            height: calc(100% - 65px);
+            background-color: #670457;
+        }
+        
+        .c {
+            display: inline-block;
+            width: calc(100% - 200px);
+            height: calc(100% - 65px);
+            background-color: #438957;
+            overflow: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="a"></span>
+        <span class="b"></span>
+        <span class="c"></span>
+    </div>
+</body>
+
+</html>
