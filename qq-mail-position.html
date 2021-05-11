@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        body>div {
+            height: 100%;
+        }
+        
+        .a {
+            height: 100px;
+            width: 100%;
+            background-color: #343434;
+        }
+        
+        .b {
+            height: calc(100% - 100px);
+            width: 200px;
+            background-color: #470707;
+        }
+        
+        .c {
+            height: calc(100% - 100px);
+            width: calc(100% - 200px);
+            background-color: #868588;
+            position: relative;
+            top: calc(100px - 100%);
+            left: 200px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="a"></div>
+        <div class="b"></div>
+        <div class="c"></div>
+    </div>
+</body>
+
+</html>
