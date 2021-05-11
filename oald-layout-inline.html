@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        .w {
+            margin: 0;
+            height: 100%;
+            font-size: 0;
+            box-sizing: border-box;
+        }
+        
+        div {
+            box-sizing: inherit;
+        }
+        
+        .a,
+        .b,
+        .c,
+        .d {
+            display: inline-block;
+            width: 150px;
+            height: 100%;
+            border-right: 3px solid #099999;
+        }
+        
+        .d {
+            border-right: none;
+        }
+        
+        .b {
+            width: calc(100% - 450px);
+        }
+        
+        .header {
+            display: inline-block;
+            height: 200px;
+            width: 100%;
+            border-bottom: 3px solid #099999;
+            background-color: red;
+        }
+        
+        .main {
+            display: inline-block;
+            height: calc(100% - 200px);
+            width: 100%;
+            background-color: green;
+            overflow: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w">
+        <div class="a"></div>
+        <div class="b">
+            <div class="header"></div>
+            <div class="main"></div>
+
+        </div>
+        <div class="c"></div>
+        <div class="d"></div>
+    </div>
+</body>
+
+</html>
