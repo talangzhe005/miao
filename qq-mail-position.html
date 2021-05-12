@@ -5,52 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>qq-mail-position</title>
     <style>
-        * {
-            margin: 0;
-            box-sizing: border-box;
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background-color: #954069;
         }
         
-        html,
-        body {
-            height: 100%;
-        }
-        
-        body>div {
-            height: 100%;
-        }
-        
-        .a {
-            height: 100px;
-            width: 100%;
-            background-color: #343434;
-        }
-        
-        .b {
-            height: calc(100% - 100px);
+        aside {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            bottom: 0;
             width: 200px;
-            background-color: #470707;
+            background-color: #754348;
         }
         
-        .c {
-            height: calc(100% - 100px);
-            width: calc(100% - 200px);
-            background-color: #868588;
-            position: relative;
-            top: calc(100px - 100%);
+        main {
+            position: fixed;
+            top: 80px;
             left: 200px;
+            right: 0;
+            bottom: 0;
+            background-color: #957849;
             overflow: scroll;
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <div class="a"></div>
-        <div class="b"></div>
-        <div class="c"></div>
-    </div>
+    <header></header>
+    <aside></aside>
+    <main></main>
 </body>
 
 </html>
