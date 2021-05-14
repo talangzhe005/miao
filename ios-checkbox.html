@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ios-checkbox</title>
+    <style>
+        .a {
+            margin: 50px auto;
+            width: 270px;
+            height: 160px;
+            box-sizing: border-box;
+            border: 3px solid rgb(198, 203, 199);
+            border-radius: 80px;
+            padding: 10px 5px;
+        }
+        
+        .b {
+            width: 132px;
+            height: 132px;
+            border: 1px solid rgb(188, 188, 188);
+            border-radius: 66px;
+            box-shadow: 1px 1px 0, 2px 2px 0;
+            background-color: white;
+        }
+        
+        #c {
+            display: none;
+        }
+        
+        input:checked+label>.a .b {
+            transition: 1s margin-left;
+            margin-left: 120px;
+        }
+        
+        input:not(:checked)+label>.a .b {
+            transition: 1s margin-left;
+            margin-left: 0;
+        }
+        
+        input:checked+label>.a {
+            transition: 1s color;
+            background-color: rgb(48, 243, 75);
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="c">
+    <label for="c">
+      <div class="a">
+        <div class="b"></div>
+      </div>
+      </label>
+
+
+</body>
+
+</html>
