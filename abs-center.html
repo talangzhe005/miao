@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abs-center</title>
+    <style>
+        div {
+            border: 5px solid green;
+        }
+        
+        .a {
+            width: 500px;
+            height: 500px;
+            position: relative;
+        }
+        
+        .b {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        
+        .c {
+            width: 500px;
+            height: 500px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        .d {
+            width: 50px;
+            height: 50px;
+            margin: auto;
+        }
+        
+        .e {
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            line-height: 500px;
+        }
+        
+        .f {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        <div class="b"></div>
+    </div>
+    <div class="c">
+        <div class="d"></div>
+    </div>
+    <div class="e">
+        <div class="f"></div>
+    </div>
+</body>
+
+</html>
