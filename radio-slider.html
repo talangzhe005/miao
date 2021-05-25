@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radio-slider</title>
+    <style>
+        div {
+            width: 600px;
+            height: 400px;
+            border: 5px solid #ccc;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 100%;
+        }
+        
+        input:nth-child(1):checked~div img:nth-child(1),
+        input:nth-child(2):checked~div img:nth-child(2),
+        input:nth-child(3):checked~div img:nth-child(3),
+        input:nth-child(4):checked~div img:nth-child(4) {
+            left: 0;
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <input type="radio" name="a" id="" checked>
+        <input type="radio" name="a" id="">
+        <input type="radio" name="a" id="">
+        <input type="radio" name="a" id="">
+        <div>
+            <img src="https://tympanus.net/Tutorials/CSS3SlidingImagePanels/images/1.jpg" alt="">
+            <img src="https://tympanus.net/Tutorials/CSS3SlidingImagePanels/images/2.jpg" alt="">
+            <img src="https://tympanus.net/Tutorials/CSS3SlidingImagePanels/images/3.jpg" alt="">
+            <img src="https://tympanus.net/Tutorials/CSS3SlidingImagePanels/images/4.jpg" alt="">
+        </div>
+    </section>
+</body>
+
+</html>
