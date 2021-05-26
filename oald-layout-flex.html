@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oald-layout-flex</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            height: 100%;
+            margin: 0;
+        }
+        
+        section {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        [a],
+        [b],
+        [c],
+        [d] {
+            width: 150px;
+            border-right: 5px solid blue;
+        }
+        
+        [d] {
+            border: none;
+        }
+        
+        [b] {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            flex: 1;
+            border-bottom: 5px solid #bb3432;
+        }
+        
+        main {
+            flex: 4;
+            font-size: 20px;
+            overflow: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <div a></div>
+        <div b>
+            <header></header>
+            <main>Lorem ipsum, Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, fugit aperiam aliquid repellendus, voluptatem quos tempore corporis iusto libero in molestias eaque nostrum quis pariatur officia, expedita nisi architecto perspiciatis
+                atque. Ipsam ratione enim doloribus cupiditate maiores, laudantium repellat ipsa neque. Excepturi deserunt repellendus velit facere perspiciatis unde saepe, autem animi tempora neque fuga omnis fugiat quia assumenda delectus laborum deleniti.
+                Repudiandae, vel praesentium modi doloribus maxime ut consectetur exercitationem rem unde sint asperiores earum laudantium quasi. Quos ut explicabo voluptatibus mollitia! Eveniet perferendis repellendus eum excepturi temporibus velit,
+                aut fugit sed nobis reiciendis pariatur corporis nihil laborum, facilis in. dolor sit amet consectetur adipisicing elit. Dignissimos, sed dolorem nulla commodi distinctio vel quaerat totam, illum aspernatur nobis incidunt at, provident
+                eum fuga quos? Placeat amet, tempora laborum impedit praesentium, corrupti, vel consequatur omnis optio tempore dolore officia eos. Maiores, soluta a ut ex architecto, libero voluptatibus recusandae quidem perferendis dolores illo ad consectetur
+                voluptatem rem voluptas aspernatur deserunt molestiae dicta? Provident impedit perferendis asperiores at, ipsa repudiandae voluptates distinctio animi? Earum amet quam consectetur mollitia maiores odit, hic placeat unde consequatur asperiores
+                in blanditiis illum nemo soluta facere sed nesciunt dolorem ex perspiciatis! Ab facere ipsum nesciunt.</main>
+        </div>
+        <div c></div>
+        <div d></div>
+    </section>
+</body>
+
+</html>
