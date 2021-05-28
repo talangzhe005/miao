@@ -1,0 +1,274 @@
+@font-face {
+    font-family: "IcoFont";
+    font-weight: normal;
+    font-style: "Regular";
+    src: url("./fonts/icofont.woff2") format("woff2"), url("./fonts/icofont.woff") format("woff");
+}
+
+body {
+    margin: 0;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+input {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.container {
+    width: 1226px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+header {
+    min-width: 800px;
+    width: 100%;
+    height: 40px;
+    background-color: #333333;
+}
+
+.header div {
+    display: inline-block;
+}
+
+.header div a {
+    color: #B0B0B0;
+    line-height: 40px;
+    font-size: 12px;
+    margin: 0 2px;
+}
+
+.header div a::after {
+    content: "  |";
+}
+
+.header div a:last-child::after,
+#shoppingCar a:after {
+    content: "";
+}
+
+.header div a:hover {
+    color: #fff;
+}
+
+.userInfo {
+    float: right;
+}
+
+[shoppingCar] {
+    position: relative;
+    float: right;
+    background-color: #424242;
+    width: 122px;
+    margin-left: 20px;
+    padding-left: 15px;
+    overflow: hidden;
+}
+
+.icofont-shopping-cart::before {
+    content: "\efe7";
+    font-family: "IcoFont";
+    color: #B0B0B0;
+}
+
+[shoppingCar]:hover {
+    background-color: #fff;
+    overflow: visible;
+    transition: .5s;
+    z-index: 9999;
+}
+
+[shoppingCar]:hover i::before,
+[shoppingCar]:hover a,
+#shoppingCar a:hover {
+    color: #FF6726;
+}
+
+.shopBuy {
+    position: absolute;
+    width: 320px;
+    height: 100px;
+    right: 0;
+    top: 100%;
+    line-height: 100px;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid #F0F0F0;
+    background-color: #fff;
+}
+
+.topbar-download {
+    position: relative;
+}
+
+.appcode {
+    position: absolute;
+    top: 27px;
+    width: 124px;
+    height: 0;
+    margin-left: -88px;
+    box-shadow: 0 1px 5px #aaa;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    line-height: 1;
+    overflow: hidden;
+}
+
+.appcode img {
+    display: block;
+    width: 90px;
+    height: 90px;
+    margin: 18px auto 12px auto;
+}
+
+.topbar-download:hover .appcode {
+    height: 150px;
+    transition: .4s;
+    z-index: 9999;
+}
+
+.topbar-download:hover::before {
+    content: "";
+    position: absolute;
+    left: 20%;
+    top: 19px;
+    width: 0;
+    height: 0;
+    border-width: 0 8px 8px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #fff;
+}
+
+
+/* logo */
+
+.nav {
+    height: 100px;
+    padding: 20px 0;
+    position: relative;
+    background-color: red;
+}
+
+.logo {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: url(images/logo-mi2.png) no-repeat;
+    background-size: 60px auto;
+    background-position: 0 20;
+    padding: 20px auto;
+}
+
+.nav div {
+    display: inline-block;
+}
+
+.menu {
+    position: absolute;
+    left: 245px;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin: 8px 10px;
+}
+
+.menu ul li a {
+    color: #333;
+}
+
+.menu ul li a:hover {
+    color: #FF9123;
+}
+
+.search {
+    position: absolute;
+    right: 0;
+    width: 298px;
+    height: 52px;
+    top: 30px;
+    white-space: nowrap;
+    font-size: 0;
+    box-sizing: border-box;
+}
+
+.search input {
+    width: 244px;
+    height: 50px;
+    padding: 10px;
+    vertical-align: bottom;
+    border: 1px solid #e0e0e0;
+}
+
+.search input:hover+.searchBtn,
+.search input:hover {
+    border-color: #B0B0B0;
+}
+
+.search input:focus+.searchBtn,
+.search input:focus {
+    border-color: #FF9123;
+}
+
+.searchBtn {
+    display: inline-block;
+    width: 52px;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-left: none;
+    text-align: center;
+    line-height: 50px;
+    color: black;
+}
+
+.searchBtn::before {
+    content: "\ed12";
+    font-family: "IcoFont";
+    font-size: 20px;
+}
+
+.searchBtn:hover {
+    color: #fff;
+    background-color: #FF9123;
+    transition: .4s;
+}
+
+
+/* hover展示手机 */
+
+.detail {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    height: 0;
+    width: 100%;
+    background-color: pink;
+}
+
+.open:hover~.detail {
+    background-color: green;
+    height: 230px;
+    border-top: 1px solid #E0E0E0;
+    transition: .4s;
+}
+
+.open:hover::after {
+    content: "";
+    border-top: 1px solid #E0E0E0;
+    background-color: green;
+}
