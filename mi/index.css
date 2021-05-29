@@ -159,7 +159,6 @@ header {
 .nav {
     height: 100px;
     padding: 20px 0;
-    position: relative;
     background-color: red;
 }
 
@@ -178,8 +177,10 @@ header {
 }
 
 .menu {
-    position: absolute;
-    left: 245px;
+    display: inline-block;
+    margin-left: 190px;
+    vertical-align: top;
+    background-color: yellow;
 }
 
 .menu ul li {
@@ -196,11 +197,10 @@ header {
 }
 
 .search {
-    position: absolute;
-    right: 0;
+    float: right;
+    margin-top: 10px;
     width: 298px;
     height: 52px;
-    top: 30px;
     white-space: nowrap;
     font-size: 0;
     box-sizing: border-box;
@@ -253,22 +253,50 @@ header {
 
 .detail {
     position: absolute;
-    top: 80px;
+    top: 140px;
     left: 0px;
     height: 0;
     width: 100%;
     background-color: pink;
+    box-shadow: 0 5px 8px -8px black;
+    overflow: hidden;
+}
+
+.detail ul {
+    display: flex;
+    justify-content: center;
+}
+
+.detail ul li {
+    text-align: center;
+    font-size: 14px;
+    width: 200px;
+    height: 230px;
+    position: relative;
+}
+
+.detail ul li h2 {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.detail ul li span {
+    color: #FF9123;
 }
 
 .open:hover~.detail {
-    background-color: green;
+    background-color: #fff;
     height: 230px;
     border-top: 1px solid #E0E0E0;
     transition: .4s;
 }
 
-.open:hover::after {
+.detail ul li:nth-child(-n+5) span:after {
     content: "";
-    border-top: 1px solid #E0E0E0;
-    background-color: green;
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: 1px;
+    height: 100px;
+    background-color: #e0e0e0;
 }
