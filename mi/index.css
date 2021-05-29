@@ -300,3 +300,11 @@ header {
     height: 100px;
     background-color: #e0e0e0;
 }
+
+
+/* 轮播图 */
+
+.main {
+    height: 460px;
+    background-color: pink;
+}
