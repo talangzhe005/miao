@@ -24,6 +24,7 @@ a {
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .container {
@@ -159,7 +160,7 @@ header {
 .nav {
     height: 100px;
     padding: 20px 0;
-    background-color: red;
+    xbackground-color: red;
 }
 
 .logo {
@@ -179,8 +180,9 @@ header {
 .menu {
     display: inline-block;
     margin-left: 190px;
+    margin-top: 15px;
     vertical-align: top;
-    background-color: yellow;
+    xbackground-color: yellow;
 }
 
 .menu ul li {
@@ -289,6 +291,7 @@ header {
     height: 230px;
     border-top: 1px solid #E0E0E0;
     transition: .4s;
+    z-index: 9999;
 }
 
 .detail ul li:nth-child(-n+5) span:after {
@@ -307,4 +310,195 @@ header {
 .main {
     height: 460px;
     background-color: pink;
+    background: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9871b5630e8083761352b76da282bb6c.jpeg?thumb=1&w=1226&h=460) no-repeat;
+}
+
+aside {
+    position: relative;
+    width: 234px;
+    height: 460px;
+    background-color: rgba(0, 0, 0, .5);
+    overflow: hidden;
+}
+
+aside ul {
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+}
+
+aside>ul>li {
+    xposition: relative;
+    width: 234px;
+    height: 42px;
+    color: #fff;
+    font-size: 14px;
+    text-indent: 2em;
+    line-height: 42px;
+    xoverflow: hidden;
+}
+
+aside>ul>li:hover {
+    background-color: #FF6700;
+    overflow: visible;
+    z-index: 99999;
+}
+
+aside>ul>li::after {
+    content: "\eab8";
+    font-family: "IcoFont";
+    font-size: 14px;
+    position: absolute;
+    left: 180px;
+}
+
+.main-detail {
+    position: absolute;
+    background-color: #fff;
+    xleft: 100%;
+    left: 234px;
+    xtop: -20px;
+    top: 0;
+    height: 460px;
+    width: 992px;
+    box-shadow: 0 0 1px black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.main-detail img {
+    vertical-align: middle;
+}
+
+.main-detail li {
+    height: 70px;
+}
+
+.main-detail li a {
+    font-size: 14px;
+    color: #473359;
+}
+
+.main-detail li:hover a {
+    color: #FF6700;
+}
+
+.a {
+    height: 170px;
+    margin: 10px auto 20px auto;
+}
+
+.b {
+    width: 234px;
+    height: 170px;
+    background-color: #5f5750;
+    float: left;
+    margin-right: 15px;
+}
+
+.b ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.b ul li {
+    width: 78px;
+    height: 85px;
+    border: 1px solid;
+}
+
+.c {
+    display: flex;
+    justify-content: space-between;
+    background-color: red;
+}
+
+.c img {
+    width: 316px;
+}
+
+
+/* 秒杀 */
+
+.w100 {
+    width: 100%;
+    background-color: #f5f5f5;
+}
+
+.miaosha {
+    height: 400px;
+}
+
+.miaoshao-title {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.anniu {
+    float: right
+}
+
+.d {
+    height: 340px;
+}
+
+.e {
+    float: left;
+    width: 234px;
+    height: inherit;
+    border-top: 1px solid #e53935;
+    background-color: pink;
+    margin-right: 14px;
+}
+
+.f {
+    height: 340px;
+    width: 978px;
+    background-color: red;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.f div {
+    display: inline-block;
+    width: 234px;
+    height: 340px;
+    border: 1px solid;
+    margin-right: 14px;
+    background-color: green;
+}
+
+.note9 {
+    margin: 34px auto;
+}
+
+
+/* 手机 */
+
+.phone-img {
+    width: 1226px;
+    height: 614px;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.phone-img div:not(:first-child) {
+    width: 234px;
+    height: 300px;
+    background-color: #ffffff;
+    border: 1px solid;
+}
+
+.phone-img div:not(:first-child) img {
+    width: 160px;
+    height: 160px;
+    margin: 12px auto 0;
 }
