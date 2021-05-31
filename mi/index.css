@@ -325,7 +325,7 @@ aside {
     width: 234px;
     height: 460px;
     background-color: rgba(0, 0, 0, .5);
-    overflow: hidden;
+    xoverflow: hidden;
 }
 
 aside ul {
@@ -351,6 +351,10 @@ aside>ul>li:hover {
     z-index: 99999;
 }
 
+aside ul li:hover .main-detail {
+    visibility: visible;
+}
+
 aside>ul>li::after {
     content: "\eab8";
     font-family: "IcoFont";
@@ -372,6 +376,7 @@ aside>ul>li::after {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    visibility: hidden;
 }
 
 .main-detail img {
@@ -641,6 +646,56 @@ footer {
     width: 252px;
     height: 111px;
     background-color: pink;
+    align-self: center;
+}
+
+
+/* 链接 */
+
+.site-info {
+    padding-bottom: 30px;
+}
+
+.site-container {
+    width: 1226px;
+    height: 157px;
+    margin: 40px auto;
+    padding-top: 26px;
+}
+
+.site-container p,
+.site-container a,
+.site-container span {
+    font-size: 12px;
+    color: #757575;
+}
+
+.ir {
+    float: left;
+    margin-right: 10px;
+}
+
+.info-text {
+    height: 110px;
+    padding-left: 67px;
+}
+
+.info-text a:hover {
+    color: #ff6a00;
+}
+
+.info-text p {
+    margin: 0 auto 0 10px;
+    vertical-align: top;
+}
+
+.info-links {
+    margin-left: 67px;
+}
+
+.info-links img {
+    height: 28px;
+    width: auto;
 }
 
 .slogan {
