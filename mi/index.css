@@ -27,6 +27,10 @@ ul {
     margin: 0;
 }
 
+i {
+    font-style: normal;
+}
+
 dl,
 dt,
 dd {
@@ -317,7 +321,11 @@ header {
 .main {
     height: 460px;
     background-color: pink;
-    background: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9871b5630e8083761352b76da282bb6c.jpeg?thumb=1&w=1226&h=460) no-repeat;
+    xbackground: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9871b5630e8083761352b76da282bb6c.jpeg?thumb=1&w=1226&h=460) no-repeat;
+}
+
+.aside-box {
+    position: absolute;
 }
 
 aside {
@@ -326,6 +334,7 @@ aside {
     height: 460px;
     background-color: rgba(0, 0, 0, .5);
     xoverflow: hidden;
+    z-index: 999;
 }
 
 aside ul {
@@ -396,6 +405,132 @@ aside>ul>li::after {
     color: #FF6700;
 }
 
+.tupian {
+    width: 1226px;
+    height: 460px;
+    overflow: hidden;
+    position: relative;
+}
+
+.tupian .imgs img {
+    position: absolute;
+    right: -100%;
+    width: 1226px;
+    height: 460px;
+}
+
+.tupian input {
+    display: none;
+    position: relative;
+    top: -20px
+}
+
+.tupian input:nth-child(1):checked~.imgs a:nth-child(1) img,
+.tupian input:nth-child(2):checked~.imgs a:nth-child(2) img,
+.tupian input:nth-child(3):checked~.imgs a:nth-child(3) img,
+.tupian input:nth-child(4):checked~.imgs a:nth-child(4) img {
+    right: 0;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    margin: auto;
+    width: 60px;
+    height: 20px;
+    z-index: 100;
+    xbackground-color: pink;
+    transition: 1s;
+}
+
+.labels label {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #949494;
+}
+
+.tupian input:nth-child(1):checked~.labels label[for="i1"],
+.tupian input:nth-child(2):checked~.labels label[for="i2"],
+.tupian input:nth-child(3):checked~.labels label[for="i3"],
+.tupian input:nth-child(4):checked~.labels label[for="i4"] {
+    background-color: #fff;
+}
+
+.left-labels,
+.right-labels {
+    width: 41px;
+    height: 69px;
+    position: absolute;
+    left: 234px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+}
+
+.left-labels:hover,
+.right-labels:hover {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.left-labels:hover {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.right-labels:hover {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.right-labels {
+    left: 1185px;
+}
+
+.left-labels label,
+.right-labels label {
+    width: 100%;
+    height: 100%;
+    display: none;
+    text-align: center;
+    line-height: 69px;
+    font-size: 30px;
+    color: #a8a8a8
+}
+
+.left-labels label::after {
+    content: "\ea9d";
+    font-family: "IcoFont";
+}
+
+.right-labels label::after {
+    content: "\eaa0";
+    font-family: "IcoFont";
+}
+
+.left-labels label:hover,
+.right-labels label:hover {
+    color: #fff;
+}
+
+.tupian input:nth-child(1):checked~.left-labels label[for="i4"],
+.tupian input:nth-child(1):checked~.right-labels label[for="i2"],
+.tupian input:nth-child(2):checked~.left-labels label[for="i1"],
+.tupian input:nth-child(2):checked~.right-labels label[for="i3"],
+.tupian input:nth-child(3):checked~.left-labels label[for="i2"],
+.tupian input:nth-child(3):checked~.right-labels label[for="i4"],
+.tupian input:nth-child(4):checked~.left-labels label[for="i3"],
+.tupian input:nth-child(4):checked~.right-labels label[for="i1"] {
+    display: block;
+}
+
+
+/* 秒杀 */
+
 .a {
     height: 170px;
     margin: 10px auto 20px auto;
@@ -409,6 +544,42 @@ aside>ul>li::after {
     margin-right: 15px;
 }
 
+.icofont-clock-time::after {
+    content: "\eedc";
+    font-family: "IcoFont";
+    font-size: 25px;
+}
+
+.icofont-bubble-up::after {
+    content: "\ea66";
+    font-family: "IcoFont";
+    font-size: 25px;
+}
+
+.icofont-muscle-weight::after {
+    content: "\eb39";
+    font-family: "IcoFont";
+    font-size: 25px;
+}
+
+.icofont-heart-eyes::after {
+    content: "\eafb";
+    font-family: "IcoFont";
+    font-size: 25px;
+}
+
+.icofont-light-bulb::after {
+    content: "\ef6b";
+    font-family: "IcoFont";
+    font-size: 25px;
+}
+
+.icofont-smart-phone::after {
+    content: "\efec";
+    font-family: "IcoFont";
+    font-size: 25px;
+}
+
 .b ul {
     display: flex;
     flex-wrap: wrap;
@@ -418,12 +589,21 @@ aside>ul>li::after {
     width: 78px;
     height: 85px;
     border: 1px solid;
+    color: #cfcdcb;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.b ul li:hover {
+    color: #fff;
 }
 
 .c {
     display: flex;
     justify-content: space-between;
-    background-color: red;
 }
 
 .c img {
@@ -512,7 +692,7 @@ aside>ul>li::after {
 .phone-img div:not(:first-child) img {
     width: 160px;
     height: 160px;
-    margin: 12px auto 0;
+    margin: 12px 37px 0;
 }
 
 
@@ -549,6 +729,10 @@ aside>ul>li::after {
     align-content: space-between;
 }
 
+.jiadianTab ul li {
+    background-color: #fff;
+}
+
 .jiadianTab ul li:nth-child(-n+7) {
     width: 234px;
     height: 300px;
@@ -559,6 +743,10 @@ aside>ul>li::after {
     width: 234px;
     height: 143px;
     border: 1px solid;
+}
+
+.jiadianTab ul li a img {
+    margin: 0 17px;
 }
 
 
