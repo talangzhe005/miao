@@ -350,16 +350,24 @@
    }
 </script>
 <script id="ch0104/20">
+
     var a = Number(prompt('请输入a'))
     var b = Number(prompt('请输入b'))
     var c = Number(prompt('请输入c'))
 
+    var shi = (-b / (2 * a)).toFixed(5)
+    var xu = (Math.sqrt(4 * a * c - b * b) / (2 * a )).toFixed(5)
+
     if(b * b == 4 * a * c){
         console.log (-b / (2 * a))
-    } else if(b * b > 4 * a * c){
-        console.log(11)
-    }else{
-
+    } else if((b * b) > (4 * a * c)){
+        console.log('111')
+        console.log((-b + sqrt(b * b - 4 * a * c)) / (2 * a))
+        console.log((-b - sqrt(b * b - 4 * a * c)) / (2 * a))
+    }else if ((b * b) < (4 * a * c)){
+        console.log('222')
+        console.log(String(shi) + "+" +  String(xu) + "i")
+        console.log(String(shi) + "-" +  String(xu) + "i")
     }
 
 
