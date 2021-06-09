@@ -1,39 +1,39 @@
-<script id="ch0103/01" >
+<script id="ch0103/01"  type="aaa">
     var a = Number(prompt('请输入a'))
     var b = Number(prompt('请输入b'))
     console.log(a + b)
 </script>
-<script id="ch0103/02" >
+<script id="ch0103/02"  type="aaa">
     var a = Number(prompt('请输入a'))
     var b = Number(prompt('请输入b'))
     var c = Number(prompt('请输入c'))
     console.log((a + b) * c)
 </script>
 
-<script id="ch0103/03" >
+<script id="ch0103/03"  type="aaa">
     var a = Number(prompt('请输入a'))
     var b = Number(prompt('请输入b'))
     var c = Number(prompt('请输入c'))
     console.log(Math.floor((a + b) / c))
 </script>
 
-<script id="ch0103/04" >
+<script id="ch0103/04"  type="aaa">
     var a = Number(prompt('请输入a'))
     var b = Number(prompt('请输入b'))
     console.log(parseInt(a / b))
     console.log(a % b)
 </script>
-<script id="ch0103/05" >
+<script id="ch0103/05"  type="aaa">
     var a = Number(prompt('请输入a'))
     var b = Number(prompt('请输入b'))
     console.log((a / b).toFixed(9))
 </script>
-<script id="ch0103/06" >
+<script id="ch0103/06" type="aaa" >
     var a = Number(prompt('请输入a'))
     var b = Number(prompt('请输入b'))
     console.log(String(((b / a) * 100).toFixed(3)) + '%')
 </script>
-<script id="ch0103/07" >
+<script id="ch0103/07" type="aaa" >
     var x = Number(prompt('请输入x'))
     var a = Number(prompt('请输入a'))
     var b = Number(prompt('请输入b'))
@@ -41,56 +41,56 @@
     var d = Number(prompt('请输入d'))
     console.log((a * x * x * x + b * x * x + c * x + d).toFixed(7))
 </script>
-<script id="ch0103/08" >
+<script id="ch0103/08"  type="aaa">
     var F = Number(prompt('请输入F'))
     console.log((5 * (F - 32) / 9).toFixed(5))
 </script>
-<script id="ch0103/09" >
+<script id="ch0103/09"  type="aaa">
     var r = Number(prompt('请输入r'))
     var pi = 3.14159
     console.log((2 * r).toFixed(4))
     console.log((2 * pi * r).toFixed(4))
     console.log((pi * r * r).toFixed(4))
 </script>
-<script id="ch0103/10" >
+<script id="ch0103/10"  type="aaa">
     var r1 = Number(prompt('请输入r1'))
     var r2 = Number(prompt('请输入r2'))
     console.log((1 / (1 / r1 + 1 / r2)).toFixed(2))
 </script>
-<script id="ch0103/11" >
+<script id="ch0103/11" type="aaa" >
     var a = Number(prompt('请输入a'))
     var b = Number(prompt('请输入b'))
     console.log((a % b).toFixed(4))
 </script>
-<script id="ch0103/12" >
+<script id="ch0103/12"  type="aaa">
     var r = Number(prompt('请输入r'))
     var pi = 3.14
     console.log((4 / 3 * pi * r * r * r).toFixed(2))
 </script>
-<script id="ch0103/13" >
+<script id="ch0103/13"  type="aaa">
     var n = Number(prompt('请输入n'))
     console.log(String(n % 10) + String(parseInt((n % 100) / 10)) + String(parseInt(n / 100)))
 </script>
-<script id="ch0103/14" >
+<script id="ch0103/14" type="aaa">
     var h = Number(prompt('请输入h'))
     var r = Number(prompt('请输入r'))
     var Pi = 3.14159
     console.log(Math.ceil(20000 / (Pi * r * r * h)))
 </script>
-<script id="ch0103/15" >
+<script id="ch0103/15" type="aaa" >
     var n = Number(prompt('请输入n'))
     var x = Number(prompt('请输入x'))
     var y = Number(prompt('请输入y'))
     console.log(parseInt(n - y / x))
 </script>
-<script id="ch0103/16" >
+<script id="ch0103/16"  type="aaa">
     var Xa = Number(prompt('请输入Xa'))
     var Ya = Number(prompt('请输入Ya'))
     var Xb = Number(prompt('请输入Xb'))
     var Yb = Number(prompt('请输入Yb'))
     console.log(Math.sqrt((Xb - Xa) * (Xb - Xa) + (Yb - Ya) * (Yb - Ya)).toFixed(3))
 </script>
-<script id="ch0103/17" >
+<script id="ch0103/17" type="aaa" >
     var x1 = Number(prompt('请输入x1'))
     var y1 = Number(prompt('请输入y1'))
     var x2 = Number(prompt('请输入x2'))
@@ -103,19 +103,264 @@
     var p = ( a + b + c ) / 2
     console.log(Math.sqrt(p * (p - a) * (p - b) * (p - c)).toFixed(2))
 </script>
-<script id="ch0103/18" >
+<script id="ch0103/18"  type="aaa">
     var a1 = Number(prompt('请输入a1'))
     var a2 = Number(prompt('请输入a2'))
     var n = Number(prompt('请输入n'))
     var d = a2 - a1 
     console.log(a1 + (n - 1 ) * d)
 </script>
-<script id="ch0103/19" >
+<script id="ch0103/19"  type="aaa">
     var A = Number(prompt('请输入A'))
     var B = Number(prompt('请输入B'))
     console.log(A * B)
 </script>
-<script id="ch0103/20"  >
+<script id="ch0103/20" type="aaa" >
     var n = Number(prompt('请输入n'))
     console.log(Math.pow(2,n))
+</script>
+
+
+
+<script id="ch0104/01" type="aaa">
+    var n = Number(prompt('请输入n'))
+    if( n > 0){
+        console.log('positive')
+    }else if( n == 0 ){
+        console.log('zero')
+    }else{
+        console.log('negative')
+    }
+    
+</script>
+
+<script id="ch0104/02" type="aaa">
+    var n = Number(prompt('请输入n'))
+    if( n > 0){
+        console.log(n)
+    }else if( n == 0 ){
+        console.log(0)
+    }else{
+        console.log(-1 * n)
+    }
+    
+</script>
+<script id="ch0104/03" type="aaa">
+    var n = Number(prompt('请输入n'))
+    if( n % 2 == 0){
+        console.log('even')
+    }else{
+        console.log("odd")
+    }
+    
+</script>
+<script id="ch0104/04" type="aaa">
+    var n = (prompt('请输入n').charCodeAt())
+    if( n % 2 == 0){
+        console.log('NO')
+    }else{
+        console.log("YES")
+    }
+</script>
+<script id="ch0104/05" type="aaa">
+    var x = Number(prompt('请输入x'))
+    var y = Number(prompt('请输入y'))
+    if( x > y){
+        console.log(">")
+    }else if (x == y){
+        console.log("=")
+    }else{
+        console.log("<")
+    }
+</script>
+<script id="ch0104/06"  type="aaa">
+    var x = Number(prompt('请输入x'))
+    
+    if( x >= 10 && x <= 99){
+        console.log("1")
+    }else{
+        console.log("0")
+    }
+</script>
+<script id="ch0104/07"  type="aaa">
+    var x = Number(prompt('请输入x'))
+    var y = Number(prompt('请输入y'))
+    if( x >= 10 || y >= 20){
+        console.log("1")
+    }else{
+        console.log("0")
+    }
+</script>
+<script id="ch0104/08" type="aaa" >
+    var x = Number(prompt('请输入x'))
+    if( x % 3 ==0 && x % 5 == 0){
+        console.log("YES")
+    }else{
+        console.log('NO')
+    }
+</script>
+<script id="ch0104/09" type="aaa" >
+    var x = Number(prompt('请输入x'))
+    if( x % 3 ==0 && x % 5 == 0 && x % 7 == 0){
+        console.log("3 5 7")
+    }else if( x % 3 ==0 && x % 5 == 0 && x % 7 != 0){
+        console.log('3 5')
+    }else if( x % 3 ==0 && x % 5 != 0 && x % 7 == 0){
+        console.log('3 7')
+    }else if( x % 3 !=0 && x % 5 == 0 && x % 7 == 0){
+        console.log('5 7')
+    }else if( x % 3 ==0 && x % 5 != 0 && x % 7 != 0){
+        console.log('3')
+    }else if( x % 3 !=0 && x % 5 == 0 && x % 7 != 0){
+        console.log('5')
+    }else if( x % 3 !=0 && x % 5 != 0 && x % 7 == 0){
+        console.log('7')
+    }else if( x % 3 !=0 && x % 5 != 0 && x % 7 != 0){
+        console.log('n')
+    }
+</script>
+<script id="ch0104/10" type="aaa">
+    var x = Number(prompt('请输入x'))
+    var y = Number(prompt('请输入y'))
+    if( (x < 60 && y > 60 )|| (y < 60 && x > 60 )){
+        console.log("1")
+    }else{
+        console.log("0")
+    }
+</script>
+<script id="ch0104/11" type="aaa">
+    var x = Number(prompt('请输入x'))
+    if( x == 1 || x == 3 || x == 5){
+        console.log("NO")
+    }else{
+        console.log("YES")
+    }
+</script>
+<script id="ch0104/12" type="aaa">
+    var x = Number(prompt('请输入x'))
+    var walk = x / 1.2
+    var bike = 27 + x / 3 + 23
+
+    if(walk > bike ){
+        console.log("Bike")
+    }else if(walk < bike){
+        console.log("Walk")
+    }else{
+        console.log("All")
+    }
+</script>
+<script id="ch0104/13" type="aaa" >
+    var n = Number(prompt('请输入n'))
+    if(n >= 0 && n < 5){
+        console.log((-n + 2.5).toFixed(3))
+    }else if( n >= 5 && n < 10 ){
+        console.log((2 - 1.5 * (n - 3) * (n - 3)).toFixed(3))
+    }else if (n >= 10 && n <20 ){
+        console.log((n / 2  - 1.5).toFixed(3))
+    }
+</script>
+<script id="ch0104/14" type="aaa"  >
+    var x = Number(prompt('请输入x'))
+    var y = Number(prompt('请输入y'))
+
+    if(x <= 1000 ){
+        if(y == "n"){
+            console.log('8')
+        }else{
+            console.log('13')
+        }
+        
+    }else{
+        if( y == "n"){
+           
+           console.log(Math.ceil((x - 1000) / 500) * 4  + 8) 
+        }else{
+            console.log(Math.ceil((x - 1000) / 500) * 4  + 13)   
+        }
+    }
+</script>
+<script id="ch0104/15" type="aaa" >
+    var a = Number(prompt('请输入a'))
+    var b = Number(prompt('请输入b'))
+    var c = Number(prompt('请输入c'))
+    if (a > b ){
+        if(a > c){
+            console.log(a)
+        }else if(a <c){
+                console.log(c)
+        }
+        
+    }else if ( a < b) {
+        if( c < b) {
+            console.log(b)
+        }else if (b < c){
+            console.log(c)
+        }
+    }
+</script>
+<script id="ch0104/16" type="aaa">
+    var a = Number(prompt('请输入a'))
+    var b = Number(prompt('请输入b'))
+    var c = Number(prompt('请输入c'))
+    
+    if(a < b + c && b < a + c && c < a + b ){
+        console.log("yes")
+    }else{
+        console.log("no")
+    }
+</script>
+
+<script id="ch0104/17" type="aaa">
+    var a = Number(prompt('请输入a'))
+   if((a % 4 ==0 && a % 100 != 0) || (a % 400 == 0)){
+        console.log("Y")
+   }else{
+       console.log("N")
+   }
+</script>
+<script id="ch0104/18" type="aaa">
+    var x = Number(prompt('请输入x'))
+    var y = Number(prompt('请输入y'))
+    
+    if(x <= 1 && x >= -1 & y <= 1 & y >= -1 ){
+        console.log("yes")
+    }else{
+        console.log("no")
+    }
+</script>
+<script id="ch0104/19" type="aaa">
+    var x = Number(prompt('请输入x'))
+    var y = Number(prompt('请输入y'))
+    var o = prompt('请输入o')
+    
+   if(o == "+" ){
+        console.log(x + y)
+   }else if(o == "-"){
+       console.log(x - y)
+   }else if(o == "*"){
+       console.log(x * y)
+   }else if(o == "/"){
+       if(y==0){
+           console.log("Divided by zero")
+       }else{
+           console.log(x / y)
+       }
+   }else{
+       console.log("Invalid operator")
+   }
+</script>
+<script id="ch0104/20">
+    var a = Number(prompt('请输入a'))
+    var b = Number(prompt('请输入b'))
+    var c = Number(prompt('请输入c'))
+
+    if(b * b == 4 * a * c){
+        console.log (-b / (2 * a))
+    } else if(b * b > 4 * a * c){
+        console.log(11)
+    }else{
+
+    }
+
+
 </script>
