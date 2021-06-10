@@ -349,7 +349,7 @@
        console.log("Invalid operator")
    }
 </script>
-<script id="ch0104/20" >
+<script id="ch0104/20" type="aaa">
 
     var a = Number(prompt('请输入a'))
     var b = Number(prompt('请输入b'))
@@ -369,10 +369,79 @@
 
 
 </script>
-<script id="ch0104/21" >
+<script id="ch0104/21" type="aaa">
     var n = Number(prompt('请输入n'))
     var x = Number(prompt('请输入x'))
     var y = Number(prompt('请输入y'))
     
     console.log(Math.floor(n - y / x))
+</script>
+
+<script id="ch0105/01" type="aaa">
+    var n = Number(prompt('请输入n'))
+    var s = 0
+    var sum = 0 
+    do {
+        var age = Number(prompt('请输入年龄'))
+        sum = sum + age
+        s = s + 1
+    }while(s < n)
+    console.log(( sum / n).toFixed(2))
+</script>
+<script id="ch0105/02" type="aaa" >
+    var s = 0
+    var sum = 0
+    do{
+        var n = Number(prompt('请输入n'))
+        sum = sum + n
+        s = s + 1
+    }while( s < 12)
+    console.log("$" + ( sum / 12 ).toFixed(2))
+</script>
+
+<script id="ch0105/03" type="aaa" >
+    var n = Number(prompt('请输入n'))
+    var s = 0
+    var sum = 0 
+    do {
+        var age = Number(prompt('请输入'))
+        sum = sum + age
+        s = s + 1
+    }while(s < n)
+    console.log(( sum / n).toFixed(4))
+</script>
+
+<script id="ch0105/04" type="aaa" >
+    var n = Number(prompt('请输入n'))
+    var s = 0
+    var sum = 0 
+    do {
+        var age = Number(prompt('请输入'))
+        sum = sum + age
+        s = s + 1
+    }while(s < n)
+    console.log(String(sum) + " " + String((sum / n).toFixed(5)))
+</script>
+
+<script id="ch0105/05" type="aaa">
+    var n = Number(prompt('请输入n'))
+    var s = 0
+    var y = 0 
+    do {
+        var x = Number(prompt('请输入'))
+        y = Math.max(x , y)
+        s = s + 1
+    }while(s < n)
+    console.log(y)
+</script>
+<script id="ch0105/05" type="aaa">
+    var n = Number(prompt('请输入n'))
+    var s = 0
+    var y = 0 
+    do {
+        var x = Number(prompt('请输入'))
+        y = Math.max(x , y)
+        s = s + 1
+    }while(s < n)
+    console.log(y)
 </script>
