@@ -434,14 +434,110 @@
     }while(s < n)
     console.log(y)
 </script>
-<script id="ch0105/05" type="aaa">
+<script id="ch0105/06" type="aaa">
     var n = Number(prompt('请输入n'))
     var s = 0
-    var y = 0 
+    var y = 0
+    var z = 0 
     do {
         var x = Number(prompt('请输入'))
         y = Math.max(x , y)
+        z = Math.min(z , x)
         s = s + 1
     }while(s < n)
-    console.log(y)
+    console.log(y - z)
+</script>
+
+<script id="ch0105/07" type="aaa">
+    var n = Number(prompt('请输入n'))
+    var s = 0 
+    var jSum = 0
+    var ySum = 0
+    var tSum = 0 
+    while(s < n){
+        var j = Number(prompt('请输入金牌数'))
+        var y = Number(prompt('请输入银牌数'))
+        var t = Number(prompt('请输入铜牌数'))
+
+        jSum = jSum + j
+        ySum = ySum + y 
+        tSum = tSum + t
+        
+        s = s + 1
+    }
+    console.log(String(jSum) + " " + String(ySum) + " " + String(tSum) + " " + (jSum + ySum + tSum))
+</script>
+
+<script id="ch0105/08" type="aaa" >
+    var n = Number(prompt('请输入n'))
+    var s = 1
+    var sumD = (n - 2) * 180
+    while(s < n ){
+        var d = Number(prompt('请输入角度'))
+        sumD = sumD - d 
+        s = s + 1
+    }
+    console.log(sumD)
+</script>
+
+
+<script id="ch0105/09" type="aaa">
+    var m = Number(prompt('请输入m'))
+    var n = Number(prompt('请输入n'))
+    var sum = 0
+    if(m % 2 == 1){
+        sum = m
+        
+    }
+    if(m % 2 == 0){
+         m = m + 1
+         sum = m  
+    }
+
+    while(m < n-1){
+        m = m + 2
+        sum = sum + m
+    }
+    console.log(sum)
+ 
+</script>
+
+<script id="ch0105/10" type="aaa">
+    var m = Number(prompt('请输入m'))
+    var n = Number(prompt('请输入n'))
+    
+    var s = 0 
+    while(m <= n ){
+        if (m % 17 == 0)  {
+            s = s + m
+        }
+        m = m + 1
+    }
+    console.log(s)
+</script>
+
+
+<script id="ch0105/11" >
+    var k = Number(prompt('请输入k'))
+    var s = 0 
+    var one = 0
+    var five = 0
+    var ten = 0
+    while(s < k ){
+        var n = Number(prompt('请输入n'))
+        if(n == 1 ){
+            one = one + 1
+        }
+        if(n == 5 ){
+            five = five + 1
+        }
+        if(n == 10 ){
+            ten = ten + 1
+        }
+        s = s + 1
+    }
+    console.log(one)
+    console.log(five)
+    console.log(ten)
+    
 </script>
