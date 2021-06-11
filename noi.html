@@ -517,7 +517,7 @@
 </script>
 
 
-<script id="ch0105/11" >
+<script id="ch0105/11" type="aaa">
     var k = Number(prompt('请输入k'))
     var s = 0 
     var one = 0
@@ -539,5 +539,182 @@
     console.log(one)
     console.log(five)
     console.log(ten)
+    
+</script>
+
+<script id="ch0105/12" type="aaa">
+    var N = Number(prompt('请输入N'))
+    var m = Number(prompt('请输入m'))
+    var s = 0
+    var p = 0
+    while(s < N ){
+        var t = Number(prompt('请输入t'))
+        if (m == t){
+            p = p + 1
+        }
+        s = s + 1
+    }
+    console.log(p)
+    
+</script>
+<script id="ch0105/13" type="aaa">
+    var a = Number(prompt('请输入a'))
+    var n = Number(prompt('请输入n'))
+    var s = 0
+    var p = 1
+    while(s < n ){
+        p =  p * a
+        s = s + 1
+    }
+    console.log(p)
+    
+</script>
+<script id="ch0105/14" type="aaa">
+    var x = Number(prompt('请输入x'))
+    var n = Number(prompt('请输入n'))
+    var s = 0
+    var p = 1
+    while(s < n ){
+        x = ((x * (100.1 / 100)).toFixed(4))
+        s = s + 1
+    }
+    console.log(x)
+    
+</script>
+<script id="ch0105/15" type="aaa">
+    var R = Number(prompt('请输入R'))
+    var M = Number(prompt('请输入M'))
+    var Y = Number(prompt('请输入Y'))
+    var s = 0
+    
+    while(s < Y ){
+        M =  M * (R / 100 + 1)
+        s = s + 1
+    }
+    console.log(Math.trunc(M))
+    
+</script>
+
+
+<script id="ch0105/16" type="aaa">
+    var N = Number(prompt('请输入N'))
+    var K = Number(prompt('请输入K'))
+    var s = 0
+    var sum = 0 
+    var p = 200
+    while(s <= 20 ){
+        sum = sum + N
+        
+        if ( s > 0 ){
+           p = p * (1 + K /100)
+        }
+        
+        if( sum > p){
+            console.log(s+1)
+            break
+        }
+        if(s == 20 ){
+            console.log("Impossible")
+            
+        }
+        s = s + 1
+    }
+    
+    
+</script>
+<script id="ch0105/17" type="aaa">
+    var k = Number(prompt('请输入k'))
+    
+    var s = 0
+    var p = 1
+    var q = 1
+    var t = 0 
+
+    while(s < k ){
+        p = q 
+        q = t 
+        t = p + q
+        s = s + 1
+    }
+    console.log(t)
+    
+</script>
+<script id="ch0105/18" type="aaa">
+    var n = Number(prompt('请输入n'))
+    var z = Number(prompt('请输入z'))
+    var y = Number(prompt('请输入y'))
+    var x = y / z
+   for(var i = 1; i < n ; i++){
+        var q = Number(prompt('请输入q'))
+        var w = Number(prompt('请输入w'))   
+        
+        
+            if ((w / q) - x > 0.05){
+                console.log("better")
+            }else if(x - (w / q) > 0.05){
+                console.log("worse")
+            }else{
+                console.log("same")
+            }
+        
+   }
+  
+</script>
+<script id="ch0105/19" type="aaa">
+    var n = Number(prompt('请输入n'))
+    
+    
+   for(var i = 0; i < n ; i++){
+        var x = Number(prompt('请输入x'))
+        var y = Number(prompt('请输入y'))   
+        var p = Number(prompt('请输入p'))
+        //出发需要的时间
+        var c = (Math.sqrt(x * x + y * y)) / 50  
+
+        //上船时间
+        var b = p 
+
+        // 下船时间
+        var q = 0.5 * p
+        sum += 2 * c  + p + q
+   }
+   console.log(Math.ceil(sum))
+  
+</script>
+<script id="ch0105/20" type="aaa">
+    var initH = Number(prompt('请输入h'))
+    var h = initH 
+    var total = 0//总共走过的长度
+    for(var i = 0; i < 10  ; i++){
+        
+        total = total + 2 * h 
+        h = h / 2
+        
+    }
+    console.log((total - initH).toFixed(4))
+    console.log(h.toFixed(7))
+
+</script>
+
+<script id="ch0105/21" type="aaa">
+    var n= Number(prompt('请输入n'))
+    while(n !== 1){
+        if(n % 2 == 1){
+            var str1 = n + '*3+1='
+            n = 3 * n + 1
+            console.log(str1 + n)
+        }
+        if(n % 2 == 0){
+            var str2 = n + '/2='
+            n = n / 2 
+            console.log(str2 + n)
+        }   
+    }
+    console.log('End')
+    
+</script>
+<script id="ch0105/22" >
+    var n= Number(prompt('请输入n'))
+    
     
 </script>
