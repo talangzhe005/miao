@@ -805,7 +805,7 @@
     }
     console.log(n)
  </script>
- <script id="ch0105/28" >
+ <script id="ch0105/28" type="aaa">
     var k = Number(prompt('请输入k'))
     var m = k
     var l = 0 
@@ -824,19 +824,46 @@
     }
     console.log(s)
  </script>
- <script id="ch0105/29" type="aaa" >
+ <script id="ch0105/29"  >
     var k = Number(prompt('请输入k'))
     var m = k
     var l = 0 
     var s = ""
-    while(m >= 1){
-        m = m / 10
-        l++
+    var ok = true
+    if(k > 0 ){
+        while(m >= 1){
+            m = m / 10
+            l++
+        }
+    }else if(k < 0){
+        m = -m
+        while(m >= 1){
+            m = m / 10
+            l++
+        }
+    }else{
+        s += 0
     }
-    
+    if(k % 10 == 0){
+        k = k / 10
+        l--;
+    }
     for(var i = 0; i < l; i++){
-       s += (k % 10)
-       k = Math.trunc(k / 10)
+        
+        if(k >= 0){
+            s += (k % 10)
+            k = Math.trunc(k / 10)
+        }else {
+            k = -k 
+            s += (k % 10)
+            k = Math.trunc(k / 10)
+            ok = false
+ 
+        }
     }
-    console.log(s)
+    if(!ok){
+        console.log(-s)
+    }else{
+        console.log(s)
+    }
  </script>
