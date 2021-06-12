@@ -769,7 +769,6 @@
 <script id="ch0105/25" type="aaa">
    
     for (var i = 82; i < 342; i++){
-        console.log(22)
         var s = Math.trunc(i / 9)
         var t = Math.trunc(i / 7) 
         if(((i % 9) == Math.trunc(i / 49)) && ( (s % 9) == (t % 7)) && ( Math.trunc(i / 81) == (i % 7 ))){
@@ -817,7 +816,10 @@
     }
     
     for(var i = 0; i < l; i++){
-       s += (k % 10) + " "
+       s += (k % 10)
+       if(i < l - 1){
+           s += " "
+       }
        k = Math.trunc(k / 10)
     }
     console.log(s)
