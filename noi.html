@@ -663,7 +663,7 @@
 <script id="ch0105/19" type="aaa">
     var n = Number(prompt('请输入n'))
     
-    
+   var sum = 0 
    for(var i = 0; i < n ; i++){
         var x = Number(prompt('请输入x'))
         var y = Number(prompt('请输入y'))   
@@ -713,8 +713,128 @@
     console.log('End')
     
 </script>
-<script id="ch0105/22" >
-    var n= Number(prompt('请输入n'))
-    
-    
+<script id="ch0105/22" type="aaa">
+    var hands = 0//手里的钱
+    var g = 0//每月麻麻给的钱
+    var c = 0//存在麻麻的钱
+    var ok = true
+    for(var i = 1 ; i <= 12 ; i++){
+        var n= Number(prompt('请输入n'))//预算
+        hands += 300
+        hands = hands - n //剩余的钱
+        if(hands < 0 ){
+            console.log(-i)
+            ok = false
+            break
+        }
+        if(hands >= 100 ){
+            c = c + (hands - hands % 100)
+            hands =  hands % 100
+            
+        }
+
+    }
+    if(ok){
+        console.log(c * 1.2 + hands)
+    }
 </script>
+<script id="ch0105/23" type="aaa">
+    var m = Number(prompt('请输入m'))
+    var n = Number(prompt('请输入n'))
+    var p = 0 //没取上的人数
+    for(var i = 0 ; i < n ; i++){
+        var s = Number(prompt())
+        if(m < s){
+            p += 1
+        }else{
+            m = m - s
+        }
+    }
+    console.log(p)
+</script>
+<script id="ch0105/24" type="aaa">
+    var n = Number(prompt('请输入n'))
+    var p = 0
+    for(var i = 0 ; i < n ; i++){
+        var s = Number(prompt())//收缩
+        var m = Number(prompt('请输入m'))//舒张
+        if(s >= 90 && s <= 140 && m >= 60 && m <= 90){
+            p += 1
+        }else{
+            p = 0
+        }
+    }
+    console.log(p)
+</script>
+<script id="ch0105/25" type="aaa">
+   
+    for (var i = 82; i < 342; i++){
+        console.log(22)
+        var s = Math.trunc(i / 9)
+        var t = Math.trunc(i / 7) 
+        if(((i % 9) == Math.trunc(i / 49)) && ( (s % 9) == (t % 7)) && ( Math.trunc(i / 81) == (i % 7 ))){
+            console.log(i)
+            console.log(String(Math.trunc(i /49)) + String( t % 7) + String(i % 7))
+            console.log(String(Math.trunc(i /81)) + String( s % 9) + String(i % 9))
+            break
+        }
+    }
+</script>
+<script id="ch0105/26" type="aaa">
+   var n = Number(prompt('请输入n'))
+   var count = 0
+   for(var i = 0; i < n; i++){
+        var m =  Number(prompt())
+        var g = m % 10
+        var s = (m % 100 - g) / 10
+        var b = (m % 1000 - m % 100) / 100
+        var q = (m - (m % 1000)) / 1000
+        if(g - q - b - s > 0){
+            count++
+        }
+   }
+   console.log(count)
+</script>
+<script id="ch0105/27" type="aaa" >
+    var k = Number(prompt('请输入k'))
+    var Sn = 0
+    for(var n = 1; ;n++){
+        Sn += 1 / n
+        if(Sn>k){
+            break
+        }
+    }
+    console.log(n)
+ </script>
+ <script id="ch0105/28" >
+    var k = Number(prompt('请输入k'))
+    var m = k
+    var l = 0 
+    var s = ""
+    while(m >= 1){
+        m = m / 10
+        l++
+    }
+    
+    for(var i = 0; i < l; i++){
+       s += (k % 10) + " "
+       k = Math.trunc(k / 10)
+    }
+    console.log(s)
+ </script>
+ <script id="ch0105/29" type="aaa" >
+    var k = Number(prompt('请输入k'))
+    var m = k
+    var l = 0 
+    var s = ""
+    while(m >= 1){
+        m = m / 10
+        l++
+    }
+    
+    for(var i = 0; i < l; i++){
+       s += (k % 10)
+       k = Math.trunc(k / 10)
+    }
+    console.log(s)
+ </script>
