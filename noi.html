@@ -1001,19 +1001,25 @@
  </script>
 
 <script id="ch0105/38"  >
-    
-    var n = Number(prompt('请输入n'))
-    var b = n
-    for(var i = 0; i < n + 1; i++){
-        var c = Number(prompt('请输入c'))
-        var g = c * b
-        b--
+    var z = Number(prompt())
+    for(var j = 0; j < z; j++){
         
-        if(i !== n){
-            console.log(g)
+        var n = Number(prompt('请输入n'))
+        var b = n
+        for(var i = 0; i < n + 1; i++){
+            var c = Number(prompt('请输入c'))
+            var g = c * b
+            b--
+            if(n == 0){
+                console.log(0)
+            }
+            if(i !== n){
+                console.log(g)
+            }
+        
         }
-        
     }
+    
     
     //console.log(n)
  </script>
