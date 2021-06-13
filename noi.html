@@ -961,16 +961,15 @@
         
     console.log(s)
  </script>
- <script id="ch0105/35"  type="aaa">
+ <script id="ch0105/35" type="aaa">
     var n = Number(prompt('请输入n'))
     
-    var s = 0
+    var s = 1
     var c = 1
     for(var i = 1; i <= n; i++){
         c *= i    
         s += (1 / c)
     }
-        
     console.log(s.toFixed(10))
  </script>
  <script id="ch0105/36"  type="aaa">
@@ -1062,7 +1061,7 @@
     }
     console.log(count)
  </script>
- <script id="ch0105/42"  >
+ <script id="ch0105/42" type="aaa" >
     var h = Number(prompt('请输入h'))
     var w = Number(prompt('请输入w'))
     var s = prompt('符号')
@@ -1095,6 +1094,71 @@
         }
     }
     console.log(str)
+
+ </script>
+ <script id="ch0105/43" type="aaa" >
+    var n = Number(prompt('请输入n'))
+    
+    for(var i = n; i > 0; i--){
+        if(n % i == 0){
+            var a = i
+            //判断i是否是质数
+            var count = 0
+            for(var j = 1; j <= a; j++){
+                if(a % j == 0){
+                    count++
+                }
+            }
+            if(count == 2){
+                console.log(a)
+                break
+            }
+        }
+    }
+
+ </script>
+ <script id="ch0105/44" type="aaa">
+    var n = Number(prompt('请输入n'))
+    //debugger
+    var s = 0
+    while( s <  n ){
+
+        for(var i = 1; ; i++){
+            var a = i
+            var count = 0
+            for(var j = 1; j <= a; j++){
+                if(a % j == 0){
+                    count++
+                }
+            }
+            if(count == 2){
+                s++
+                if(s == n){
+                    console.log(a)
+                    break
+                }
+            }
+        }
+        
+    }
+ </script>
+
+<script id="ch0105/45" type="aaa">
+    var n = Number(prompt('请输入n'))
+    var count = 0
+    var ok = true
+    for(var i = 1; ok ;i++){
+        //分组
+        for(var j = 1; j <= i; j++){
+            count += i
+            n--
+            if(n == 0){
+            console.log(count)
+            ok = false
+            break
+            }
+        }
+    }
 
  </script>
 
