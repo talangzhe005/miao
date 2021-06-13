@@ -1000,7 +1000,7 @@
     console.log(n)
  </script>
 
-<script id="ch0105/38"  >
+<script id="ch0105/38" type="aaa" >
     var z = Number(prompt())
     for(var j = 0; j < z; j++){
         
@@ -1019,7 +1019,86 @@
         
         }
     }
-    
-    
-    //console.log(n)
+
  </script>
+ <script id="ch0105/39" type="aaa" >
+    var n = Number(prompt('请输入n'))
+    var s = 0
+    for(var i = 1; i <= n; i++){
+        if(i % 7 !== 0 && i % 10 !== 7 && Math.trunc(i / 10) !== 7){
+            s += i * i
+        }
+    }
+    console.log(s)
+ </script>
+ <script id="ch0105/40"  type="aaa">
+    var n = Number(prompt('请输入n'))
+    var count = 0
+   
+    for(var i = 1; i <= n; i++){
+        var x = i
+        while(x >= 1){
+            if(x % 10 == 1){
+                count++
+            }
+            x = Math.trunc(x / 10)
+        } 
+    }
+    console.log(count)
+ </script>
+ <script id="ch0105/41" type="aaa" >
+    var l = Number(prompt('请输入l'))
+    var r = Number(prompt('请输入r'))
+    var count = 0
+   
+    for(var i = l; i <= r; i++){
+        var x = i
+        while(x >= 1){
+            if(x % 10 == 2){
+                count++
+            }
+            x = Math.trunc(x / 10)
+        } 
+    }
+    console.log(count)
+ </script>
+ <script id="ch0105/42"  >
+    var h = Number(prompt('请输入h'))
+    var w = Number(prompt('请输入w'))
+    var s = prompt('符号')
+    var k = Number(prompt())
+    var str = s
+    
+    for(var i = 1; i < w; i++){
+        str += s
+    }
+    var str1 = str
+    for(var j = 1; j < h; j++){
+        if(k == 0){
+            if(j !== h - 1){
+                str += "\n" + s 
+            }
+            
+            for(var a = 0; a < h - 2 ;a++){
+                str += " "
+                if(a == h -3){
+                    break
+                }
+            }
+            if(j !== h - 1){
+                str += s
+            }else{
+                str += "\n" + str1
+            }
+        }else{
+            str += "\n" + str1
+        }
+    }
+    console.log(str)
+
+ </script>
+
+
+
+ 
+
