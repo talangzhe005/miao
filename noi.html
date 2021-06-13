@@ -824,7 +824,7 @@
     }
     console.log(s)
  </script>
- <script id="ch0105/29"  >
+ <script id="ch0105/29"  type="aaa">
     var k = Number(prompt('请输入k'))
     var m = k
     var l = 0 
@@ -866,4 +866,154 @@
     }else{
         console.log(s)
     }
+ </script>
+ <script id="ch0105/30"  type="aaa">
+    var m = Number(prompt('请输入m'))
+    var k = Number(prompt('请输入k'))
+    var n = m
+    var l = 0
+    var count = 0
+    while(n >= 1){
+        n /= 10
+        l++
+    }
+    if(m % 19 == 0){
+        for(var i = 0; i < l; i++){
+            var digit = m % 10
+            if(digit == 3){
+                count++
+            }
+            m = Math.trunc(m / 10)
+        }
+        if(count == k){
+            console.log("YES")
+        }else{
+            console.log("NO")
+        }
+    }else{
+        console.log("NO")
+    }
+
+ </script>
+ <script id="ch0105/31"  type="aaa">
+    var n = Number(prompt('请输入n'))
+    var m = Number(prompt('请输入m'))
+    var r = []
+    //编号1~n的灯 状态on off
+    //i 的倍数的灯操作
+
+    for(var i = 1; i <= m; i++){
+        var ok = false
+        for(var j = 1; j <= n; j++){
+            if(i % j ==0 ){
+                if(ok == false){
+                    ok = true
+                }else{
+                    ok = false
+                }
+            }
+        }
+        if(ok == true){
+            r.push(i)
+            //console.log(i)
+        }
+    }
+    console.log(r.join())
+ </script>
+ <script id="ch0105/32"  type="aaa">
+    var n = Number(prompt('请输入n'))
+    var p = 1
+    var q = 2
+    var s = 0
+    for(var i = 0; i < n; i++){
+        s  = s + q / p
+        var m = p
+        p = q
+        q = m + q
+    }
+    console.log(s.toFixed(4))
+ </script>
+ <script id="ch0105/33"  type="aaa">
+    var n = Number(prompt('请输入n'))
+    
+    var s = 0
+    for(var i = 1; i <= n; i++){
+        if(i % 2 == 1){
+            s += 1 / i
+            
+        }
+        if(i % 2 == 0){
+            s -= 1 / i
+        }
+    }
+        
+    console.log(s.toFixed(4))
+ </script>
+ <script id="ch0105/34" type="aaa" >
+    var n = Number(prompt('请输入n'))
+    
+    var s = 0
+    var c = 1
+    for(var i = 1; i <= n; i++){
+        c *= i
+        s += c 
+    }
+        
+    console.log(s)
+ </script>
+ <script id="ch0105/35"  type="aaa">
+    var n = Number(prompt('请输入n'))
+    
+    var s = 0
+    var c = 1
+    for(var i = 1; i <= n; i++){
+        c *= i    
+        s += (1 / c)
+    }
+        
+    console.log(s.toFixed(10))
+ </script>
+ <script id="ch0105/36"  type="aaa">
+    var x = Number(prompt('请输入x'))
+    var n = Number(prompt('请输入n'))
+    
+    var s = 0
+    var c = 1
+    for(var i = 1; i <= n; i++){ 
+        c *= x    
+        s += c
+    }  
+    console.log((s+1).toFixed(2))
+ </script>
+ <script id="ch0105/37" type="aaa" >
+    var m = Number(prompt('请输入m'))
+    var n = Number(prompt('请输入n'))
+    var x = Number(prompt('请输入x'))
+
+    while(n <= x && x ){
+        x -= Math.ceil(m / n)
+        if(x < 0){
+            break
+        }
+        n += Math.floor(m / n)
+    }
+    console.log(n)
+ </script>
+
+<script id="ch0105/38"  >
+    
+    var n = Number(prompt('请输入n'))
+    var b = n
+    for(var i = 0; i < n + 1; i++){
+        var c = Number(prompt('请输入c'))
+        var g = c * b
+        b--
+        
+        if(i !== n){
+            console.log(g)
+        }
+        
+    }
+    
+    //console.log(n)
  </script>
