@@ -1202,7 +1202,7 @@
     }
  </script>
  <script id="narcissistics" type="aaa">
-    for(var i = 1; i <= 10000; i++){
+    for(var i = 1; i <= 1000; i++){
         if(isNarcissistic(i)){
             console.log(i)
         }
@@ -1282,10 +1282,122 @@
 
  </script>
 
-<script id="complete-number">
+<script id="complete-number" type="aaa">
     var n = Number(prompt())
+    if(isComplete_number(n)){
+        console.log("YES")
+    }else{
+        console.log("NO")
+    }
 
-    
+    function isComplete_number(k){
+        var s = 0
+        for(var i = 1; i < k; i++){
+            if(k % i == 0){
+                s += i
+            }
+        }
+        if(s == k){
+            return true
+        }else{
+            return false
+        }
+    }
+</script>
+
+<script id="complete-numbers" type="aaa">
+    for(var i = 1; i <= 1000; i++){
+        if(isComplete_number(i)){
+            console.log(i)
+        }
+    }
+
+    function isComplete_number(k){
+        var s = 0
+        for(var i = 1; i < k; i++){
+            if(k % i == 0){
+                s += i
+            }
+        }
+        if(s == k){
+            return true
+        }else{
+            return false
+        }
+    }
+</script>
+
+<script id="prime" type="aaa">
+    var n = Number(prompt())
+    if(isPrime(n)){
+        console.log("YES")
+    }else{
+        console.log("NO")
+    }
+
+
+    function isPrime(k){
+        var sqrt_k = Math.sqrt(k)
+        if(k == 1){
+            return false
+        }
+        for(var i = 2; i <= sqrt_k; i++){
+            if(k % i == 0){
+                return false
+            }
+        }
+        return true
+    }
+</script>
+
+
+<script id="primes" type="aaa">
+    for(var i = 1; i <=1000; i++){
+        if(isPrime(i)){
+            console.log(i)
+        }
+    }
+
+
+    function isPrime(k){
+        var sqrt_k = Math.sqrt(k)
+        if(k == 1){
+            return false
+        }
+        for(var i = 2; i <= sqrt_k; i++){
+            if(k % i == 0){
+                return false
+            }
+        }
+        return true
+    }
+</script>
+
+<script id="lcf&lcm">
+    var m = Number(prompt("m"))
+    var n = Number(prompt("n"))
+    console.log(lcf(m,n))
+    console.log(lcm(m,n))
+
+    function lcf(a,b){
+        //最大公约数
+        for(var i = Math.min(a,b);i >= 1 ; i--){
+            if(a % i == 0 && b % i ==0){
+                return i;
+            }
+        }
+    }
+
+    //最小公倍数
+    function lcm(a,b){
+        for(var i = 1; i <= Math.max(a,b); i++ ){
+            if(i * a % b == 0){
+                return(i * a)
+            }
+        }
+    }
+
+
 </script>
 
 
