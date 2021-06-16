@@ -1165,7 +1165,7 @@
 
 
 
- <script id="narcissistic" >
+ <script id="narcissistic" type="aaa" >
     var n = Number(prompt('请输入n'))
     if(isNarcissistic(n)){
         console.log('YES')
@@ -1176,12 +1176,14 @@
         var s = 0
         var m = k
         var l = dw(k)
-        
-       for(var i = 0; i < l; i++){
+        if(l < 3){
+            return false
+        }
+        for(var i = 0; i < l; i++){
             var digit = m % 10 
             s += Math.pow(digit, l) 
             m = (m - digit) / 10
-       }
+        }
         if(k == s){
             return true
         }else{
@@ -1199,7 +1201,92 @@
         return(l)
     }
  </script>
+ <script id="narcissistics" type="aaa">
+    for(var i = 1; i <= 10000; i++){
+        if(isNarcissistic(i)){
+            console.log(i)
+        }
+    }
 
+
+    function isNarcissistic(k){
+        var s = 0
+        var m = k
+        var l = dw(k)
+        if(l < 3){
+            return false
+        }
+        for(var i = 0; i < l; i++){
+            var digit = m % 10 
+            s += Math.pow(digit, l) 
+            m = (m - digit) / 10
+        }
+        if(k == s){
+            return true
+        }else{
+            return false
+        }
+    }
+    //判断是几位数
+    function dw(k){
+        var l = 0
+        while(k >= 1){
+           var digit = k % 10 
+           k = (k - digit) / 10 
+           l++
+        }
+        return(l)
+    }
+    
+ </script>
+
+
+ <script id="palindrom" type="aaa">
+     var n = Number(prompt())
+     debugger
+     if(isPalindrom(n)){
+         console.log("YES")
+     }else{
+         console.log("NO")
+     }
+
+     function isPalindrom(k){
+        var l = dw(k)
+        var b = l
+        for(var i = 0; i < l / 2; i++){
+            var digit = k % 10 
+            
+            var g = Math.trunc(k / Math.pow(10, b - 1)) 
+            if(digit !== g){
+                return false
+            }
+            k = (k - digit - g * Math.pow(10, b - 1)) / 10
+            b -= 2
+        }
+        return true
+     }
+
+      //判断是几位数
+    function dw(k){
+        var l = 0
+        while(k >= 1){
+           var digit = k % 10 
+           k = (k - digit) / 10 
+           l++
+        }
+        return(l)
+    }
+ </script>
+
+ <script id="weekday">
+
+ </script>
+
+<script id="complete-number">
+    var n = Number(prompt())
+
+    
+</script>
 
 
  
