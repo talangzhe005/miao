@@ -902,9 +902,9 @@
     //编号1~n的灯 状态on off
     //i 的倍数的灯操作
 
-    for(var i = 1; i <= m; i++){
+    for(var i = 1; i <= n; i++){
         var ok = false
-        for(var j = 1; j <= n; j++){
+        for(var j = 1; j <= m; j++){
             if(i % j ==0 ){
                 if(ok == false){
                     ok = true
@@ -1160,6 +1160,44 @@
         }
     }
 
+ </script>
+
+
+
+
+ <script id="narcissistic" >
+    var n = Number(prompt('请输入n'))
+    if(isNarcissistic(n)){
+        console.log('YES')
+    }else{
+        console.log('NO')
+    }
+    function isNarcissistic(k){
+        var s = 0
+        var m = k
+        var l = dw(k)
+        
+       for(var i = 0; i < l; i++){
+            var digit = m % 10 
+            s += Math.pow(digit, l) 
+            m = (m - digit) / 10
+       }
+        if(k == s){
+            return true
+        }else{
+            return false
+        }
+    }
+    //判断是几位数
+    function dw(k){
+        var l = 0
+        while(k >= 1){
+           var digit = k % 10 
+           k = (k - digit) / 10 
+           l++
+        }
+        return(l)
+    }
  </script>
 
 
