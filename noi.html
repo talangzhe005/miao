@@ -1278,8 +1278,45 @@
     }
  </script>
 
- <script id="weekday">
+ <script id="weekday" type="aaa">
+     var year = Number(prompt("年份"))
+     var month = Number(prompt("月份"))
+     
+     console.log(weekday(year , month))
+    
+     function weekday(year , month){
+         var count = 0
+         for(var i = 1; i <= year - 1; i++){
+             if(i % 4 == 0 && i % 100 !== 0 || i % 400 == 0){
+                 count++
+             }
+         }
+         var days = count * 366 + (year - 1 - count) * 365
+         //1 3 5 7 8 10 12
+         //2 4 6 8 9 11 
+         //debugger
+         var monthT = month - 1
+         for(monthT; monthT > 0; monthT--){
+             if(monthT == 1 || monthT == 3 || monthT == 5 || monthT == 7 || monthT == 8 || monthT == 10 ){
+                days += 31
+             }else if(leapYear(year) && monthT == 2){
+                 days += 29
+             }else if(!leapYear(year) && monthT == 2){
+                 days += 28
+             }else{
+                 days += 30
+             }
+         }
 
+         return days % 7 + 1
+     }
+
+     //判断是否是闰年
+     function leapYear(year){
+        if(year % 4 == 0 && year % 100 !== 0 || year % 400 == 0){
+            return true
+        }
+     }
  </script>
 
 <script id="complete-number" type="aaa">
@@ -1373,11 +1410,11 @@
     }
 </script>
 
-<script id="lcf&lcm">
+<script id="lcf&lcm" type="aaa">
     var m = Number(prompt("m"))
     var n = Number(prompt("n"))
-    console.log(lcf(m,n))
     console.log(lcm(m,n))
+    console.log(lcf(m,n))
 
     function lcf(a,b){
         //最大公约数
@@ -1396,8 +1433,21 @@
             }
         }
     }
+</script>
 
+<script id="sqrt" >
 
+    var n = Number(prompt())
+    console.log(sqrt(n))
+
+    function sqrt(k){
+        for(var i = 0; i <= k; i++){
+            if(i * i == k){
+                return i
+            }
+        }
+        return false
+    }
 </script>
 
 
