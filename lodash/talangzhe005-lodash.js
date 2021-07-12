@@ -105,5 +105,6 @@ var talangzhe005 = (function(){
     join : join,
     uniq : uniq,
     drop : drop,
+    dropRight : dropRight,
   }
 })()
