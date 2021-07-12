@@ -83,6 +83,15 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function dropRight(array, n = 1){
+    var res = []
+    for(var i = 0; i < array.length - n; i++){
+      res.push(array[i])
+    }
+
+    return res
+  }
+
 
 
 
