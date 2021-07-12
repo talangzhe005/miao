@@ -107,6 +107,10 @@ var talangzhe005 = (function(){
     return obj
   }
 
+  function head(array){
+    return array[0]
+  }
+
 
 
 
@@ -122,5 +126,6 @@ var talangzhe005 = (function(){
     dropRight : dropRight,
     fill : fill,
     fromPairs : fromPairs,
+    head : head,
   }
 })()
