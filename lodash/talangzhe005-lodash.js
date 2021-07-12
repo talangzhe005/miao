@@ -149,7 +149,7 @@ var talangzhe005 = (function(){
   function nth(array, n = 0){
     if(n < 0){
       return array[array.length + n]
-    }ese{
+    }else{
       return array[n]
     }
   }
