@@ -146,6 +146,14 @@ var talangzhe005 = (function(){
     return -1
   }
 
+  function nth(array, n = 0){
+    if(n < 0){
+      return array[array.length + n]
+    }ese{
+      return array[n]
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -162,5 +170,6 @@ var talangzhe005 = (function(){
     initial : initial,
     last : last,
     lastIndexOf : lastIndexOf,
+    nth : nth,
   }
 })()
