@@ -128,6 +128,10 @@ var talangzhe005 = (function(){
     return -1
   }
 
+  function initial(array){
+    array.pop()
+    return array
+  }
 
 
 
@@ -144,5 +148,6 @@ var talangzhe005 = (function(){
     fromPairs : fromPairs,
     head : head,
     indexOf : indexOf,
+    initial : initial,
   }
 })()
