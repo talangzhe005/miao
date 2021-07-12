@@ -29,6 +29,7 @@ var talangzhe005 = (function(){
     }
     return res
   }
+
   function concat(array, a){
     for(var i = 1; i < arguments.length; i++){
       if(Array.isArray(arguments[i])){
@@ -40,10 +41,30 @@ var talangzhe005 = (function(){
     return array
   }
 
+  function difference(array, ...values){
+    var res = []
+    var val = [].concat(...values)
+
+    for(var i = 0; i < array.length; i++){
+      if(val.indexOf(array[i]) == -1){
+        res.push(array[i])
+      }
+    }
+    return res
+
+  }
+
+
+
+
+
+
   return {
     chunk : chunk,
     compact : compact,
-    concat : concat
+    concat : concat,
+    difference : difference,
+
     
   }
 })()
