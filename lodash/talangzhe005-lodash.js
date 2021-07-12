@@ -119,7 +119,7 @@ var talangzhe005 = (function(){
         }
       }
     }else{
-      for(var i = array.length -1; i >= 0; i--){
+      for(var i = 0; i < array.length; i++){
         if(array[i] == value){
           return i
         }
