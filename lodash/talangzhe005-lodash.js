@@ -170,8 +170,9 @@ var talangzhe005 = (function(){
     var c = array.length - 1
     for(var i = 0; i < Math.floor(array.length / 2); i++){
       var temp = array[i]
-      array[i] = array[c--]
-      array[c--] = temp
+      array[i] = array[c]
+      array[c] = temp
+      c--
     }
     return array
   }
