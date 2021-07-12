@@ -1,4 +1,4 @@
-var talangzhe005 = (function(){
+var talangzhe005 = function(){
   function chunk(array, size = 1){
     var res = []
     var a = []
@@ -20,4 +20,4 @@ var talangzhe005 = (function(){
     return res
   }
   
-})()
+}()
