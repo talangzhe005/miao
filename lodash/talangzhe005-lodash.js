@@ -158,7 +158,7 @@ var talangzhe005 = (function(){
     
     for(var i = 0; i < values.length; i++){
       for(var j = 0 ; j < array.length; j++){
-        if(array[i] == values[j]){
+        if(array[j] == values[i]){
           array.splice(j, 1)
         }
       }
