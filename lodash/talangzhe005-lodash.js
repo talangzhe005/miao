@@ -92,6 +92,13 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function fill(array, value, start = 0, end = array.length){
+    for(var i = start; i < end; i++){
+      array[i] = value
+    }
+    return array
+  }
+ 
 
 
 
@@ -106,5 +113,6 @@ var talangzhe005 = (function(){
     uniq : uniq,
     drop : drop,
     dropRight : dropRight,
+    fill : fill,
   }
 })()
