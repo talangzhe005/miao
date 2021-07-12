@@ -166,6 +166,16 @@ var talangzhe005 = (function(){
     return array
   }
 
+  function reverse(array){
+    var c = array.length - 1
+    for(var i = 0; i < Math.floor(array.length / 2); i++){
+      var temp = array[i]
+      array[i] = array[c--]
+      array[c--] = temp
+    }
+    return array
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -184,5 +194,6 @@ var talangzhe005 = (function(){
     lastIndexOf : lastIndexOf,
     nth : nth,
     pull : pull,
+    reverse : reverse,
   }
 })()
