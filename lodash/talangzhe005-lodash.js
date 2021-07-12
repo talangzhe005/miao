@@ -54,6 +54,17 @@ var talangzhe005 = (function(){
 
   }
 
+  function join(array, separator = ','){
+    var str = ''
+    for(var i = 0; i < array.length; i++){
+      str += array[i]
+      if(i !== array.length -1){
+        str += separator
+      }
+    }
+    return str
+  }
+
 
 
 
@@ -64,7 +75,7 @@ var talangzhe005 = (function(){
     compact : compact,
     concat : concat,
     difference : difference,
-
+    join : join,
     
   }
 })()
