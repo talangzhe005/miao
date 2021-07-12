@@ -156,10 +156,10 @@ var talangzhe005 = (function(){
 
   function pull(array, ...values){
     
-    for(var i = 0; i < array.length; i++){
-      for(var j = 0 ; j < values.length; j++){
+    for(var i = 0; i < values.length; i++){
+      for(var j = 0 ; j < array.length; j++){
         if(array[i] == values[j]){
-          array.splice(i, 1)
+          array.splice(j, 1)
         }
       }
     }
