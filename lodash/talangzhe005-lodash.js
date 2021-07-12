@@ -75,6 +75,14 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function drop(array, n = 1){
+    var res = []
+    for(var i = n; i < array.length; i++){
+      res.push(array[i])
+    }
+    return res
+  }
+
 
 
 
@@ -87,5 +95,6 @@ var talangzhe005 = (function(){
     difference : difference,
     join : join,
     uniq : uniq,
+    drop : drop,
   }
 })()
