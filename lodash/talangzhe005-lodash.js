@@ -65,6 +65,16 @@ var talangzhe005 = (function(){
     return str
   }
 
+  function uniq(array){
+    var res = []
+    for(var i = 0; i < array.length; i++){
+      if(res.indexOf(array[i]) == -1){
+        res.push(array[i])
+      }
+    }
+    return res
+  }
+
 
 
 
@@ -76,6 +86,6 @@ var talangzhe005 = (function(){
     concat : concat,
     difference : difference,
     join : join,
-    
+    uniq : uniq,
   }
 })()
