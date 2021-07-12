@@ -19,8 +19,20 @@ var talangzhe005 = (function(){
     
     return res
   }
+
+  function compact(array){
+    var res = []
+    for(var i = 0; i < array.length; i++){
+      if(array[i]){
+        res.push(array[i])
+      }
+    }
+    return res
+  }
+
   return {
-    chunk : chunk
+    chunk : chunk,
+    compact: compact
     
   }
 })()
