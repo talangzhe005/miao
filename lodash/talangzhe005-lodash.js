@@ -29,10 +29,21 @@ var talangzhe005 = (function(){
     }
     return res
   }
+  function concat(array, a){
+    for(var i = 1; i < arguments.length; i++){
+      if(Array.isArray(arguments[i])){
+        array.push(...arguments[i])
+      }else{
+        array.push(arguments[i])
+      }
+    }
+    return array
+  }
 
   return {
     chunk : chunk,
-    compact: compact
+    compact : compact,
+    concat : concat
     
   }
 })()
