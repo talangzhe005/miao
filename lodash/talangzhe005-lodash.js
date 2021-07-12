@@ -133,6 +133,9 @@ var talangzhe005 = (function(){
     return array
   }
 
+  function last(array){
+    return array[array.length - 1]
+  }
 
 
   return {
@@ -149,5 +152,6 @@ var talangzhe005 = (function(){
     head : head,
     indexOf : indexOf,
     initial : initial,
+    last : last,
   }
 })()
