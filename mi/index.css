@@ -45,7 +45,7 @@ dd {
 }
 
 header {
-    min-width: 800px;
+    min-width: 1226px;
     width: 100%;
     height: 40px;
     background-color: #333333;
@@ -620,6 +620,7 @@ aside>ul>li::after {
 
 .miaosha {
     height: 400px;
+    position: relative;
 }
 
 .miaoshao-title {
@@ -630,7 +631,66 @@ aside>ul>li::after {
 }
 
 .anniu {
-    float: right
+    width: 70px;
+    height: 40px;
+    xfloat: right;
+    xposition: relative;
+    xtop: -20px;
+    z-index: 9999;
+}
+
+.anniu input {
+    display: none;
+}
+
+.anniu>input:nth-child(1):checked~ul {
+    xleft: -978px;
+    left: 0;
+}
+
+.anniu>input:nth-child(2):checked~ul {
+    left: -100%;
+}
+
+.anniu>input:nth-child(3):checked~ul {
+    left: -200%;
+}
+
+.anniu>input:nth-child(4):checked~ul {
+    left: -300%;
+}
+
+.anniu>input:nth-child(1):checked~.anniu-right-labels label[for="a2"],
+.anniu>input:nth-child(1):checked~.anniu-left-labels label[for="a1"],
+.anniu>input:nth-child(2):checked~.anniu-right-labels label[for="a3"],
+.anniu>input:nth-child(2):checked~.anniu-left-labels label[for="a1"],
+.anniu>input:nth-child(3):checked~.anniu-right-labels label[for="a4"],
+.anniu>input:nth-child(3):checked~.anniu-left-labels label[for="a2"],
+.anniu>input:nth-child(4):checked~.anniu-right-labels label[for="a4"],
+.anniu>input:nth-child(4):checked~.anniu-left-labels label[for="a3"] {
+    display: block;
+}
+
+.anniu-left-labels,
+.anniu-right-labels {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 35px;
+    height: 20px;
+    background-color: greenyellow;
+    border: 1px solid;
+}
+
+.anniu-left-labels {
+    right: 35px;
+}
+
+.anniu-left-labels label,
+.anniu-right-labels label {
+    width: 100%;
+    height: 100%;
+    display: none;
 }
 
 .d {
@@ -642,26 +702,81 @@ aside>ul>li::after {
     width: 234px;
     height: inherit;
     border-top: 1px solid #e53935;
-    background-color: pink;
+    background-color: #f1eded;
     margin-right: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.e .round {
+    font-size: 21px;
+    color: #ef3a3b;
+    margin-top: 30px;
+}
+
+.e .desc {
+    color: rgba(0, 0, 0, .54);
+    font-size: 15px;
+}
+
+.e .countdown {
+    display: flex;
+    margin-bottom: 58px;
+}
+
+.e .countdown span {
+    width: 46px;
+    height: 46px;
+    background-color: #605751;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 46px;
+}
+
+.e .countdown i {
+    width: 15px;
+    height: 46px;
+    font-size: 28px;
+    line-height: 46px;
+    text-align: center;
+    color: #605751;
 }
 
 .f {
+    position: relative;
+    xfloat: left;
     height: 340px;
     width: 978px;
     background-color: red;
     display: inline-block;
-    white-space: nowrap;
+    xflex-direction: row;
+    xwhite-space: nowrap;
     overflow: hidden;
 }
 
-.f div {
-    display: inline-block;
+.f ul {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    xoverflow: hidden;
+    xdisplay: inline-block;
+    display: flex;
+    xfont-size: 0;
+    white-space: nowrap;
+}
+
+.f ul li {
+    xdisplay: inline-block;
+    flex-shrink: 0;
     width: 234px;
     height: 340px;
     border: 1px solid;
     margin-right: 14px;
     background-color: green;
+    font-size: 14px;
 }
 
 .note9 {

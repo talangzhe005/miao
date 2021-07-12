@@ -1441,12 +1441,21 @@
     console.log(sqrt(n))
 
     function sqrt(k){
-        for(var i = 0; i <= k; i++){
-            if(i * i == k){
-                return i
+
+        var left = 0
+        var right = k
+        var mid = (left + right) / 2
+        var l 
+        do{
+            if(mid * mid > right){
+                right = mid
+            }else{
+                left = mid 
             }
-        }
-        return false
+            l = mid
+            mid = (left + right) / 2
+        }while(left - right <-0.00000000000001)
+        return mid
     }
 </script>
 
