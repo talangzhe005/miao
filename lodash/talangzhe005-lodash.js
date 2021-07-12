@@ -111,6 +111,22 @@ var talangzhe005 = (function(){
     return array[0]
   }
 
+  function indexOf(array, value, fromIndex = 0){
+    if(fromIndex >= 0){
+      for(var i = fromIndex; i < array.length; i++){
+        if(array[i] == value){
+          return i
+        }
+      }
+    }else{
+      for(var i = array.length -1; i >= 0; i--){
+        if(array[i] == value){
+          return i
+        }
+      }
+    }
+    return -1
+  }
 
 
 
@@ -127,5 +143,6 @@ var talangzhe005 = (function(){
     fill : fill,
     fromPairs : fromPairs,
     head : head,
+    indexOf : indexOf,
   }
 })()
