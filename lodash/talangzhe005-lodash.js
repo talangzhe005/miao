@@ -184,7 +184,7 @@ var talangzhe005 = (function(){
 
   function zip(...arrays){
     var ary = concat(...arrays)
-    var res = []
+    var res = [[],[]]
     for(var i = 0; i < ary.length; i++){
       if(i % 2 == 0){
         res[0].push(ary[i])
