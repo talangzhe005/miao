@@ -212,7 +212,23 @@ var talangzhe005 = (function(){
       return res
   }
 
-
+  function xor(...arrays){
+    var res = []
+    var ary = concat(...arrays)
+    var flag = true
+    for(var i = 0; i < ary.length; i++){
+      for(var j = i + 1; j < ary.length; j++){
+        if(ary[i] == ary[j]){
+          flag = false
+          break
+        }
+      }
+      if(flag){
+        res.push(ary[i])
+      }
+    }
+    return res
+  }
 
 
 
@@ -240,5 +256,6 @@ var talangzhe005 = (function(){
     union : union,
     zip : zip,
     without : without,
+    xor : xor,
   }
 })()
