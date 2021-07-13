@@ -195,6 +195,23 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function without(array, ...values){
+      var res = []
+      for(var i = 0; i < array.length; i++){
+        var flag = true
+        for(var j = 0; j < values.length; j++){
+          if(values[j] == array[i]){
+            flag = false
+            break
+          }
+        }
+        if(flag){
+          res.push(array[i])
+        }
+      }
+      return res
+  }
+
 
 
 
@@ -222,5 +239,6 @@ var talangzhe005 = (function(){
     reverse : reverse,
     union : union,
     zip : zip,
+    without : without,
   }
 })()
