@@ -241,6 +241,10 @@ var talangzhe005 = (function(){
     return sum 
   }
 
+  function add(augend, addend){
+    return augend + addend
+  }
+
 
 
 
@@ -267,6 +271,7 @@ var talangzhe005 = (function(){
     zip : zip,
     without : without,
     xor : xor,
-    sum : sum
+    sum : sum,
+    add : add,
   }
 })()
