@@ -220,7 +220,7 @@ var talangzhe005 = (function(){
       var flag = true
       for(var j = i + 1; j < ary.length; j++){
         if(ary[i] == ary[j]){
-          array.splice(j, 1)
+          ary.splice(j, 1)
           flag = false
           break
         }
