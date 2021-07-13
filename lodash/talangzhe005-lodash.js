@@ -182,6 +182,25 @@ var talangzhe005 = (function(){
     return uniq(ary)
   }
 
+  function zip(...arrays){
+    var ary = concat(...arrays)
+    var res = []
+    for(var i = 0; i < ary.length; i++){
+      if(i % 2 == 0){
+        res[0].push(ary[i])
+      }else{
+        res[1].push(ary[i])
+      }
+    }
+    return res
+  }
+
+
+
+
+
+
+
   return {
     chunk : chunk,
     compact : compact,
@@ -202,5 +221,6 @@ var talangzhe005 = (function(){
     pull : pull,
     reverse : reverse,
     union : union,
+    zip : zip,
   }
 })()
