@@ -222,7 +222,7 @@ var talangzhe005 = (function(){
         if(ary[i] == ary[j]){
           ary.splice(j, 1)
           flag = false
-          break
+         
         }
       }
       if(flag){
