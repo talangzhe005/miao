@@ -182,17 +182,35 @@ var talangzhe005 = (function(){
     return uniq(ary)
   }
 
+  // function zip(...arrays){
+  //   var ary = concat(...arrays)
+  //   var res = [[],[]]
+  //   for(var i = 0; i < ary.length; i++){
+  //     if(i % 2 == 0){
+  //       res[0].push(ary[i])
+  //     }else{
+  //       res[1].push(ary[i])
+  //     }
+  //   }
+  //   return res
+  // }
   function zip(...arrays){
-    var ary = concat(...arrays)
-    var res = [[],[]]
-    for(var i = 0; i < ary.length; i++){
-      if(i % 2 == 0){
-        res[0].push(ary[i])
-      }else{
-        res[1].push(ary[i])
+    var res = []
+    var maxLength = 0
+    for(var i = 0; i < arrays.length; i++){
+      if(arrays[i].length > maxLength){
+        maxLength = arrays[i].length
       }
     }
-    return res
+    for(var i = 0; i < maxLength; i ++){
+      var a = []
+      
+      for(var j = 0; j < arrays.length; j++){
+        a.push(arrays[j][i])
+      }
+      res.push(a)
+    }
+    return res 
   }
 
   function without(array, ...values){
