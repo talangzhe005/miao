@@ -215,8 +215,9 @@ var talangzhe005 = (function(){
   function xor(...arrays){
     var res = []
     var ary = concat(...arrays)
-    var flag = true
+    
     for(var i = 0; i < ary.length; i++){
+      var flag = true
       for(var j = i + 1; j < ary.length; j++){
         if(ary[i] == ary[j]){
           flag = false
