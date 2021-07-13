@@ -177,6 +177,11 @@ var talangzhe005 = (function(){
     return array
   }
 
+  function union(...arrays){
+    var ary = concat(...arrays)
+    return uniq(ary)
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -196,5 +201,6 @@ var talangzhe005 = (function(){
     nth : nth,
     pull : pull,
     reverse : reverse,
+    union : union,
   }
 })()
