@@ -224,8 +224,8 @@ var talangzhe005 = (function(){
     for(var i = 0; i < maxLength; i ++){
       var a = []
       
-      for(var j = 0; j < arrays.length; j++){
-        a.push(arrays[j][i])
+      for(var j = 0; j < array.length; j++){
+        a.push(array[j][i])
       }
       res.push(a)
     }
@@ -292,6 +292,18 @@ var talangzhe005 = (function(){
     return max 
   }
 
+  function min(array){
+    if(array.length == 0){
+      return undefined
+    }
+    var min = array[0]
+    for(var i = 1; i < array.length; i++){
+      if(array[i] < min){
+        min = array[i]
+      }
+    }
+    return min
+  }
 
   return {
     chunk : chunk,
@@ -319,6 +331,7 @@ var talangzhe005 = (function(){
     sum : sum,
     add : add,
     max : max,
-    unzip : unzip
+    unzip : unzip,
+    min : min,
   }
 })()
