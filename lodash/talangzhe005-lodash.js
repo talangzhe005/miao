@@ -245,7 +245,15 @@ var talangzhe005 = (function(){
     return augend + addend
   }
 
-
+  function max(array){
+    var max = array[0]
+    for(var i = 1; i < array.length; i++){
+      if(array[i] > max){
+        max = array[i]
+      }
+    }
+    return max 
+  }
 
 
   return {
@@ -273,5 +281,6 @@ var talangzhe005 = (function(){
     xor : xor,
     sum : sum,
     add : add,
+    max : max,
   }
 })()
