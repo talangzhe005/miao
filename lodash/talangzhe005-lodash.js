@@ -213,6 +213,25 @@ var talangzhe005 = (function(){
     return res 
   }
 
+  function unzip(array){
+    var res = []
+    var maxLength = 0
+    for(var i = 0; i < array.length; i++){
+      if(array[i].length > maxLength){
+        maxLength = array[i].length
+      }
+    }
+    for(var i = 0; i < maxLength; i ++){
+      var a = []
+      
+      for(var j = 0; j < arrays.length; j++){
+        a.push(arrays[j][i])
+      }
+      res.push(a)
+    }
+    return res 
+  }
+
   function without(array, ...values){
       var res = []
       for(var i = 0; i < array.length; i++){
@@ -300,5 +319,6 @@ var talangzhe005 = (function(){
     sum : sum,
     add : add,
     max : max,
+    unzip : unzip
   }
 })()
