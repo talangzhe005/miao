@@ -305,6 +305,10 @@ var talangzhe005 = (function(){
     return min
   }
 
+  function mean(array){
+    return sum(array) / array.length
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -333,5 +337,7 @@ var talangzhe005 = (function(){
     max : max,
     unzip : unzip,
     min : min,
+    mean : mean
+
   }
 })()
