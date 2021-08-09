@@ -131,7 +131,7 @@
             re.lastIndex++
           }
         }
-        resultHTML += str.slice(lastIndex)
+        resultHTML += str.slice(lastIndex)  + '\n'
         result.innerHTML = resultHTML
       } else {
         var resultHTML = ''
@@ -139,7 +139,7 @@
         resultHTML += str.slice(0, match.index)
         resultHTML += `<em>${match[0]}</em>`
 
-        resultHTML += str.slice(match[0].length + match.index)
+        resultHTML += str.slice(match[0].length + match.index) + '\n'
         result.innerHTML = resultHTML
       }
     }
