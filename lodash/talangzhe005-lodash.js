@@ -54,6 +54,32 @@ var talangzhe005 = (function(){
 
   }
 
+
+  function  differenceBy(array, ...values) {
+    let f = values.pop()
+    let res = []
+    if(typeof(f) == 'function'){
+      let temp = []
+      for (let i = 0; i < values.length; i++) {
+        temp.push(f(values[i]))
+      }
+      
+      for (let i = 0; i < array.length; i++) {
+        if (temp.indexOf(f(array[i])) == -1){
+          res.push(array[i])
+        }
+      }
+    }
+
+
+
+    return res
+
+  }
+
+
+
+
   function join(array, separator = ','){
     var str = ''
     for(var i = 0; i < array.length; i++){
@@ -337,7 +363,8 @@ var talangzhe005 = (function(){
     max : max,
     unzip : unzip,
     min : min,
-    mean : mean
+    mean : mean,
+    differenceBy: differenceBy,
 
   }
 })()
