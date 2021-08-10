@@ -57,11 +57,12 @@ var talangzhe005 = (function(){
 
   function  differenceBy(array, ...values) {
     let f = values.pop()
+    var val = [].concat(...values)
     let res = []
     if(typeof(f) == 'function'){
       let temp = []
-      for (let i = 0; i < values.length; i++) {
-        temp.push(f(values[i]))
+      for (let i = 0; i < val.length; i++) {
+        temp.push(f(val[i]))
       }
       
       for (let i = 0; i < array.length; i++) {
@@ -69,6 +70,8 @@ var talangzhe005 = (function(){
           res.push(array[i])
         }
       }
+    }else if(typeof(f) == 'string'){
+      
     }
 
 
