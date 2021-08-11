@@ -27,6 +27,7 @@
 
   <script>
     let pinkBox = document.querySelector('#pinkBox')
+    let blueBox = document.querySelector('#blueBox')
 
     let vx = 0
     let vy = 0
@@ -36,24 +37,50 @@
     let upPress = false
     let downPress = false
 
+    let vx1 = 0
+    let vy1 = 0
+    let leftPress1 = false
+    let rightPress1 = false
+
+    let upPress1 = false
+    let downPress1 = false
+
     document.addEventListener('keydown', function(e){
       
-      if (e.key == 'ArrowRight' || e.key == 'd') {
+      if (e.key == 'ArrowRight') {
         vx = 1
         rightPress = true
       }
-      if (e.key == 'ArrowLeft' || e.key == 'a') {
+      if (e.key == 'ArrowLeft' ) {
         vx = -1
         leftPress =  true
       }
 
-      if (e.key == 'ArrowDown' || e.key == 's') {
+      if (e.key == 'ArrowDown' ) {
         vy = 1
         downPress = true
       }
-      if (e.key == 'ArrowUp' || e.key == 'w') {
+      if (e.key == 'ArrowUp' ) {
         vy = -1
         upPress =  true
+      }
+
+      if ( e.key == 'd') {
+        vx1 = 1
+        rightPress1 = true
+      }
+      if ( e.key == 'a') {
+        vx1 = -1
+        leftPress1 =  true
+      }
+
+      if ( e.key == 's') {
+        vy1 = 1
+        downPress1 = true
+      }
+      if ( e.key == 'w') {
+        vy1 = -1
+        upPress1 =  true
       }
     })
 
@@ -93,6 +120,44 @@
           vy = 0
         }
       }
+
+
+      //blueBox
+      if(e.key == 'd'){
+        rightPress1 = false
+        if(leftPress1){
+          vx1 = -1
+        }else {
+          vx1 = 0
+        }
+      }
+
+      if(e.key == 'a'){
+        leftPress1 = false
+        if(rightPress1){
+          vx1 = 1
+        }else{
+          vx1 = 0
+        }
+      }
+
+      if(e.key == 's'){
+        downPress1 = false
+        if(upPress1){
+          vy1 = -1
+        }else {
+          vy1 = 0
+        }
+      }
+
+      if(e.key == 'w'){
+        upPress1 = false
+        if(downPress1){
+          vy1 = 1
+        }else{
+          vy1 = 0
+        }
+      }
     })
 
     let lastTime = 0
@@ -101,6 +166,10 @@
       lastTime = time
       pinkBox.style.left = parseFloat(pinkBox.style.left) + vx * timeDiff * 0.05 + 'px'
       pinkBox.style.top = parseFloat(pinkBox.style.top) + vy * timeDiff * 0.05 + 'px'
+
+
+      blueBox.style.left = parseFloat(blueBox.style.left) + vx1 * timeDiff * 0.05 + 'px'
+      blueBox.style.top = parseFloat(blueBox.style.top) + vy1 * timeDiff * 0.05 + 'px'
       requestAnimationFrame(move)
     })
 
