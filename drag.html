@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>drag</title>
+  <style>
+    div{
+      width: 300px;
+      height: 300px;
+      border: 1px solid;
+      position: absolute;
+
+    }
+    div#pink{
+      background-color: pink;
+    }
+    div#blue{
+      background-color: blue;
+    }
+    div#green{
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div style='top:0;left:0;' id='pink'></div>
+  <div id ='blue'></div>
+  <div id='green'></div>
+  <script>
+    var divs = document.querySelector('div')
+    document.addEventListener('mousedown', function(e){
+      //console.log(e)
+      document.addEventListener('mousemove',move)
+
+      document.addEventListener('mouseup', function (e){
+        document.removeEventListener('mousemove', move)
+      })
+
+      function move(e){
+        //console.log( e)
+        var y = e.pageY - 150
+        var x = e.pageX - 150
+        e.target.style.top =  y + 'px'
+        e.target.style.left =  x + 'px'
+      }
+    })
+
+  </script>
+</body>
+</html>
