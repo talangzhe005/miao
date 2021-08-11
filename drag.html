@@ -29,9 +29,9 @@
   <div id ='blue'></div>
   <div id='green'></div>
   <script>
-    var divs = document.querySelector('div')
+    var divs = document.querySelectorAll('div')
+    
     document.addEventListener('mousedown', function(e){
-      //console.log(e)
       document.addEventListener('mousemove',move)
 
       document.addEventListener('mouseup', function (e){
@@ -44,6 +44,8 @@
         var x = e.pageX - 150
         e.target.style.top =  y + 'px'
         e.target.style.left =  x + 'px'
+        divs.forEach(it => it.style.zIndex = 0)
+        e.target.style.zIndex = 999
       }
     })
 
