@@ -164,12 +164,12 @@
     requestAnimationFrame(function move(time){
       let timeDiff = time - lastTime
       lastTime = time
-      pinkBox.style.left = parseFloat(pinkBox.style.left) + vx * timeDiff * 0.05 + 'px'
-      pinkBox.style.top = parseFloat(pinkBox.style.top) + vy * timeDiff * 0.05 + 'px'
+      pinkBox.style.left = parseFloat(pinkBox.style.left) + vx * timeDiff * 0.5 + 'px'
+      pinkBox.style.top = parseFloat(pinkBox.style.top) + vy * timeDiff * 0.5 + 'px'
 
 
-      blueBox.style.left = parseFloat(blueBox.style.left) + vx1 * timeDiff * 0.05 + 'px'
-      blueBox.style.top = parseFloat(blueBox.style.top) + vy1 * timeDiff * 0.05 + 'px'
+      blueBox.style.left = parseFloat(blueBox.style.left) + vx1 * timeDiff * 0.5 + 'px'
+      blueBox.style.top = parseFloat(blueBox.style.top) + vy1 * timeDiff * 0.5 + 'px'
       requestAnimationFrame(move)
     })
 
