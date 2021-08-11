@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>moving-box</title>
+  <style>
+    
+    span {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+    }
+    
+    #pinkBox {
+      background:pink;
+    }
+    #blueBox {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <span style="left: 100px; top: 100px" id='pinkBox'></span>
+  <span style="left: 500px; top: 100px" id='blueBox'></span>
+
+  <script>
+    let pinkBox = document.querySelector('#pinkBox')
+
+    let vx = 0
+    let vy = 0
+    let leftPress = false
+    let rightPress = false
+
+    let upPress = false
+    let downPress = false
+
+    document.addEventListener('keydown', function(e){
+      
+      if (e.key == 'ArrowRight' || e.key == 'd') {
+        vx = 1
+        rightPress = true
+      }
+      if (e.key == 'ArrowLeft' || e.key == 'a') {
+        vx = -1
+        leftPress =  true
+      }
+
+      if (e.key == 'ArrowDown' || e.key == 's') {
+        vy = 1
+        downPress = true
+      }
+      if (e.key == 'ArrowUp' || e.key == 'w') {
+        vy = -1
+        upPress =  true
+      }
+    })
+
+    document.addEventListener('keyup', function(e){
+      if(e.key == 'ArrowRight'){
+        rightPress = false
+        if(leftPress){
+          vx = -1
+        }else {
+          vx = 0
+        }
+      }
+
+      if(e.key == 'ArrowLeft'){
+        leftPress = false
+        if(rightPress){
+          vx = 1
+        }else{
+          vx = 0
+        }
+      }
+
+      if(e.key == 'ArrowDown'){
+        downPress = false
+        if(upPress){
+          vy = -1
+        }else {
+          vy = 0
+        }
+      }
+
+      if(e.key == 'ArrowUp'){
+        upPress = false
+        if(downPress){
+          vy = 1
+        }else{
+          vy = 0
+        }
+      }
+    })
+
+    let lastTime = 0
+    requestAnimationFrame(function move(time){
+      let timeDiff = time - lastTime
+      lastTime = time
+      pinkBox.style.left = parseFloat(pinkBox.style.left) + vx * timeDiff * 0.05 + 'px'
+      pinkBox.style.top = parseFloat(pinkBox.style.top) + vy * timeDiff * 0.05 + 'px'
+      requestAnimationFrame(move)
+    })
+
+  </script>
+</body>
+</html>
