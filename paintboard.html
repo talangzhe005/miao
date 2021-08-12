@@ -1,0 +1,74 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>paintboard</title>
+  <style>
+    body {
+      height: 500px;
+      background-color: beige;
+    }
+    .dot {
+      height: 8px;
+      width: 8px;
+      border-radius: 4px;
+      background: blue;
+      position: absolute;
+    }
+    svg {
+      height: 500px;
+      width: 1000px;
+      border: 1px solid #df3248;
+    }
+  </style>
+</head>
+<body>
+  颜色： <input type="color" name="" id="colorInput">
+  <svg></svg>
+</body>
+</html>
+<script>
+  var svg = document.querySelector('svg')
+  var color = document.querySelector('#colorInput')
+
+  var lastPos = null
+  document.addEventListener('mousedown', function(e){
+    console.log(color.value)
+    // var lastPos = {x: e.pageX, y: e.pageY}
+    svg.addEventListener('mousemove', moved)
+    document.addEventListener('mouseup', function(e){
+      svg.removeEventListener('mousemove', moved)
+      lastPos = null
+    })
+      
+  })
+  function moved(){
+    var pos = mousePos(svg)
+    var line = document.createElementNS("http://www.w3.org/2000/svg", 'line')
+    if(lastPos == null) {
+      line.setAttribute('x2', pos.x)
+      line.setAttribute('y2', pos.y)
+    }else{
+      line.setAttribute('x2', lastPos.x)
+      line.setAttribute('y2', lastPos.y)
+      
+    }
+    line.setAttribute('x1', pos.x)
+    line.setAttribute('y1', pos.y)
+    line.setAttribute('stroke', color.value)
+    line.setAttribute('stroke-width',  '2')
+    lastPos = pos
+    svg.append(line)
+  }
+
+  function mousePos(node){
+    var box = node.getBoundingClientRect()
+
+    return {
+      x : window.event.clientX - box.x,
+      y : window.event.clientY - box.y,
+    }
+  }
+</script>
