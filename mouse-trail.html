@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>酸奶味真火</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      
+      position: absolute;
+      border-radius: 100px;
+    }
+
+    span {
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-color: #dd8349;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <span></span>
+    <span style="left:100px;"></span>
+    <span></span>
+  </div>
+</body>
+
+</html>
+
+<script>
+  var div = document.querySelector('div')
+  var spans = document.querySelectorAll('span')
+  document.addEventListener('mousemove', function (e) {
+    div.style.left = e.pageX - (div.offsetWidth / 2) + 'px'
+    div.style.top = e.pageY - (div.offsetHeight / 2) + 'px'
+  })
+
+  
+
+
+  requestAnimationFrame(function animate(time){
+    angle1 = time * 0.005
+      
+
+      for(var i = 0; i < spans.length; i++){
+        let x1 = Math.cos(angle1 ) * 200 + 100
+        let y1 = Math.sin(angle1) * 200 + 100
+        spans[i].style.left = x1 + 'px'
+        spans[i].style.top = y1 + 'px'
+        angle1 += Math.PI * 2 / 3
+      }
+      requestAnimationFrame(animate)
+
+    })
+
+</script>
