@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mouse-shadow</title>
+  <style>
+    .mouse-shadow {
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-color:red;
+      position: fixed;
+      background: url('./images/normal.png') no-repeat center;
+    }
+  </style>
+</head>
+<body>
+  
+</body>
+</html>
+
+
+<script>
+  var i = 0
+  document.addEventListener('mousemove', function(e){
+    i++
+    if(i % 2) {
+      return 
+    }
+    var span = document.createElement('span')
+    span.classList.add('mouse-shadow')
+    span.style.top = e.clientY + 'px'
+    span.style.left = e.clientX + 'px'
+    document.body.append(span)
+
+    setTimeout(function(){
+      document.body.removeChild(span)
+    }, 16 * 8)
+  })
+</script>
