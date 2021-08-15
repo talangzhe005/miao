@@ -45,22 +45,70 @@
 
   var lastPos = null
   svg.addEventListener('mousedown', function(e){
-    
-    
-   if(e.which == 1) {
-      svg.addEventListener('mousemove', moved)
+    var pos = mousePos(svg)
+    var g = document.createElementNS("http://www.w3.org/2000/svg", 'g')
+    svg.append(g)
+    function moved(e){
+        var pos = mousePos(svg)
+        var line = document.createElementNS("http://www.w3.org/2000/svg", 'line')
+       if(lastPos == null) {
+          line.setAttribute('x1', pos.x)
+          line.setAttribute('y1', pos.y)
+        }else{
+          line.setAttribute('x1', lastPos.x)
+          line.setAttribute('y1', lastPos.y)
+          
+        }
+        line.setAttribute('x2', pos.x)
+        line.setAttribute('y2', pos.y)
+        line.setAttribute('stroke', color.value)
+        line.setAttribute('stroke-width',  range.value)
+        line.setAttribute('stroke-linecap', 'round')
+        lastPos = pos
+        g.append(line)
+
+
+      // if(!buttonPressed(e)){
+      //   lastPos = null
+      //   removeEventListener('mousemove', moved)
+      // }else{
       
-      e.preventDefault()
+      //   if(lastPos == null) {
+      //     line.setAttribute('x2', pos.x)
+      //     line.setAttribute('y2', pos.y)
+      //   }else{
+      //     line.setAttribute('x2', lastPos.x)
+      //     line.setAttribute('y2', lastPos.y)
+          
+      //   }
+      //   line.setAttribute('x1', pos.x)
+      //   line.setAttribute('y1', pos.y)
+      //   line.setAttribute('stroke', color.value)
+      //   line.setAttribute('stroke-width',  range.value)
+      //   line.setAttribute('stroke-linecap', 'round')
+      //   lastPos = pos
+      //   g.append(line)
+        
+      // }
+    
+  }
+  document.addEventListener('mousemove', moved)
+    
+  //  if(e.which != 0) {
+  //     document.addEventListener('mousemove', moved)
+  //     e.preventDefault()
+  //     //lastPos = null
+  //  }
+    document.addEventListener('mouseup', function once(){
       lastPos = null
-   }
-    // document.addEventListener('mouseup', function(e){
-    //   svg.removeEventListener('mousemove', moved)
-    //   lastPos = null
-    // })
-      
+      document.removeEventListener('mouseup', once)
+      document.removeEventListener('mousemove', moved)
+    })
+    
   })
 
   document.addEventListener('keydown', function(e){
+    console.log(svg.lastElementChild)
     if(e.ctrlKey && e.key == 'z'){
       if(svg.lastElementChild){
         svg.removeChild(svg.lastElementChild)
@@ -68,32 +116,7 @@
     }
   })
 
-  function moved(e){
-    var pos = mousePos(svg)
-    var g = document.createElementNS("http://www.w3.org/2000/svg", 'g')
-    var line = document.createElementNS("http://www.w3.org/2000/svg", 'line')
-    if(!buttonPressed(e)){
-      removeEventListener('mouseve', moved)
-    }else{
-      if(lastPos == null) {
-        line.setAttribute('x2', pos.x)
-        line.setAttribute('y2', pos.y)
-      }else{
-        line.setAttribute('x2', lastPos.x)
-        line.setAttribute('y2', lastPos.y)
-        
-      }
-      line.setAttribute('x1', pos.x)
-      line.setAttribute('y1', pos.y)
-      line.setAttribute('stroke', color.value)
-      line.setAttribute('stroke-width',  range.value)
-      line.setAttribute('stroke-linecap', 'round')
-      lastPos = pos
-      g.append(line)
-      svg.append(g)
-    }
-    
-  }
+ 
 
   function buttonPressed(event){
     if(event.buttons == null) {
