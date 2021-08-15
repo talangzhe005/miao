@@ -9,44 +9,73 @@
     div{
       width: 300px;
       height: 300px;
-      border: 1px solid;
       position: absolute;
-
+      user-select: none;
     }
     div#pink{
-      background-color: pink;
+      background: url('./images/A.png') no-repeat center/100%;
+      
     }
     div#blue{
-      background-color: blue;
+      
+      background: url('./images/A.jpg') no-repeat center/100%;
     }
     div#green{
       background-color: green;
     }
+    
   </style>
 </head>
 <body>
-  <div style='top:0;left:0;' id='pink'></div>
-  <div id ='blue'></div>
-  <div id='green'></div>
+  <div class="dragable"  style='top:0;left:0;' id='pink'></div>
+  <div  class="dragable" id ='blue' style='top:0;left:0;'></div>
+  <div class="dragable" id='green' style='top:0;left:0;'></div>
   <script>
     var divs = document.querySelectorAll('div')
-    
+    var maxzIndex = 4
     document.addEventListener('mousedown', function(e){
-      document.addEventListener('mousemove',move)
-
-      document.addEventListener('mouseup', function (e){
-        document.removeEventListener('mousemove', move)
-      })
-
-      function move(e){
-        //console.log( e)
-        var y = e.pageY - 150
-        var x = e.pageX - 150
-        e.target.style.top =  y + 'px'
-        e.target.style.left =  x + 'px'
-        divs.forEach(it => it.style.zIndex = 0)
-        e.target.style.zIndex = 999
+      console.log('down')
+      if(!e.target.classList.contains('dragable')){
+        return 
       }
+
+      var startX = e.pageX
+      var startY = e.pageY
+      var elStartX = parseFloat(e.target.style.left)
+      var elStartY = parseFloat(e.target.style.top)
+      e.target.style.zIndex = maxzIndex++
+      window.addEventListener('mousemove', function move(ev){
+        if(ev.which === 0 || ev.buttons === 0){
+          console.log('remove mousemove')
+          window.removeEventListener('mousemove', move)
+          return 
+        }
+        console.log('move')
+          var y = ev.pageY - startY
+          var x = ev.pageX - startX
+         
+          var top = elStartY + y
+          if(top < 50) {
+            top = 0
+          }
+          if(top > window.innerHeight - divs[0].offsetHeight - 50){
+            top = window.innerHeight - divs[0].offsetHeight
+          }
+
+
+          var left = elStartX + x 
+          if(left < 50 ) {
+            left = 0
+          }
+          if(left > window.innerWidth - divs[0].offsetWidth -50){
+            left = window.innerWidth - divs[0].offsetWidth
+          }
+
+          e.target.style.top =  top + 'px'
+          e.target.style.left =  left +  'px'
+        })
+        // divs.forEach(it => it.style.zIndex = 0)
+        // e.target.style.zIndex = 999
     })
 
   </script>
