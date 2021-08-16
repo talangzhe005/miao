@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tabs</title>
+</head>
+<body>
+  <div>
+    <div  data-tabname="Home">Lorem ipsum dolor sit amet consectetur adipisicing elit. At dolorum dolore eligendi nam in delectus voluptatem repellendus pariatur labore deserunt minus modi aperiam provident repellat expedita ad, quaerat optio? Suscipit.</div>
+    <div data-tabname="Link">Suscipit ullam magni dignissimos earum, sint laborum illo tempora consectetur error officiis non commodi nulla tempore quos laudantium doloremque quod quam. Temporibus voluptatibus, mollitia aut suscipit corporis reiciendis eius voluptatem.</div>
+    <div data-tabname="About">Voluptatibus, doloremque quaerat! Labore architecto et ex neque ea. Nesciunt accusantium ab voluptatem maiores in error vel, ut eos voluptate quod cupiditate rerum quidem eius veritatis quos provident eum molestiae!</div>
+  </div>
+</body>
+</html>
+
+<script>
+  function astabs(node) {
+    let children = Array.from(node.children)
+    let buttons = []
+    for(let child of children.reverse()){
+      let button = document.createElement('button')
+      buttons.push(button)
+      button.textContent = child.dataset.tabname
+      child.style.display = 'none'
+      node.prepend(button)
+
+      button.addEventListener('click', function(e){
+        children.forEach(it => it.style.display = 'none')
+        buttons.forEach(it => it.style.background = '')
+        child.style.display = 'block'
+        button.style.background = 'pink'
+
+      })
+    }
+    node.firstElementChild.click()
+  }
+
+  astabs(document.querySelector('body>div'))
+</script>
