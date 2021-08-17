@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>conway-life</title>
+</head>
+
+<body>
+  <button id='next'>next</button>
+  <button id='autoPlay'>autoPlay</button>
+  <button id='stop'>stop</button>
+  <br>
+</body>
+
+</html>
+<script>
+
+
+
+
+
+  class Conway {
+    constructor (width, height){
+      this.width = width
+      this.height = height
+    }
+  }
+
+  var conway = new Conway(20,20)
+  window.onload = function() {
+    var k = 0
+    for (var i = 0; i < conway.width; i++){
+      for(var j = 0 ; j < conway.height; j++){
+        var checkbox = document.createElement('input')
+        checkbox.setAttribute('type','checkbox')
+        checkbox.setAttribute('id', 'c'+ (k++) +'')
+        document.body.append(checkbox)
+      
+      }
+      var br = document.createElement('br')
+      document.body.append(br)
+    }
+    
+  }
+
+
+  
+
+
+
+
+  var next = document.querySelector('#next')
+
+  next.addEventListener('click', function(e) {
+    console.log(2222)
+    var checkboxs = document.querySelectorAll('input')
+    for (let checkbox of checkboxs){
+      if(checkbox.checked == true){
+        console.log(checkbox.id)
+
+        var n = findNeighborLife(Number(checkbox.id.slice(1)))
+        console.log(n)
+
+        if(n < 2 || n > 3){
+          checkbox.checked = false
+        }
+      }else{
+        //console.log(checkbox.id)
+        var n = findNeighborLife(Number(checkbox.id.slice(1)))
+        if(n == 3){
+          checkbox.checked = true
+        }
+      }
+      
+    }
+
+  })
+
+
+  var autoPlay = document.querySelector('#autoPlay')
+  var stop = document.querySelector('#stop')
+  var nIntervId
+  autoPlay.addEventListener('click', function(e){
+     nIntervId = setInterval(function(){
+      next.click()
+    },300)
+  })
+
+  stop.addEventListener('click',function(e){
+    clearInterval(nIntervId)
+  })
+
+  function findNeighborLife(i) {
+    var n = 0
+    if(i-1 >= 0){
+        let id = '#c' + (i-1)
+        if(document.querySelector(id).checked){
+            n++
+        } 
+    }
+    // i+1
+    if(i + 1 < conway.width * conway.height){
+      let id = '#c' + (i+1)
+        if(document.querySelector(id).checked){
+            n++
+        } 
+    }
+
+    // i+conway.width
+    if(i+conway.width < conway.width * conway.height){
+      let id = '#c' + (i+conway.width)
+        if(document.querySelector(id).checked){
+            n++
+        } 
+    }
+
+    // i-conway.width
+    if(i-conway.width >= 0){
+      let id = '#c' + (i-conway.width)
+        if(document.querySelector(id).checked){
+            n++
+        } 
+    }
+    // i+conway.width-1
+    if(i+conway.width-1 < conway.width * conway.height ){
+      let id = '#c' + (i+conway.width-1)
+        if(document.querySelector(id).checked){
+            n++
+        } 
+    }
+    // i+conway.width+ 1
+    if(i+conway.width+ 1 < conway.width * conway.height ){
+      let id = '#c' + (i+conway.width+ 1)
+        if(document.querySelector(id).checked){
+            n++
+        } 
+    }
+    // i-conway.width - 1
+    if(i-conway.width - 1 >= 0){
+      let id = '#c' + (i-conway.width - 1)
+        if(document.querySelector(id).checked){
+            n++
+        } 
+    }
+    // i-conway.width +1
+    if(i-conway.width +1 >= 0){
+      let id = '#c' + (i-conway.width +1)
+        if(document.querySelector(id).checked){
+            n++
+        } 
+    }
+    return n 
+  }
+ 
+</script>
