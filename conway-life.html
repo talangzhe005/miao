@@ -57,25 +57,46 @@
   next.addEventListener('click', function(e) {
     console.log(2222)
     var checkboxs = document.querySelectorAll('input')
-    for (let checkbox of checkboxs){
+
+    for(let checkbox of checkboxs){
+      var n = findNeighborLife(Number(checkbox.id.slice(1)))
+      checkbox.setAttribute('data-n', n)
+    }
+
+    for(let checkbox of checkboxs){
+      console.log(checkbox.getAttribute('data-n'))
+      let n1 = checkbox.getAttribute('data-n')
       if(checkbox.checked == true){
-        console.log(checkbox.id)
-
-        var n = findNeighborLife(Number(checkbox.id.slice(1)))
-        console.log(n)
-
-        if(n < 2 || n > 3){
+        if(n1 < 2 || n1 > 3){
           checkbox.checked = false
         }
-      }else{
-        //console.log(checkbox.id)
-        var n = findNeighborLife(Number(checkbox.id.slice(1)))
-        if(n == 3){
+      }else {
+        if(n1 == 3){
           checkbox.checked = true
         }
       }
-      
     }
+
+
+    // for (let checkbox of checkboxs){
+    //   if(checkbox.checked == true){
+    //     console.log(checkbox.id)
+
+    //     var n = findNeighborLife(Number(checkbox.id.slice(1)))
+    //     console.log(n)
+
+    //     if(n < 2 || n > 3){
+    //       checkbox.checked = false
+    //     }
+    //   }else{
+    //     //console.log(checkbox.id)
+    //     var n = findNeighborLife(Number(checkbox.id.slice(1)))
+    //     if(n == 3){
+    //       checkbox.checked = true
+    //     }
+    //   }
+      
+    // }
 
   })
 
