@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>autocompletion</title>
+  <style>
+    input {
+      box-sizing: border-box;
+      width: 500px;
+      height: 30px;
+      border: 1px solid brown;
+    }
+    #spans {
+      box-sizing: border-box;
+      width: 500px;
+      height: 500px;
+      padding: 5px;
+      border: 1px solid ;
+      display: none;
+    }
+    span{
+      display: block;
+      cursor: pointer;
+      line-height: 2em;
+      
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <input type="text" name="" id="">
+    <div id='spans'>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  var input = document.querySelector('input')
+  //var span = document.querySelector('span')
+  var spans = document.querySelector('#spans')
+  var id 
+  var span
+  input.addEventListener('input', function(e) {
+    clearTimeout(id)
+    id = setTimeout(function() {
+      for(var i = 0; i < 10; i++) {
+        span = document.createElement('span')
+        span.textContent = "联想" + Math.random().toString(16).slice(2)
+        spans.append(span)
+      }
+      spans.style.display = 'block'
+    },1000)
+  })
+
+  spans.addEventListener('click',function(e) {
+    input.value = e.target.textContent  
+    spans.style.display = 'none'
+    var child = spans.lastChild
+    while(child){
+      spans.removeChild(child)
+      child = spans.lastChild
+    }
+    console.log(e.target)
+  })
+  
+
+</script>
