@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>detect-triple-click</title>
+  <style>
+    section{
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <section>
+
+  </section>
+</body>
+</html>
+
+<script>
+  var section = document.querySelector('section')
+  var last1 = 0
+  var last2 = 0
+  var last3 = 0
+
+  window.addEventListener('click', function(e) {
+    e.preventDefault()
+    console.log('click')
+    var time = Date.now()
+
+    if(time - last2 < 1000  && last2 - last1 > 1000){
+      console.log('triple click')
+      section.textContent += 'triple click' 
+    }
+    last1 = last2 
+    last2 = last3
+    last3 = time
+  })
+</script>
