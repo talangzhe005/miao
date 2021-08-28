@@ -451,7 +451,11 @@ var talangzhe005 = (function(){
     for (let i = 0; i < array.length; i++){
       if (Array.isArray(array[i])) {
         let flattenArr = flattenDeep(array[i])
-
+        for (let k = 0; k < flattenArr.length; k++) {
+          res.push(flattenArr[k])
+        }
+      }else {
+        res.push(array[i])
       }
     }
   }
