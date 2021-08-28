@@ -375,7 +375,7 @@ var talangzhe005 = (function(){
     if(typeof(predicate) == 'object') {
       let str = JSON.stringify(predicate)
       for (let i = fromIndex; i < array.length; i++) {
-        if(JSON.stringify(array[i] == str)) {
+        if(JSON.stringify(array[i]) == str) {
           return i
         }
       }
@@ -445,6 +445,17 @@ var talangzhe005 = (function(){
     }
     return res
   }
+
+  function flattenDeep(array) {
+    let res = []
+    for (let i = 0; i < array.length; i++){
+      if (Array.isArray(array[i])) {
+        let flattenArr = flattenDeep(array[i])
+
+      }
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
