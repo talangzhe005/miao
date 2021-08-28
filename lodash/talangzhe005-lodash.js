@@ -57,7 +57,7 @@ var talangzhe005 = (function(){
 
   function  differenceBy(array, ...values) {
     let f = values.pop()
-    var val = [].concat(...values)
+    let val = [].concat(...values)
     let res = []
     if(typeof(f) == 'function'){
       let temp = []
@@ -119,6 +119,11 @@ var talangzhe005 = (function(){
     }
 
     return res
+  }
+
+  function dropRightWhile(array, predicate) {
+    var res = []
+
   }
 
   function fill(array, value, start = 0, end = array.length){
@@ -338,6 +343,54 @@ var talangzhe005 = (function(){
     return sum(array) / array.length
   }
 
+  function filter(collection, predicate) {
+
+  }
+
+  function iteratee (value) {
+    
+  }
+
+  function findIndex(array, predicate, fromIndex = 0) {
+    if (typeof(predicate) == 'function') {
+      for (let i = fromIndex; i < array.length; i++) {
+        if(predicate(array[i])) {
+          return i 
+        }
+      }
+      return -1 
+    }
+    if(Array.isArray(predicate)) {
+      let key = predicate[0]
+      let val = predicate[1]
+      for (let i = fromIndex; i < array.length; i++ ){
+        if(arr[i][key] == val) {
+          return i
+        }
+      }
+      return -1
+    }
+
+    if(typeof(predicate) == 'object') {
+      let str = JSON.stringify(predicate)
+      for (let i = fromIndex; i < array.length; i++) {
+        if(JSON.stringify(arr[i] == str)) {
+          return i
+        }
+      }
+      return -1
+    }
+
+    if(typeof(predicate) == 'string') {
+      let key = predicate
+      for (let i = fromIndex; i < array.length; i++) {
+        if(arr[i][key]) {
+          return i
+        }
+      }
+      return -1
+    }
+  }
   return {
     chunk : chunk,
     compact : compact,
@@ -368,6 +421,7 @@ var talangzhe005 = (function(){
     min : min,
     mean : mean,
     differenceBy: differenceBy,
+    findIndex: findIndex,
 
   }
 })()
