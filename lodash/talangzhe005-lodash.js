@@ -375,7 +375,7 @@ var talangzhe005 = (function(){
     if(typeof(predicate) == 'object') {
       let str = JSON.stringify(predicate)
       for (let i = fromIndex; i < array.length; i++) {
-        if(JSON.stringify(arr[i] == str)) {
+        if(JSON.stringify(array[i] == str)) {
           return i
         }
       }
@@ -385,7 +385,7 @@ var talangzhe005 = (function(){
     if(typeof(predicate) == 'string') {
       let key = predicate
       for (let i = fromIndex; i < array.length; i++) {
-        if(arr[i][key]) {
+        if(array[i][key]) {
           return i
         }
       }
