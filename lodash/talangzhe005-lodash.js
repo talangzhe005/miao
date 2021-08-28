@@ -431,6 +431,20 @@ var talangzhe005 = (function(){
       return -1
     }
   }
+
+  function flatten (array) {
+    let res = []
+    for (let i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        for (k of array[i]) {
+          res.push(k)
+        }
+      }else {
+        res.push(array[i])
+      }
+    }
+    return res
+  }
   return {
     chunk : chunk,
     compact : compact,
@@ -463,6 +477,6 @@ var talangzhe005 = (function(){
     differenceBy: differenceBy,
     findIndex: findIndex,
     findLastIndex: findLastIndex,
-    
+    flatten : flatten,
   }
 })()
