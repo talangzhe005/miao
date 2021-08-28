@@ -1,4 +1,5 @@
 var talangzhe005 = (function(){
+  'use strict'
   function chunk(array, size = 1){
     var res = []
     var a = []
@@ -364,7 +365,7 @@ var talangzhe005 = (function(){
       let key = predicate[0]
       let val = predicate[1]
       for (let i = fromIndex; i < array.length; i++ ){
-        if(arr[i][key] == val) {
+        if(array[i][key] == val) {
           return i
         }
       }
@@ -385,6 +386,45 @@ var talangzhe005 = (function(){
       let key = predicate
       for (let i = fromIndex; i < array.length; i++) {
         if(arr[i][key]) {
+          return i
+        }
+      }
+      return -1
+    }
+  }
+
+  function findLastIndex(array, predicate, fromIndex=array.length-1) {
+    if(typeof(predicate) == 'function') {
+      for (let i = fromIndex; i >= 0; i--) {
+        if (predicate(array[i])){
+          return i
+        }
+      }
+      return -1
+    }
+    if (Array.isArray(predicate)) {
+      let key = predicate[0]
+      let val = predicate[1]
+      for (let i = fromIndex; i >= 0; i--) {
+        if(array[i][key] == val) {
+          return i
+        }
+      }
+      return -1
+    }
+    if (typeof(predicate) == 'object') {
+      let str = JSON.stringify(predicate)
+      for (let i = fromIndex; i >= 0; i--) {
+        if(JSON.stringify(array[i]) == str) {
+          return i
+        }
+      }
+      return -1
+    }
+    if (typeof(predicate) == 'string') {
+      let key = predicate
+      for (let i = fromIndex; i >= 0; i--) {
+        if (array[i][key]) {
           return i
         }
       }
@@ -422,6 +462,7 @@ var talangzhe005 = (function(){
     mean : mean,
     differenceBy: differenceBy,
     findIndex: findIndex,
-
+    findLastIndex: findLastIndex,
+    
   }
 })()
