@@ -484,10 +484,20 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function intersectionBy(arrays, iteratee = identity) {
+
+  }
+
   function identity(...values) {
     return values[0]
   }
 
+  function isUndefined(value) {
+    if(typeof(value) == 'undefined') {
+      return true
+    }
+    return false
+  }
   return {
     chunk : chunk,
     compact : compact,
@@ -525,5 +535,6 @@ var talangzhe005 = (function(){
     flattenDepth: flattenDepth,
     intersection: intersection,
     identity: identity,
+    isUndefined: isUndefined,
   }
 })()
