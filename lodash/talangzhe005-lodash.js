@@ -460,6 +460,18 @@ var talangzhe005 = (function(){
     }
   }
 
+  function flattenDepth(array, depth = 1) {
+    let res = []
+    for (let i = 0; i < array.length; i++) {
+      if (depth > 0 && Array.isArray(array[i])) {
+        let flattenArr = flattenDepth(arrary[i], depth - 1)
+      }else {
+        res.push(array[i])
+      }
+    }
+    return res
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -493,5 +505,7 @@ var talangzhe005 = (function(){
     findIndex: findIndex,
     findLastIndex: findLastIndex,
     flatten : flatten,
+    flattenDeep : flattenDeep,
+    flattenDepth: flattenDepth,
   }
 })()
