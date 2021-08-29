@@ -466,7 +466,7 @@ var talangzhe005 = (function(){
     for (let i = 0; i < array.length; i++) {
       if (depth > 0 && Array.isArray(array[i])) {
         let flattenArr = flattenDepth(arrary[i], depth - 1)
-        for (let j = 0; j < flattenArr; j++) {
+        for (let j = 0; j < flattenArr.length; j++) {
           res.push(flattenArr[j])
         }
       }else {
