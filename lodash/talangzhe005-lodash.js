@@ -477,7 +477,11 @@ var talangzhe005 = (function(){
   }
 
   function intersection(...arrays) {
-    
+    let res = arrays[0]
+    for (let i = 0; i < arrays.length; i++) {
+      res = res.filter(val => arrays[i].includes(val))
+    }
+    return res
   }
 
   return {
@@ -515,5 +519,6 @@ var talangzhe005 = (function(){
     flatten : flatten,
     flattenDeep : flattenDeep,
     flattenDepth: flattenDepth,
+    intersection: intersection,
   }
 })()
