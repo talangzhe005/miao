@@ -212,6 +212,10 @@ var talangzhe005 = (function(){
     return array
   }
 
+  function pullAllBy(array, values, iteratee= identity) {
+
+  }
+
   function reverse(array){
     var c = array.length - 1
     for(var i = 0; i < Math.floor(array.length / 2); i++){
@@ -523,6 +527,48 @@ var talangzhe005 = (function(){
     }
   }
 
+  function matches(source) {
+    return function(object) {
+
+    }
+  }
+
+  function isEqual(value, other) {
+    if (typeof(value) !== typeof(other)) {
+      return false
+    }
+    
+    if (Array.isArray(value)) {
+      if (value.length !== other.length) {
+        return false
+      }
+      for (let i = 0; i < value.length; i++) {
+        if (value[i] !== other[i]) {
+          return false
+        }
+      }
+      return false
+    }
+
+    if (typeof(value) == 'object') {
+      if(Object.keys(value).length !== Object.keys(other).length) {
+        return false
+      }
+      for (let k  in value) {
+        if(!isEqual(value, other)) {
+          return false
+        }
+        return true
+      }
+    }
+
+    if(value == other) {
+      return true
+    }
+    
+    return false
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -562,6 +608,7 @@ var talangzhe005 = (function(){
     identity: identity,
     isUndefined: isUndefined,
     property: property,
-    pullAll: pullAll
+    pullAll: pullAll,
+    isEqual: isEqual,
   }
 })()
