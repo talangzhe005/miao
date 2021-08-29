@@ -498,6 +498,20 @@ var talangzhe005 = (function(){
     }
     return false
   }
+
+  function property(path) {
+    if(!Array.isArray(path)) {
+      path = path.split('.')
+    }
+    return function (object) {
+      let res = object
+      for (let i = 0; i < path.length; i++) {
+        res = res[path[i]]
+      }
+      return res 
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -536,5 +550,6 @@ var talangzhe005 = (function(){
     intersection: intersection,
     identity: identity,
     isUndefined: isUndefined,
+    property: property,
   }
 })()
