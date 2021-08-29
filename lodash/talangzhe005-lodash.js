@@ -201,6 +201,17 @@ var talangzhe005 = (function(){
     return array
   }
 
+  function pullAll(array, values) {
+    for (var i = 0; i < values.length; i++) {
+      for (var j = 0; j < array.length; j++) {
+        if (array[j] == values[i]) {
+          array.splice(j, 1)
+        }
+      }
+    }
+    return array
+  }
+
   function reverse(array){
     var c = array.length - 1
     for(var i = 0; i < Math.floor(array.length / 2); i++){
@@ -551,5 +562,6 @@ var talangzhe005 = (function(){
     identity: identity,
     isUndefined: isUndefined,
     property: property,
+    pullAll: pullAll
   }
 })()
