@@ -529,7 +529,12 @@ var talangzhe005 = (function(){
 
   function matches(source) {
     return function(object) {
-
+      for (let k in source) {
+        if(source[k] !== object[k]){
+          return false
+        }
+      }
+      return true
     }
   }
 
@@ -610,5 +615,6 @@ var talangzhe005 = (function(){
     property: property,
     pullAll: pullAll,
     isEqual: isEqual,
+    matches: matches,
   }
 })()
