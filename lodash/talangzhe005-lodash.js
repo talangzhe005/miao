@@ -484,6 +484,10 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function identity(...values) {
+    return values[0]
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -520,5 +524,6 @@ var talangzhe005 = (function(){
     flattenDeep : flattenDeep,
     flattenDepth: flattenDepth,
     intersection: intersection,
+    identity: identity,
   }
 })()
