@@ -458,6 +458,7 @@ var talangzhe005 = (function(){
         res.push(array[i])
       }
     }
+    return res
   }
 
   function flattenDepth(array, depth = 1) {
@@ -473,6 +474,10 @@ var talangzhe005 = (function(){
       }
     }
     return res
+  }
+
+  function intersection(...arrays) {
+    
   }
 
   return {
