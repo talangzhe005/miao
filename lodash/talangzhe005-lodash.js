@@ -574,6 +574,32 @@ var talangzhe005 = (function(){
     return false
   }
 
+  function escape(string = '') {
+    //转义string中的 "&", "<", ">", '"', "'", 和 "`" 字符为HTML实体字符。
+    let res = ''
+    for(let i = 0; i < string.length; i++) {
+      switch(string[i]) {
+        case '&' :
+          res += '&amp;'
+          break
+        case '<' :
+          res += '&lt;'
+          break
+        case '>' :
+          res += '&gt;'
+          break
+        case '\"' :
+          res += '&quot;'
+          break
+        case '\'' :
+          res += '&apos'
+          break
+        default:
+          res += string[i]
+      }
+    }
+    return res
+  }
   return {
     chunk : chunk,
     compact : compact,
@@ -616,5 +642,6 @@ var talangzhe005 = (function(){
     pullAll: pullAll,
     isEqual: isEqual,
     matches: matches,
+    escape: escape,
   }
 })()
