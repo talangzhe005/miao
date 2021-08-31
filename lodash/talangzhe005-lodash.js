@@ -328,6 +328,18 @@ var talangzhe005 = (function(){
     return sum 
   }
 
+  function sumBy(array, iteratee=identity) {
+    let sum = 0
+    if(typeof iteratee == 'function') {
+      sum = sum(iteratee(array))
+    }
+    if(typeof iteratee == 'string') {
+     array =  array.map(it => it.iteratee)
+     sum = sum(array)
+    }
+    return sum
+  }
+
   function add(augend, addend){
     return augend + addend
   }
@@ -620,7 +632,7 @@ var talangzhe005 = (function(){
 
     let res = []
     for (let k in collection) {
-      res.push(iteratee(collection[k], k, collection))
+      res.push(iteratee(collection[k], Number(k), collection))
     }
     return res
   }
@@ -669,5 +681,6 @@ var talangzhe005 = (function(){
     matches: matches,
     escape: escape,
     map: map,
+    sumBy: sumBy,
   }
 })()
