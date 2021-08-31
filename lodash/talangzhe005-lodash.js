@@ -538,6 +538,12 @@ var talangzhe005 = (function(){
     }
   }
 
+  function matchesProperty(path, srcValue) {
+    return function(obj) {
+      return obj[path] == srcValue
+    }
+  }
+
   function isEqual(value, other) {
     if (typeof(value) !== typeof(other)) {
       return false
@@ -600,6 +606,25 @@ var talangzhe005 = (function(){
     }
     return res
   }
+
+  function map (collection, iteratee=identity) {
+    if (typeof iteratee == 'string') {
+      iteratee = property(iteratee)
+    }
+    if(Array.isArray(iteratee)) {
+      iteratee = matchesProperty(iteratee)
+    }
+    if(typeof iteratee == 'object') {
+      iteratee = matches(iteratee)
+    }
+
+    let res = []
+    for (let k in collection) {
+      res.push(iteratee(collection[k], k, collection))
+    }
+    return res
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -643,5 +668,6 @@ var talangzhe005 = (function(){
     isEqual: isEqual,
     matches: matches,
     escape: escape,
+    map: map,
   }
 })()
