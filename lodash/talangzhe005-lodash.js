@@ -594,7 +594,7 @@ var talangzhe005 = (function(){
   //   }
   //   return false
   // }
-  
+
   function isUndefined(value) {
     return value === undefined
   }
@@ -710,6 +710,12 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function tail(array){
+    let res = array.slice()
+    res.shift()
+    return res 
+  }
+
   
 
   return {
@@ -765,7 +771,7 @@ var talangzhe005 = (function(){
     subtract: subtract,
     clamp: clamp,
     inRange: inRange,
-    
+    tail: tail,
 
   }
 })()
