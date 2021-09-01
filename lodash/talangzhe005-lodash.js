@@ -588,11 +588,15 @@ var talangzhe005 = (function(){
     return values[0]
   }
 
+  // function isUndefined(value) {
+  //   if(typeof(value) == 'undefined') {
+  //     return true
+  //   }
+  //   return false
+  // }
+  
   function isUndefined(value) {
-    if(typeof(value) == 'undefined') {
-      return true
-    }
-    return false
+    return value === undefined
   }
 
   function property(path) {
@@ -706,9 +710,7 @@ var talangzhe005 = (function(){
     return res
   }
 
-  function isUndefined(value) {
-    return value == undefined
-  }
+  
 
   return {
     chunk : chunk,
@@ -763,7 +765,7 @@ var talangzhe005 = (function(){
     subtract: subtract,
     clamp: clamp,
     inRange: inRange,
-    isUndefined: isUndefined,
     
+
   }
 })()
