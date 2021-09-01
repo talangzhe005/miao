@@ -391,6 +391,10 @@ var talangzhe005 = (function(){
     return matchesProperty(minArr)
   }
 
+  function multiply(multiplier, multiplicand){
+    return multiplier * multiplicand
+  }
+
   function mean(array){
     return sum(array) / array.length
   }
@@ -719,5 +723,6 @@ var talangzhe005 = (function(){
     maxBy: maxBy,
     meanBy: meanBy,
     minBy: minBy,
+    multiply: multiply,
   }
 })()
