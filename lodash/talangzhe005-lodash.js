@@ -395,6 +395,10 @@ var talangzhe005 = (function(){
     return multiplier * multiplicand
   }
 
+  function subtract(minuend, subtrahend) {
+    return minuend - subtrahend
+  }
+
   function mean(array){
     return sum(array) / array.length
   }
@@ -724,5 +728,6 @@ var talangzhe005 = (function(){
     meanBy: meanBy,
     minBy: minBy,
     multiply: multiply,
+    subtract: subtract,
   }
 })()
