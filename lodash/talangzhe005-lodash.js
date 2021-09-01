@@ -348,6 +348,7 @@ var talangzhe005 = (function(){
     return dividend / divisor
   }
 
+
   function max(array){
     var max = array[0]
     for(var i = 1; i < array.length; i++){
@@ -356,6 +357,15 @@ var talangzhe005 = (function(){
       }
     }
     return max 
+  }
+
+  function maxBy(array, iteratee = identity) {
+    if (typeof iteratee == 'function') {
+      array = iteratee(array)
+    } else {
+      array =  array.map(it => it.iteratee)
+    }
+    return max(array)
   }
 
   function min(array){
@@ -687,5 +697,6 @@ var talangzhe005 = (function(){
     map: map,
     sumBy: sumBy,
     divide: divide,
+    maxBy: maxBy,
   }
 })()
