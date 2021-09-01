@@ -344,6 +344,10 @@ var talangzhe005 = (function(){
     return augend + addend
   }
 
+  function divide(dividend, divisor) {
+    return dividend / divisor
+  }
+
   function max(array){
     var max = array[0]
     for(var i = 1; i < array.length; i++){
@@ -682,5 +686,6 @@ var talangzhe005 = (function(){
     escape: escape,
     map: map,
     sumBy: sumBy,
+    divide: divide,
   }
 })()
