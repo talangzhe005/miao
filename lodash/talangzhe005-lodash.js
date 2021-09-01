@@ -385,6 +385,15 @@ var talangzhe005 = (function(){
     return sum(array) / array.length
   }
 
+  function meanBy(array, iteratee = identity) {
+    if(typeof iteratee == 'function') {
+      array = iteratee(array)
+    }else {
+      array = array.map(it => it.iteratee)
+    }
+    return mean(array)
+  }
+
   function filter(collection, predicate) {
 
   }
@@ -698,5 +707,6 @@ var talangzhe005 = (function(){
     sumBy: sumBy,
     divide: divide,
     maxBy: maxBy,
+    meanBy: meanBy,
   }
 })()
