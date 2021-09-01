@@ -423,6 +423,23 @@ var talangzhe005 = (function(){
     }
   }
 
+  function inRange(number, start = 0, end) {
+    if (end == undefined) {
+      end = start
+      start = 0 
+    }
+    if (start > end) {
+      let temp = start
+      start = end
+      end = start
+    }
+    if(number >= start && number < end) {
+      return true
+    }else {
+      return false
+    }
+  }
+
   function filter(collection, predicate) {
 
   }
@@ -741,5 +758,6 @@ var talangzhe005 = (function(){
     multiply: multiply,
     subtract: subtract,
     clamp: clamp,
+    inRange: inRange,
   }
 })()
