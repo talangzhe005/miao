@@ -380,6 +380,17 @@ var talangzhe005 = (function(){
     return min
   }
 
+  function minBy(array, iteratee = identity) {
+    let array1 
+    if (typeof iteratee == 'function') {
+      array1 = iteratee(array)
+    }else {
+      array1 = array.map(it => it.iteratee)
+    }
+    let minArr = min(array1)
+    return matchesProperty(minArr)
+  }
+
   function mean(array){
     return sum(array) / array.length
   }
@@ -707,5 +718,6 @@ var talangzhe005 = (function(){
     divide: divide,
     maxBy: maxBy,
     meanBy: meanBy,
+    minBy: minBy,
   }
 })()
