@@ -329,12 +329,12 @@ var talangzhe005 = (function(){
   }
 
   function sumBy(array, iteratee=identity) {
-    let sum = 0
+    
     if(typeof iteratee == 'function') {
-      array = iteratee(array)
+      array = array.map(it => iteratee(it))
     }
     if(typeof iteratee == 'string') {
-     array =  array.map(it => it.iteratee)
+      array =  array.map(it => it[iteratee])
     }
     return sum(array)
   }
