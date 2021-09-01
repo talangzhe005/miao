@@ -365,7 +365,7 @@ var talangzhe005 = (function(){
       array1 =  array.map(it => it[iteratee])
     }
     let max = max(array)
-    return matchesProperty(array, max)
+    return filter(array, matches(max))
   }
 
   function min(array){
@@ -389,7 +389,7 @@ var talangzhe005 = (function(){
       array1 = array.map(it => it[iteratee])
     }
     let minArr = min(array1)
-    return matchesProperty(array, minArr)
+    return filter(array, matches(minArr))
   }
 
   function multiply(multiplier, multiplicand){
@@ -706,6 +706,10 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function isUndefined(value) {
+    return value == undefined
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -759,5 +763,7 @@ var talangzhe005 = (function(){
     subtract: subtract,
     clamp: clamp,
     inRange: inRange,
+    isUndefined: isUndefined,
+    
   }
 })()
