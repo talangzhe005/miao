@@ -360,9 +360,9 @@ var talangzhe005 = (function(){
 
   function maxBy(array, iteratee = identity) {
     if (typeof iteratee == 'function') {
-      array = iteratee(array)
+      array = array.map(it => iteratee(it))
     } else {
-      array =  array.map(it => it.iteratee)
+      array =  array.map(it => it[iteratee])
     }
     return max(array)
   }
@@ -383,9 +383,9 @@ var talangzhe005 = (function(){
   function minBy(array, iteratee = identity) {
     let array1 
     if (typeof iteratee == 'function') {
-      array1 = iteratee(array)
+      array1 = array.map(it => iteratee(it))
     }else {
-      array1 = array.map(it => it.iteratee)
+      array1 = array.map(it => it[iteratee])
     }
     let minArr = min(array1)
     return matchesProperty(minArr)
