@@ -716,6 +716,9 @@ var talangzhe005 = (function(){
     return res 
   }
 
+  function take(array,  n = 1) {
+    return array.slice(0, n)
+  }
   
 
   return {
@@ -772,6 +775,7 @@ var talangzhe005 = (function(){
     clamp: clamp,
     inRange: inRange,
     tail: tail,
+    take:  take,
 
   }
 })()
