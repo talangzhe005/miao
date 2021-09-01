@@ -413,6 +413,16 @@ var talangzhe005 = (function(){
     return mean(array)
   }
 
+  function clamp(number, lower, upper) {
+    if (number < lower) {
+      return lower
+    }else if(number > upper) {
+      return upper
+    }else {
+      return number
+    }
+  }
+
   function filter(collection, predicate) {
 
   }
@@ -730,5 +740,6 @@ var talangzhe005 = (function(){
     minBy: minBy,
     multiply: multiply,
     subtract: subtract,
+    clamp: clamp,
   }
 })()
