@@ -360,11 +360,12 @@ var talangzhe005 = (function(){
 
   function maxBy(array, iteratee = identity) {
     if (typeof iteratee == 'function') {
-      array = array.map(it => iteratee(it))
+      array1 = array.map(it => iteratee(it))
     } else {
-      array =  array.map(it => it[iteratee])
+      array1 =  array.map(it => it[iteratee])
     }
-    return max(array)
+    let max = max(array)
+    return matchesProperty(array, max)
   }
 
   function min(array){
@@ -388,7 +389,7 @@ var talangzhe005 = (function(){
       array1 = array.map(it => it[iteratee])
     }
     let minArr = min(array1)
-    return matchesProperty(minArr)
+    return matchesProperty(array, minArr)
   }
 
   function multiply(multiplier, multiplicand){
