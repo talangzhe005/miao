@@ -397,9 +397,9 @@ var talangzhe005 = (function(){
 
   function meanBy(array, iteratee = identity) {
     if(typeof iteratee == 'function') {
-      array = iteratee(array)
+      array = array.map(it => iteratee(it))
     }else {
-      array = array.map(it => it.iteratee)
+      array = array.map(it => it[iteratee])
     }
     return mean(array)
   }
