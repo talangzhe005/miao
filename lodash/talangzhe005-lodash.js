@@ -431,7 +431,7 @@ var talangzhe005 = (function(){
     if (start > end) {
       let temp = start
       start = end
-      end = start
+      end = temp
     }
     if(number >= start && number < end) {
       return true
