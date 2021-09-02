@@ -737,6 +737,16 @@ var talangzhe005 = (function(){
     }
     return res 
   }
+
+  function toFinite(value) {
+    if(value === Infinity) {
+      return Number.MAX_VALUE
+    }
+    if(value === -Infinity) {
+      return Number.MIN_VALUE
+    }
+    return Number(value)
+  }
   
 
   return {
@@ -797,5 +807,6 @@ var talangzhe005 = (function(){
     lt: lt,
     lte: lte,
     toArray: toArray,
+    toFinite: toFinite,
   }
 })()
