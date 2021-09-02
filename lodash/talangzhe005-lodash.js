@@ -783,6 +783,16 @@ var talangzhe005 = (function(){
     return object
   }
 
+  function toSafeInteger(value) {
+    if(value > Number.MAX_SAFE_INTEGER) {
+      return Number.MAX_SAFE_INTEGER
+    }
+    if(value < Number.MIN_SAFE_INTEGER) {
+      return Number.MIN_SAFE_INTEGER
+    }
+    return toInteger(value)
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -846,5 +856,6 @@ var talangzhe005 = (function(){
     toLength: toLength,
     toNumber: toNumber,
     assign: assign,
+    toSafeInteger: toSafeInteger,
   }
 })()
