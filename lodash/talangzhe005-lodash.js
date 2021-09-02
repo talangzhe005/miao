@@ -770,6 +770,10 @@ var talangzhe005 = (function(){
     return value
   }
 
+  function toNumber(value) {
+    return Number(value)
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -831,5 +835,6 @@ var talangzhe005 = (function(){
     toFinite: toFinite,
     toInteger: toInteger,
     toLength: toLength,
+    toNumber: toNumber,
   }
 })()
