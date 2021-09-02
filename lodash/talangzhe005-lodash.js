@@ -747,6 +747,16 @@ var talangzhe005 = (function(){
     }
     return Number(value)
   }
+
+  function toInteger(value) {
+    let val = toFinite(value)
+    let digit  = val % 1
+    if(digit) {
+      return val - digit
+    }else {
+      return val 
+    }
+  }
   
 
   return {
@@ -808,5 +818,6 @@ var talangzhe005 = (function(){
     lte: lte,
     toArray: toArray,
     toFinite: toFinite,
+    toInteger: toInteger,
   }
 })()
