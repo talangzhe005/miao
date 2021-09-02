@@ -758,6 +758,17 @@ var talangzhe005 = (function(){
     }
   }
   
+  function toLength(value) {
+    const MAX_ARRAY_LENGTH = 4294967295
+    if(! value) {
+      return 0
+    }
+    value = toInteger(value)
+    if(value > MAX_ARRAY_LENGTH ) {
+      return MAX_ARRAY_LENGTH
+    }
+    return value
+  }
 
   return {
     chunk : chunk,
@@ -819,5 +830,6 @@ var talangzhe005 = (function(){
     toArray: toArray,
     toFinite: toFinite,
     toInteger: toInteger,
+    toLength: toLength,
   }
 })()
