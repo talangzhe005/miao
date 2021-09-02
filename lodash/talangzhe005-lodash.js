@@ -719,6 +719,10 @@ var talangzhe005 = (function(){
   function take(array,  n = 1) {
     return array.slice(0, n)
   }
+
+  function lt(value, other) {
+    return value < other
+  }
   
 
   return {
@@ -776,6 +780,6 @@ var talangzhe005 = (function(){
     inRange: inRange,
     tail: tail,
     take:  take,
-
+    lt: lt,
   }
 })()
