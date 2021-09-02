@@ -774,6 +774,15 @@ var talangzhe005 = (function(){
     return Number(value)
   }
 
+  function assign(object, ...sources) {
+    for (let i = 0 ; i < sources.length; i++) {
+      for (let k in Object.keys(sources[i])) {
+        object[k] = sources[i][k]
+      }
+    }
+    return object
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -836,5 +845,6 @@ var talangzhe005 = (function(){
     toInteger: toInteger,
     toLength: toLength,
     toNumber: toNumber,
+    assign: assign,
   }
 })()
