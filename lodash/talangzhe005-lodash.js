@@ -727,6 +727,16 @@ var talangzhe005 = (function(){
   function lte(value, other) {
     return value <= other
   }
+
+  function toArray(value) {
+    let res = []
+    if(typeof value == 'object' || typeof value == 'string') {
+      for(let k in value) {
+        res.push(value[k])
+      }
+    }
+    return res 
+  }
   
 
   return {
@@ -786,5 +796,6 @@ var talangzhe005 = (function(){
     take:  take,
     lt: lt,
     lte: lte,
+    toArray: toArray,
   }
 })()
