@@ -723,6 +723,10 @@ var talangzhe005 = (function(){
   function lt(value, other) {
     return value < other
   }
+
+  function lte(value, other) {
+    return value <= other
+  }
   
 
   return {
@@ -781,5 +785,6 @@ var talangzhe005 = (function(){
     tail: tail,
     take:  take,
     lt: lt,
+    lte: lte,
   }
 })()
