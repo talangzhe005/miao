@@ -793,6 +793,14 @@ var talangzhe005 = (function(){
     return toInteger(value)
   }
 
+  function values(object) {
+    let res = []
+    for(let k in object) {
+      res.push(object[k])
+    }
+    return res
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -857,5 +865,6 @@ var talangzhe005 = (function(){
     toNumber: toNumber,
     assign: assign,
     toSafeInteger: toSafeInteger,
+    values: values,
   }
 })()
