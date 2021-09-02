@@ -776,7 +776,7 @@ var talangzhe005 = (function(){
 
   function assign(object, ...sources) {
     for (let i = 0 ; i < sources.length; i++) {
-      for (let k in Object.keys(sources[i])) {
+      for (let k of Object.keys(sources[i])) {
         object[k] = sources[i][k]
       }
     }
