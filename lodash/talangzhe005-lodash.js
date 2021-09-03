@@ -801,6 +801,13 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function repeat(string='', n = 1) {
+    for (let i = 0; i < n; i++) {
+      string += string
+    }
+    return string
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -866,5 +873,6 @@ var talangzhe005 = (function(){
     assign: assign,
     toSafeInteger: toSafeInteger,
     values: values,
+    repeat: repeat,
   }
 })()
