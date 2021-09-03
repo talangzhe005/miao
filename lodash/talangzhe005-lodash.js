@@ -812,6 +812,14 @@ var talangzhe005 = (function(){
     return string.replace(pattern, replacement)
   }
 
+  function toPairs(object) {
+    let res = []
+    for (let k in object) {
+      res.push([k, object[k]])
+    }
+    return res 
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -879,5 +887,6 @@ var talangzhe005 = (function(){
     values: values,
     repeat: repeat,
     replace: replace,
+    toPairs: toPairs,
   }
 })()
