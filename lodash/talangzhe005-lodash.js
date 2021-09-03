@@ -808,6 +808,10 @@ var talangzhe005 = (function(){
     return string
   }
 
+  function replace(string='', pattern, replacement) {
+    return string.replace(pattern, replacement)
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -874,5 +878,6 @@ var talangzhe005 = (function(){
     toSafeInteger: toSafeInteger,
     values: values,
     repeat: repeat,
+    replace: replace,
   }
 })()
