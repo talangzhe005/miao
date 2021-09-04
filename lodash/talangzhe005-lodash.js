@@ -911,6 +911,43 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function takeRightWhile(array, predicate = identity) {
+    let res = []
+    for (let i = array.length - 1; i >= 0; i--) {
+      if (typeof predicate == 'function') {
+        if (predicate(array[i])) {
+          res.unshift(array[i])
+        }else {
+          break
+        }
+      }else if (typeof predicate == 'string') {
+        if(!(predicate in array[i])){
+          res.unshift(array[i])
+        }else {
+          break
+        }
+      }else if (Array.isArray(predicate)) {
+        if(array[i][predicate[0]] == predicate[1]) {
+          res.unshift(array[i])
+        }else {
+          break
+        }
+      }else if (typeof predicate == 'object') {
+        let isSame = true
+        for(let k in array[i]) {
+          if (predicate[k] !== array[i][k]){
+            isSame = false
+          }
+        }
+        if(isSame) {
+          res.unshift(array[i])
+        }
+      }
+
+    }
+    return res
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -988,5 +1025,6 @@ var talangzhe005 = (function(){
     sortedUniq: sortedUniq,
     sortedUniqBy: sortedUniqBy,
     takeRight: takeRight,
+    takeRightWhile: takeRightWhile,
   }
 })()
