@@ -878,6 +878,16 @@ var talangzhe005 = (function(){
     }
   }
 
+  function sortedUniq(array) {
+    let res = []
+    for (let i = 0; i < array.length; i++) {
+      if(!res.includes(array[i])) {
+        res.push(array[i])
+      }
+    }
+    return res.sort((a,b) => a-b)
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -952,5 +962,6 @@ var talangzhe005 = (function(){
     sortedLastIndex: sortedLastIndex,
     sortedLastIndexBy: sortedLastIndexBy,
     sortedLastIndexOf: sortedLastIndexOf,
+    sortedUniq: sortedUniq,
   }
 })()
