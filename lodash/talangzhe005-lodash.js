@@ -257,6 +257,10 @@ var talangzhe005 = (function(){
 
   }
 
+  function uniqWith(array, comparator) {
+
+  }
+
   // function zip(...arrays){
   //   var ary = concat(...arrays)
   //   var res = [[],[]]
@@ -1034,6 +1038,12 @@ var talangzhe005 = (function(){
     return res 
   }
 
+  function ary(func,  n = func.length) {
+    return function (...arguments) {
+      return func(...arguments.slice(0, n))
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1114,5 +1124,6 @@ var talangzhe005 = (function(){
     takeRightWhile: takeRightWhile,
     takeWhile: takeWhile,
     unionBy: unionBy,
+    ary: ary,
   }
 })()
