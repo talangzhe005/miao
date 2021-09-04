@@ -238,7 +238,7 @@ var talangzhe005 = (function(){
     let temp = []
     var ary = concat(...arrays)
     if (typeof iteratee == 'function') {
-      for (let k of ary) {
+      for (let k in ary) {
         if(!(iteratee(ary[k]) in temp)){
           res.push(ary[k])
           temp.push(iteratee(ary[k]))
@@ -247,7 +247,7 @@ var talangzhe005 = (function(){
     }
     if (typeof iteratee == 'string') {
       for (let i = 0; i <= ary.length; i++) {
-        if(!(temp.includes(ary[i][iteratee]))) {
+        if(!((ary[i][iteratee] in temp))) {
           res.push(ary[i])
           temp.push(ary[i][iteratee])
         }
