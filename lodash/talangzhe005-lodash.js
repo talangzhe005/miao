@@ -870,6 +870,14 @@ var talangzhe005 = (function(){
     }
   }
 
+  function sortedLastIndexOf(array, value) {
+    for (let i = array.length - 1; i >= 0; i--) {
+      if(array[i] == value) {
+        return i
+      }
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -943,5 +951,6 @@ var talangzhe005 = (function(){
     sortedIndexOf: sortedIndexOf,
     sortedLastIndex: sortedLastIndex,
     sortedLastIndexBy: sortedLastIndexBy,
+    sortedLastIndexOf: sortedLastIndexOf,
   }
 })()
