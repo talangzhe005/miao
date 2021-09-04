@@ -828,6 +828,16 @@ var talangzhe005 = (function(){
       }
     }
   }
+  
+  function sortedIndexBy(array, value, iteratee = identity) {
+    if (typeof iteratee == 'function') {
+      array = map(array, it => iteratee(array))
+    }
+    if (typeof iteratee == 'string') {
+      array = map(array, it => it[iteratee])
+    }
+    return sortedIndex(array, value)
+  }
 
   return {
     chunk : chunk,
@@ -898,5 +908,6 @@ var talangzhe005 = (function(){
     replace: replace,
     toPairs: toPairs,
     sortedIndex: sortedIndex,
+    sortedIndexBy: sortedIndexBy,
   }
 })()
