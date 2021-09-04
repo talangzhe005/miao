@@ -839,6 +839,15 @@ var talangzhe005 = (function(){
     return sortedIndex(array, value)
   }
 
+  function sortedIndexOf(array, value) {
+    for (let i = 0; i < array.length; i++) {
+      if(array[i] == value) {
+        return i 
+      }
+    }
+    return -1 
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -909,5 +918,6 @@ var talangzhe005 = (function(){
     toPairs: toPairs,
     sortedIndex: sortedIndex,
     sortedIndexBy: sortedIndexBy,
+    sortedIndexOf: sortedIndexOf,
   }
 })()
