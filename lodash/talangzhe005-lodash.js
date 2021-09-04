@@ -802,10 +802,11 @@ var talangzhe005 = (function(){
   }
 
   function repeat(string='', n = 1) {
+    let res = ''
     for (let i = 0; i < n; i++) {
-      string += string
+      res += string
     }
-    return string
+    return res
   }
 
   function replace(string='', pattern, replacement) {
