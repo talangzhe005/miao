@@ -821,6 +821,14 @@ var talangzhe005 = (function(){
     return res 
   }
 
+  function sortedIndex(array, value) {
+    for (let i =0; i < array.length; i++) {
+      if (array[i] >= value) {
+        return i 
+      }
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -889,5 +897,6 @@ var talangzhe005 = (function(){
     repeat: repeat,
     replace: replace,
     toPairs: toPairs,
+    sortedIndex: sortedIndex,
   }
 })()
