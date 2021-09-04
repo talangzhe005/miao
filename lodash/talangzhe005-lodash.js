@@ -860,7 +860,14 @@ var talangzhe005 = (function(){
   }
 
   function sortedLastIndexBy(array, value, iteratee = identity) {
-
+    if (typeof iteratee == 'function') {
+      array = map(array, it => iteratee(it)) 
+      return sortedLastIndex(array, iteratee(value))
+    }
+    if(typeof iteratee == 'string') {
+      array = map(array, it => it[iteratee]) 
+      return sortedLastIndex(array, value[iteratee])
+    }
   }
 
   return {
@@ -935,5 +942,6 @@ var talangzhe005 = (function(){
     sortedIndexBy: sortedIndexBy,
     sortedIndexOf: sortedIndexOf,
     sortedLastIndex: sortedLastIndex,
+    sortedLastIndexBy: sortedLastIndexBy,
   }
 })()
