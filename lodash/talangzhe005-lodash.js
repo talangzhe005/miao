@@ -235,9 +235,25 @@ var talangzhe005 = (function(){
   function unionBy(...arrays) {
     let iteratee = arrays.pop()
     let res = []
+    let temp = []
+    var ary = concat(...arrays)
     if (typeof iteratee == 'function') {
-
+      for (let k of ary) {
+        if(!(iteratee(ary[k]) in temp)){
+          res.push(ary[k])
+          temp.push(iteratee(ary[k]))
+        }
+      }
     }
+    if (typeof iteratee == 'string') {
+      for (let i = 0; i <= ary.length; i++) {
+        if(!(temp.includes(ary[i][iteratee]))) {
+          res.push(ary[i])
+          temp.push(ary[i][iteratee])
+        }
+      }
+    }
+    return res 
 
   }
 
@@ -1086,5 +1102,6 @@ var talangzhe005 = (function(){
     takeRight: takeRight,
     takeRightWhile: takeRightWhile,
     takeWhile: takeWhile,
+    unionBy: unionBy,
   }
 })()
