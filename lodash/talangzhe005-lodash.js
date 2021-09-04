@@ -1069,6 +1069,12 @@ var talangzhe005 = (function(){
     }
   }
 
+  function spread(func, start = 0) {
+    return function(ary) {
+      return func.apply(this, ary)
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1153,5 +1159,6 @@ var talangzhe005 = (function(){
     unary: unary,
     negate: negate,
     once: once,
+    spread: spread,
   }
 })()
