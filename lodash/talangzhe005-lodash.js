@@ -1050,6 +1050,12 @@ var talangzhe005 = (function(){
     }
   }
 
+  function negate(predicate) {
+    return function (...args) {
+      return !predicate(...args)
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1132,5 +1138,6 @@ var talangzhe005 = (function(){
     unionBy: unionBy,
     ary: ary,
     unary: unary,
+    negate: negate,
   }
 })()
