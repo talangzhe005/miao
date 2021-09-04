@@ -232,6 +232,15 @@ var talangzhe005 = (function(){
     return uniq(ary)
   }
 
+  function unionBy(...arrays) {
+    let iteratee = arrays.pop()
+    let res = []
+    if (typeof iteratee == 'function') {
+
+    }
+
+  }
+
   // function zip(...arrays){
   //   var ary = concat(...arrays)
   //   var res = [[],[]]
@@ -977,9 +986,10 @@ var talangzhe005 = (function(){
         }
       }
     }else if (typeof predicate == 'object') {
+      let isSame = true
       for (let i = 0; i < array.length; i++) {
-        for (let i = 0; i < array.length; i++) {
-          let isSame = true
+        
+          
           for (let k in array[i]) {
             if(array[i][k] !== predicate[k]){
               isSame = false
@@ -991,7 +1001,7 @@ var talangzhe005 = (function(){
             break
           }
           
-        }
+        
       }
     }
     return res 
