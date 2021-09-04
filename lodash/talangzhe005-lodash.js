@@ -1046,7 +1046,8 @@ var talangzhe005 = (function(){
 
   function unary(func) {
     return function (...args) {
-      return func(...args[0])
+      let args1 = [].concat(...args)
+      return func(args1[0])
     }
   }
 
