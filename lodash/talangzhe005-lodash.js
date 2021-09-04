@@ -1044,6 +1044,12 @@ var talangzhe005 = (function(){
     }
   }
 
+  function unary(func) {
+    return function (...arguments) {
+      return func(...arguments[0])
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1125,5 +1131,6 @@ var talangzhe005 = (function(){
     takeWhile: takeWhile,
     unionBy: unionBy,
     ary: ary,
+    unary: unary,
   }
 })()
