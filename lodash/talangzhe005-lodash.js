@@ -832,11 +832,13 @@ var talangzhe005 = (function(){
   function sortedIndexBy(array, value, iteratee = identity) {
     if (typeof iteratee == 'function') {
       array = map(array, it => iteratee(array))
+      return sortedIndex(array, iteratee(value))
     }
     if (typeof iteratee == 'string') {
       array = map(array, it => it[iteratee])
+      return sortedIndex(array, value[iteratee])
     }
-    return sortedIndex(array, value)
+    
   }
 
   function sortedIndexOf(array, value) {
