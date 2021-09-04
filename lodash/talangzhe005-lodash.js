@@ -1039,14 +1039,14 @@ var talangzhe005 = (function(){
   }
 
   function ary(func,  n = func.length) {
-    return function (arguments) {
-      return func(arguments.slice(0, n))
+    return function (...args) {
+      return func(...args.slice(0, n))
     }
   }
 
   function unary(func) {
-    return function (...arguments) {
-      return func(...arguments[0])
+    return function (...args) {
+      return func(...args[0])
     }
   }
 
