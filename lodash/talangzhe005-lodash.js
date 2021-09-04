@@ -848,6 +848,15 @@ var talangzhe005 = (function(){
     return -1 
   }
 
+  function sortedLastIndex(array, value) {
+    for (let i = array.length - 1; i >= 0; i--) {
+      if(array[i] <= value) {
+        return i 
+      }
+    }
+    return 0
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -919,5 +928,6 @@ var talangzhe005 = (function(){
     sortedIndex: sortedIndex,
     sortedIndexBy: sortedIndexBy,
     sortedIndexOf: sortedIndexOf,
+    sortedLastIndex: sortedLastIndex,
   }
 })()
