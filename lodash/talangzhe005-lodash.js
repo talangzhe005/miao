@@ -1057,6 +1057,18 @@ var talangzhe005 = (function(){
     }
   }
 
+  function once(func) {
+    let flag = true
+    let res = null
+    return function(...args) {
+      if(flag){
+        res = func(...args)
+        flag = false
+      }
+      return res
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1140,5 +1152,6 @@ var talangzhe005 = (function(){
     ary: ary,
     unary: unary,
     negate: negate,
+    once: once,
   }
 })()
