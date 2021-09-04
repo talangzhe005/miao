@@ -941,11 +941,60 @@ var talangzhe005 = (function(){
         }
         if(isSame) {
           res.unshift(array[i])
+        }else {
+          break
         }
       }
 
     }
     return res
+  }
+
+  function takeWhile(array, predicate = identity) {
+    let res = []
+    if (typeof predicate == 'function') {
+      for (let i = 0; i < array.length; i++) {
+        if(predicate(array[i])){
+          res.push(array[i])
+        }else {
+          break
+        }
+      }
+    }else if (typeof predicate == 'string') {
+      for (let i = 0; i < array.length; i++) {
+        if(!(predicate in array[i])){
+          res.push(array[i])
+        }else {
+          break
+        }
+      }
+    }else if (Array.isArray(predicate)) {
+      for (let i = 0; i < array.length; i++) {
+        if(array[i][predicate[0]] == predicate[1]){
+          res.push(array[i])
+        }else {
+          break
+        }
+      }
+    }else if (typeof predicate == 'object') {
+      for (let i = 0; i < array.length; i++) {
+        for (let i = 0; i < array.length; i++) {
+          let isSame = true
+          for (let k in array[i]) {
+            if(array[i][k] !== predicate[k]){
+              isSame = false
+            }
+          }
+          if(isSame) {
+            res.push(array[i])
+          }else {
+            break
+          }
+          
+        }
+      }
+    }
+    return res 
   }
 
   return {
@@ -1026,5 +1075,6 @@ var talangzhe005 = (function(){
     sortedUniqBy: sortedUniqBy,
     takeRight: takeRight,
     takeRightWhile: takeRightWhile,
+    takeWhile: takeWhile,
   }
 })()
