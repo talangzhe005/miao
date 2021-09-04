@@ -900,6 +900,17 @@ var talangzhe005 = (function(){
     return res.sort((a,b) => a - b)
   }
 
+  function takeRight(array, n = 1) {
+    let res = []
+    if (n > array.length) {
+      n = array.length
+    }
+    for (let i = array.length - 1; n > 0; i--, n--  ) {
+      res.unshift(array[i])
+    }
+    return res
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -976,5 +987,6 @@ var talangzhe005 = (function(){
     sortedLastIndexOf: sortedLastIndexOf,
     sortedUniq: sortedUniq,
     sortedUniqBy: sortedUniqBy,
+    takeRight: takeRight,
   }
 })()
