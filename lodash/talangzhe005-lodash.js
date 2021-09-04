@@ -831,7 +831,7 @@ var talangzhe005 = (function(){
   
   function sortedIndexBy(array, value, iteratee = identity) {
     if (typeof iteratee == 'function') {
-      array = map(array, it => iteratee(array))
+      array = map(array, it => iteratee(it))
       return sortedIndex(array, iteratee(value))
     }
     if (typeof iteratee == 'string') {
@@ -853,10 +853,14 @@ var talangzhe005 = (function(){
   function sortedLastIndex(array, value) {
     for (let i = array.length - 1; i >= 0; i--) {
       if(array[i] <= value) {
-        return i 
+        return i + 1
       }
     }
     return 0
+  }
+
+  function sortedLastIndexBy(array, value, iteratee = identity) {
+
   }
 
   return {
