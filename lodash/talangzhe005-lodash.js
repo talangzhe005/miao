@@ -239,14 +239,14 @@ var talangzhe005 = (function(){
     var ary = concat(...arrays)
     if (typeof iteratee == 'function') {
       for (let k in ary) {
-        if(!(iteratee(ary[k]) in temp)){
+        if (!(temp.includes(iteratee(ary[k])))){
           res.push(ary[k])
           temp.push(iteratee(ary[k]))
         }
       }
     }
     if (typeof iteratee == 'string') {
-      for (let i = 0; i <= ary.length; i++) {
+      for (let i = 0; i < ary.length; i++) {
         if(!((ary[i][iteratee] in temp))) {
           res.push(ary[i])
           temp.push(ary[i][iteratee])
@@ -465,8 +465,19 @@ var talangzhe005 = (function(){
     }
   }
 
-  function filter(collection, predicate) {
+  function filter(collection, predicate = identity) {
+    if (typeof predicate == 'function') {
 
+    }
+    if (typeof predicate == 'string') {
+
+    }
+    if (Array.isArray(predicate)) {
+
+    }
+    if (typeof predicate == 'object') {
+
+    }
   }
 
   function iteratee (value) {
