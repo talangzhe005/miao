@@ -1110,6 +1110,12 @@ var talangzhe005 = (function(){
     }
   }
 
+  function constant(value) {
+    return function(value) {
+      return value
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1198,5 +1204,6 @@ var talangzhe005 = (function(){
     memoize: memoize,
     flip: flip,
     conforms: conforms,
+    constant: constant,
   }
 })()
