@@ -1175,8 +1175,8 @@ var talangzhe005 = (function(){
       if(res.length > 0) {
         return false
       }
-      return true
     }
+    return true
   }
 
   return {
