@@ -1227,5 +1227,6 @@ var talangzhe005 = (function(){
     constant: constant,
     flow: flow,
     isArray: isArray,
+    isArrayBuffer: isArrayBuffer,
   }
 })()
