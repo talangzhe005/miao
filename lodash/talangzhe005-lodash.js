@@ -1203,6 +1203,10 @@ var talangzhe005 = (function(){
     return toString.call(value) == '[object Map]'
   }
 
+  function isArguments(value) {
+    return toString.call(value) == '[object Arguments]'
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1307,5 +1311,6 @@ var talangzhe005 = (function(){
     isInteger: isInteger,
     isLength: isLength,
     isMap: isMap,
+    isArguments: isArguments,
   }
 })()
