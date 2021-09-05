@@ -1195,6 +1195,10 @@ var talangzhe005 = (function(){
     return value % 1 == 0 && typeof(value) == 'number'
   }
 
+  function isLength(value) {
+    return isInteger(value) && value >= 0
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1297,5 +1301,6 @@ var talangzhe005 = (function(){
     isFinite: isFinite,
     isFunction: isFunction,
     isInteger: isInteger,
+    isLength: isLength,
   }
 })()
