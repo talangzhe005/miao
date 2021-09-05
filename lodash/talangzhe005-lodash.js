@@ -1077,11 +1077,12 @@ var talangzhe005 = (function(){
   
   function memoize(func, resolver) {
     let map = new Map()
+    let that = this
     return function(args) {
       if(map.has(args)){
         return map.get(args)
       }else {
-        let res = func.apply(this, args)
+        let res = func.apply(that, args)
         if (resolver !== undefined) {
           res = resolver(res)
         }
@@ -1094,6 +1095,18 @@ var talangzhe005 = (function(){
   function flip(func) {
     return function(...args) {
       return func.apply(this, reverse(...args))
+    }
+  }
+
+  function conforms(source) {
+    let keys = Object.keys(source)
+    return function(){
+      for(let k of keys) {
+        if(!(source[k] (obj[k]))) {
+          return false
+        }
+      }
+      return true
     }
   }
 
@@ -1184,5 +1197,6 @@ var talangzhe005 = (function(){
     spread: spread,
     memoize: memoize,
     flip: flip,
+    conforms: conforms,
   }
 })()
