@@ -1074,6 +1074,22 @@ var talangzhe005 = (function(){
       return func.apply(this, ary)
     }
   }
+  
+  function memoize(func, resolver) {
+    let map = new Map()
+    return function(args) {
+      if(map.has(args)){
+        return map.get(args)
+      }else {
+        let res = func.apply(this, args)
+        if (resolver !== undefined) {
+          res = resolver(res)
+        }
+        map.set(args, res)
+        return res
+      }
+    }
+  }
 
   return {
     chunk : chunk,
@@ -1160,5 +1176,6 @@ var talangzhe005 = (function(){
     negate: negate,
     once: once,
     spread: spread,
+    memoize: memoize,
   }
 })()
