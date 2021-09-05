@@ -1211,7 +1211,17 @@ var talangzhe005 = (function(){
     return value == null
   }
 
+  function isNative(value) {
+    return toString.call(value)
+  }
   
+  function isObject(value) {
+    if (value == null) {
+      return false
+    }
+    return typeof(value) == 'object' || typeof(value) == 'function'
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1318,5 +1328,6 @@ var talangzhe005 = (function(){
     isMap: isMap,
     isArguments: isArguments,
     isNull: isNull, 
+    isObject: isObject, 
   }
 })()
