@@ -1091,6 +1091,12 @@ var talangzhe005 = (function(){
     }
   }
 
+  function flip(func) {
+    return function(...args) {
+      return func.apply(this, reverse(...args))
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1177,5 +1183,6 @@ var talangzhe005 = (function(){
     once: once,
     spread: spread,
     memoize: memoize,
+    flip: flip,
   }
 })()
