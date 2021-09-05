@@ -1199,6 +1199,10 @@ var talangzhe005 = (function(){
     return isInteger(value) && value >= 0
   }
 
+  function isMap(value) {
+    return toString.call(value) == '[object Map]'
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1302,5 +1306,6 @@ var talangzhe005 = (function(){
     isFunction: isFunction,
     isInteger: isInteger,
     isLength: isLength,
+    isMap: isMap,
   }
 })()
