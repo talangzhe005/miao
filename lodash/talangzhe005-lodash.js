@@ -1208,7 +1208,7 @@ var talangzhe005 = (function(){
   }
 
   function isNull(value) {
-    return value == null
+    return value === null
   }
 
   function isNative(value) {
