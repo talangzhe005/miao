@@ -1136,6 +1136,10 @@ var talangzhe005 = (function(){
     return value.toString() === '[object ArrayBuffer]'
   }
 
+  function isArrayLike(value) {
+    return typeof(value) !== 'function' && value.length >=0
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1228,5 +1232,6 @@ var talangzhe005 = (function(){
     flow: flow,
     isArray: isArray,
     isArrayBuffer: isArrayBuffer,
+    isArrayLike: isArrayLike,
   }
 })()
