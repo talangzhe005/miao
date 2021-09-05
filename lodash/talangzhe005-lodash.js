@@ -1128,6 +1128,10 @@ var talangzhe005 = (function(){
     }
   }
 
+  function isArray(value) {
+    return Array.isArray(value)
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1218,5 +1222,6 @@ var talangzhe005 = (function(){
     conforms: conforms,
     constant: constant,
     flow: flow,
+    isArray: isArray,
   }
 })()
