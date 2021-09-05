@@ -1156,6 +1156,21 @@ var talangzhe005 = (function(){
     return toString.call(value) == '[object HTMLBodyElement]'
   }
 
+  function isEmpty(value) {
+    if (isArray(value)){
+      return value.length == 0
+    }else if(typeof value == 'object') {
+      let res = []
+      for (let k in value) {
+        res.push(k)
+      }
+      if(res.length > 0) {
+        return false
+      }
+      return true
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1253,5 +1268,6 @@ var talangzhe005 = (function(){
     isBoolean: isBoolean,
     isDate: isDate,
     isElement: isElement,
+    isEmpty: isEmpty,
   }
 })()
