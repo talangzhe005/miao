@@ -674,7 +674,7 @@ var talangzhe005 = (function(){
       return false
     }
     
-    if (Array.isArray(value)) {
+    if (Array.isArray(value) && Array.isArray(other)) {
       if (value.length !== other.length) {
         return false
       }
@@ -692,6 +692,8 @@ var talangzhe005 = (function(){
         // }
       }
       return true
+    } else {
+      return false
     }
 
     if (typeof(value) == 'object') {
