@@ -1140,6 +1140,10 @@ var talangzhe005 = (function(){
     return typeof(value) !== 'function' && value.length >=0
   }
 
+  function isArrayLikeObject(value) {
+    return isArrayLike(value) && typeof(value) == 'object'
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1233,5 +1237,6 @@ var talangzhe005 = (function(){
     isArray: isArray,
     isArrayBuffer: isArrayBuffer,
     isArrayLike: isArrayLike,
+    isArrayLikeObject: isArrayLikeObject,
   }
 })()
