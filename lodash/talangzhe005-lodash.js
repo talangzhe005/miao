@@ -1082,7 +1082,7 @@ var talangzhe005 = (function(){
       if(map.has(args)){
         return map.get(args)
       }else {
-        let res = func.apply(that, args)
+        let res = func.apply(that, arguments)
         if (resolver !== undefined) {
           res = resolver(res)
         }
@@ -1100,7 +1100,7 @@ var talangzhe005 = (function(){
 
   function conforms(source) {
     let keys = Object.keys(source)
-    return function(){
+    return function(obj){
       for(let k of keys) {
         if(!(source[k] (obj[k]))) {
           return false
