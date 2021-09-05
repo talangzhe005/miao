@@ -1094,7 +1094,7 @@ var talangzhe005 = (function(){
 
   function flip(func) {
     return function(...args) {
-      return func(reverse(...args))
+      return func(...args.reverse())
     }
   }
 
