@@ -687,9 +687,9 @@ var talangzhe005 = (function(){
             return false
           }
         }
-        if (value[i] !== other[i]) {
-          return false
-        }
+        // if (value[i] !== other[i]) {
+        //   return false
+        // }
       }
       return true
     }
