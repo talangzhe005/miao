@@ -1094,7 +1094,7 @@ var talangzhe005 = (function(){
 
   function flip(func) {
     return function(...args) {
-      return func.apply(this, reverse(...args))
+      return func(reverse(...args))
     }
   }
 
@@ -1121,7 +1121,7 @@ var talangzhe005 = (function(){
     return function(...args) {
       let index = 0
       let result = length ? funcs[index].apply(this, args) : args[0]
-      while (++ index < length) {
+      while (++index < length) {
         result = funcs[index].call(this, result)
       }
       return result
