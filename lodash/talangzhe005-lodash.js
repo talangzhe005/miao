@@ -1179,6 +1179,10 @@ var talangzhe005 = (function(){
     return true
   }
 
+  function isError(value) {
+    return toString.call(value) == '[object Error]'
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1277,5 +1281,6 @@ var talangzhe005 = (function(){
     isDate: isDate,
     isElement: isElement,
     isEmpty: isEmpty,
+    isError: isError,
   }
 })()
