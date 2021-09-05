@@ -679,11 +679,19 @@ var talangzhe005 = (function(){
         return false
       }
       for (let i = 0; i < value.length; i++) {
+        if(typeof(value[i]) !== typeof(other[i])) {
+          return false
+        }
+        if(typeof(value[i]) == 'object') {
+          if(!(isEqual(value[i], other[i])) ) {
+            return false
+          }
+        }
         if (value[i] !== other[i]) {
           return false
         }
       }
-      return false
+      return true
     }
 
     if (typeof(value) == 'object') {
@@ -691,11 +699,11 @@ var talangzhe005 = (function(){
         return false
       }
       for (let k  in value) {
-        if(!isEqual(value, other)) {
+        if(!isEqual(value[k], other[k])) {
           return false
         }
-        return true
       }
+      return true
     }
 
     if(value == other) {
