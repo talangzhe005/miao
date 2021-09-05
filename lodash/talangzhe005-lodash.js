@@ -1183,6 +1183,10 @@ var talangzhe005 = (function(){
     return toString.call(value) == '[object Error]'
   }
 
+  function isFinite(value) {
+    return Number.isFinite(value)
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1282,5 +1286,6 @@ var talangzhe005 = (function(){
     isElement: isElement,
     isEmpty: isEmpty,
     isError: isError,
+    isFinite: isFinite,
   }
 })()
