@@ -1145,7 +1145,7 @@ var talangzhe005 = (function(){
   }
 
   function isBoolean(value) {
-    return Object.prototypt.toString.call(value) == '[object boolean]'
+    return Object.prototypt.toString.call(value) == '[object Boolean]'
   }
 
   function isDate(value) {
