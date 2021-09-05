@@ -1148,6 +1148,10 @@ var talangzhe005 = (function(){
     return typeof(value) == 'boolean'
   }
 
+  function isDate(value) {
+    return Object.prototype.toString.call(value) == '[object Date]'
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1243,5 +1247,6 @@ var talangzhe005 = (function(){
     isArrayLike: isArrayLike,
     isArrayLikeObject: isArrayLikeObject,
     isBoolean: isBoolean,
+    isDate: isDate,
   }
 })()
