@@ -692,9 +692,7 @@ var talangzhe005 = (function(){
         // }
       }
       return true
-    } else {
-      return false
-    }
+    } 
 
     if (typeof(value) == 'object') {
       if(Object.keys(value).length !== Object.keys(other).length) {
