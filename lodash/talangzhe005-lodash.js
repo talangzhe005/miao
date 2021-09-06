@@ -1255,6 +1255,11 @@ var talangzhe005 = (function(){
     return [value]
   }
 
+  function toPath(value) {
+    let reg = /\w/g
+    return value.match(reg)
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1367,5 +1372,6 @@ var talangzhe005 = (function(){
     eq: eq,
     times: times,
     castArray: castArray,
+    toPath: toPath,
   }
 })()
