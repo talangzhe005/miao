@@ -1230,6 +1230,13 @@ var talangzhe005 = (function(){
     return value > other
   }
 
+  function eq(value, other) {
+    if(value !== value && other !== other) {
+      return true 
+    }
+    return value == other
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1339,5 +1346,6 @@ var talangzhe005 = (function(){
     isObject: isObject, 
     gte: gte,
     gt: gt,
+    eq: eq,
   }
 })()
