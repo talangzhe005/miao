@@ -1234,7 +1234,7 @@ var talangzhe005 = (function(){
     if(value !== value && other !== other) {
       return true 
     }
-    return value == other
+    return value === other
   }
 
   function times(n, iteratee = identity) {
