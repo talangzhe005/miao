@@ -1260,6 +1260,20 @@ var talangzhe005 = (function(){
     return value.match(reg)
   }
 
+  function pullAt(array, ...indexes) {
+    let ary = []
+    let pulled = []
+    for (let i = 0; i < array.length; i++) {
+      if(indexes.includes(i)) {
+        pulled.push(array[i])
+      }else {
+        ary.push(array[i])
+      }
+    }
+    array = ary
+    return pulled
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1373,5 +1387,6 @@ var talangzhe005 = (function(){
     times: times,
     castArray: castArray,
     toPath: toPath,
+    pullAt: pullAt,
   }
 })()
