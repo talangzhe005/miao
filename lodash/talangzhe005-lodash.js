@@ -1274,6 +1274,16 @@ var talangzhe005 = (function(){
     return pulled
   }
 
+  function omit(object, props) {
+    let obj = {}
+    for (let k in object) {
+      if (!(props.includes(k))){
+        obj[k] = object[k]
+      }
+    }
+    return obj
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1388,5 +1398,6 @@ var talangzhe005 = (function(){
     castArray: castArray,
     toPath: toPath,
     pullAt: pullAt,
+    omit: omit,
   }
 })()
