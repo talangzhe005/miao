@@ -1240,7 +1240,7 @@ var talangzhe005 = (function(){
   function times(n, iteratee = identity) {
     let res = []
     for (let i = 0; i < n; i++) {
-      res.push(iteratee(index))
+      res.push(iteratee(i))
     }
     return res
   }
