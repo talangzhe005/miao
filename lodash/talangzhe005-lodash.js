@@ -1245,6 +1245,16 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function castArray(value) {
+    if(arguments.length == 0) {
+      return []
+    }
+    if(Array.isArray(value)) {
+      return value
+    }
+    return [value]
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1356,5 +1366,6 @@ var talangzhe005 = (function(){
     gt: gt,
     eq: eq,
     times: times,
+    castArray: castArray,
   }
 })()
