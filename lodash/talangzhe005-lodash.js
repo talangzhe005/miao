@@ -1261,10 +1261,11 @@ var talangzhe005 = (function(){
   }
 
   function pullAt(array, ...indexes) {
+    let arr = [].concat(...indexes)
     let ary = []
     let pulled = []
     for (let i = 0; i < array.length; i++) {
-      if(indexes.includes(i)) {
+      if(arr.includes(i)) {
         pulled.push(array[i])
       }else {
         ary.push(array[i])
