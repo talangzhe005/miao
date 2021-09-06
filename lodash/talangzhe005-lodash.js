@@ -1237,6 +1237,14 @@ var talangzhe005 = (function(){
     return value == other
   }
 
+  function times(n, iteratee = identity) {
+    let res = []
+    for (let i = 0; i < n; i++) {
+      res.push(iteratee(index))
+    }
+    return res
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1347,5 +1355,6 @@ var talangzhe005 = (function(){
     gte: gte,
     gt: gt,
     eq: eq,
+    times: times,
   }
 })()
