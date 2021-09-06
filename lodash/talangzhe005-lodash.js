@@ -1226,6 +1226,10 @@ var talangzhe005 = (function(){
     return value >= other
   }
 
+  function gt(value, other) {
+    return value > other
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1334,5 +1338,6 @@ var talangzhe005 = (function(){
     isNull: isNull, 
     isObject: isObject, 
     gte: gte,
+    gt: gt,
   }
 })()
