@@ -1222,6 +1222,10 @@ var talangzhe005 = (function(){
     return typeof(value) == 'object' || typeof(value) == 'function'
   }
 
+  function gte(value, other) {
+    return value >= other
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1329,5 +1333,6 @@ var talangzhe005 = (function(){
     isArguments: isArguments,
     isNull: isNull, 
     isObject: isObject, 
+    gte: gte,
   }
 })()
