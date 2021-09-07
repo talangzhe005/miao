@@ -1322,6 +1322,17 @@ var talangzhe005 = (function(){
 
   }
 
+  function get(object, path, defaultValue) {
+    path = toPath(path)
+    for (let i = 0; i < path.length; i++) {
+      if (object == undefined) {
+        return defaultValue
+      }else {
+        object = object[path[i]]
+      }
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1441,5 +1452,6 @@ var talangzhe005 = (function(){
     pick: pick,
     pickBy: pickBy,
     filter: filter,
+    get: get,
   }
 })()
