@@ -1305,6 +1305,17 @@ var talangzhe005 = (function(){
     return obj
   }
 
+  function pickBy(object, predicate = identity) {
+    let obj = {}
+    for (let key in object) {
+      if (predicate(object[key], key)) {
+        obj[key] = object[key]
+      }
+    }
+    return obj
+
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1422,5 +1433,6 @@ var talangzhe005 = (function(){
     omit: omit,
     omitBy: omitBy,
     pick: pick,
+    pickBy: pickBy,
   }
 })()
