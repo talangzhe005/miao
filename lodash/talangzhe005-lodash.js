@@ -1295,6 +1295,16 @@ var talangzhe005 = (function(){
     return obj
   }
 
+  function  pick(object, props) {
+    let obj = {}
+    for (let k in object) {
+      if(props.includes(k)) {
+        obj[k] = object[k]
+      }
+    }
+    return obj
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1411,5 +1421,6 @@ var talangzhe005 = (function(){
     pullAt: pullAt,
     omit: omit,
     omitBy: omitBy,
+    pick: pick,
   }
 })()
