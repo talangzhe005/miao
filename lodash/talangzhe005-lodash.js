@@ -1343,6 +1343,21 @@ var talangzhe005 = (function(){
     return object
   }
 
+  function forInRight(object, iteratee = identity) {
+    let arr = []
+    for (let k in object) {
+      arr.push(k)
+    }
+    for (let i = arr.length - 1; i >=0; i--) {
+      let key = arr[i]
+      if(iteratee(object[k], k, object) == false) {
+        break
+      }
+    }
+    return object
+
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1464,5 +1479,6 @@ var talangzhe005 = (function(){
     filter: filter,
     get: get,
     forIn: forIn,
+    forInRight: forInRight,
   }
 })()
