@@ -1285,6 +1285,16 @@ var talangzhe005 = (function(){
     return obj
   }
 
+  function omitBy(object, predicate = identity) {
+    let obj = {}
+    for (let k in object) {
+      if (!(predicate(object[k], k))) {
+        obj[k] = object[k]
+      }
+    }
+    return obj
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1400,5 +1410,6 @@ var talangzhe005 = (function(){
     toPath: toPath,
     pullAt: pullAt,
     omit: omit,
+    omitBy: omitBy,
   }
 })()
