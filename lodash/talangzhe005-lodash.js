@@ -1334,6 +1334,15 @@ var talangzhe005 = (function(){
     return object
   }
 
+  function forIn(object, iteratee = identity) {
+    for (let k in object) {
+      if(iteratee(object[k], k, object) == false) {
+        break
+      }
+    }
+    return object
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1454,5 +1463,6 @@ var talangzhe005 = (function(){
     pickBy: pickBy,
     filter: filter,
     get: get,
+    forIn: forIn,
   }
 })()
