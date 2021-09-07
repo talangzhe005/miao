@@ -470,18 +470,23 @@ var talangzhe005 = (function(){
   }
 
   function filter(collection, predicate = identity) {
-    if (typeof predicate == 'function') {
-
-    }
     if (typeof predicate == 'string') {
+      predicate = property(predicate)
 
     }
     if (Array.isArray(predicate)) {
-
+      predicate = matchesProperty(predicate)
     }
     if (typeof predicate == 'object') {
-
+      predicate = matches(...predicate)
     }
+    let res = []
+    for (let key in collection) {
+      if(predicate(collection[i], i, collection) === true) {
+        res.push(collection[i])
+      }
+    }
+    return res
   }
 
   function iteratee (value) {
@@ -639,6 +644,7 @@ var talangzhe005 = (function(){
     return value === undefined
   }
 
+  //创建一个返回给定对象的 path 的值的函数。
   function property(path) {
     if(!Array.isArray(path)) {
       path = path.split('.')
@@ -1434,5 +1440,6 @@ var talangzhe005 = (function(){
     omitBy: omitBy,
     pick: pick,
     pickBy: pickBy,
+    filter: filter,
   }
 })()
