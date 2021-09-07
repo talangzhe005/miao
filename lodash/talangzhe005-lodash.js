@@ -1331,6 +1331,7 @@ var talangzhe005 = (function(){
         object = object[path[i]]
       }
     }
+    return object
   }
 
   return {
