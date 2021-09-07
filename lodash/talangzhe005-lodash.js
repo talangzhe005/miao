@@ -482,8 +482,8 @@ var talangzhe005 = (function(){
     }
     let res = []
     for (let key in collection) {
-      if(predicate(collection[i], i, collection) === true) {
-        res.push(collection[i])
+      if(predicate(collection[key], key, collection) === true) {
+        res.push(collection[key])
       }
     }
     return res
