@@ -1401,6 +1401,10 @@ var talangzhe005 = (function(){
     return typeof value == "symbol"
   }
 
+  function isTypedArray(value) {
+    return toString.call(value) == "[object Uint8Array]"
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1533,5 +1537,6 @@ var talangzhe005 = (function(){
     isSet: isSet,
     isString: isString,
     isSymbol: isSymbol,
+    isTypedArray: isTypedArray,
   }
 })()
