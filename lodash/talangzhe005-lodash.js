@@ -1409,6 +1409,10 @@ var talangzhe005 = (function(){
     return toString.call(value) == "[object WeakMap]"
   }
 
+  function isWeakSet(value) {
+    return toString.call(value) == '[object WeakSet]'
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1543,5 +1547,6 @@ var talangzhe005 = (function(){
     isSymbol: isSymbol,
     isTypedArray: isTypedArray,
     isWeakMap: isWeakMap,
+    isWeakSet: isWeakSet,
   }
 })()
