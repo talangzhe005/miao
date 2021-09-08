@@ -1413,6 +1413,10 @@ var talangzhe005 = (function(){
     return toString.call(value) == '[object WeakSet]'
   }
 
+  function isNative(value) {
+    return typeof value == 'function' && Function.prototype.toString.call(value).includes('[native code]')
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1548,5 +1552,6 @@ var talangzhe005 = (function(){
     isTypedArray: isTypedArray,
     isWeakMap: isWeakMap,
     isWeakSet: isWeakSet,
+    isNative: isNative,
   }
 })()
