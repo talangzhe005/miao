@@ -1397,6 +1397,10 @@ var talangzhe005 = (function(){
     return typeof value == 'string'
   }
 
+  function isSymbol(value) {
+    return typeof value == "symbol"
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1528,5 +1532,6 @@ var talangzhe005 = (function(){
     isSafeInteger: isSafeInteger,
     isSet: isSet,
     isString: isString,
+    isSymbol: isSymbol,
   }
 })()
