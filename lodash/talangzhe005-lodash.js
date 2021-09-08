@@ -1381,6 +1381,10 @@ var talangzhe005 = (function(){
     return value.__proto__ == Object.prototype || value.__proto__ === null
   }
 
+  function isRegExp(value) {
+    return toString.call(value) == "[object RegExp]"
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1508,5 +1512,6 @@ var talangzhe005 = (function(){
     isNil: isNil,
     isObjectLike: isObjectLike,
     isPlainObject: isPlainObject,
+    isRegExp: isRegExp,
   }
 })()
