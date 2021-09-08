@@ -1370,6 +1370,10 @@ var talangzhe005 = (function(){
     return value == undefined
   }
 
+  function isObjectLike(value) {
+    return value !== null && typeof value == 'object'
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1495,5 +1499,6 @@ var talangzhe005 = (function(){
     isNumber: isNumber,
     isNaN: isNaN,
     isNil: isNil,
+    isObjectLike: isObjectLike,
   }
 })()
