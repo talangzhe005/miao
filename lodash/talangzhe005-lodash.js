@@ -1389,6 +1389,10 @@ var talangzhe005 = (function(){
     return isInteger(value) && value <= Number.MAX_SAFE_INTEGER && value >= Number.MIN_SAFE_INTEGER
   }
 
+  function isSet(value) {
+    return toString.call(value) == '[object Set]'
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1518,5 +1522,6 @@ var talangzhe005 = (function(){
     isPlainObject: isPlainObject,
     isRegExp: isRegExp,
     isSafeInteger: isSafeInteger,
+    isSet: isSet,
   }
 })()
