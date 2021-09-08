@@ -1393,6 +1393,10 @@ var talangzhe005 = (function(){
     return toString.call(value) == '[object Set]'
   }
 
+  function isString(value) {
+    return typeof value == 'string'
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1523,5 +1527,6 @@ var talangzhe005 = (function(){
     isRegExp: isRegExp,
     isSafeInteger: isSafeInteger,
     isSet: isSet,
+    isString: isString,
   }
 })()
