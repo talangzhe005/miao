@@ -1377,6 +1377,10 @@ var talangzhe005 = (function(){
     return value !== null && typeof value == 'object'
   }
 
+  function isPlainObject(value) {
+    return value.__proto__ == Object.prototype || value.__proto__ === null
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1503,5 +1507,6 @@ var talangzhe005 = (function(){
     isNaN: isNaN,
     isNil: isNil,
     isObjectLike: isObjectLike,
+    isPlainObject: isPlainObject,
   }
 })()
