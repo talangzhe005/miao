@@ -1366,6 +1366,10 @@ var talangzhe005 = (function(){
     return value !== value
   }
 
+  function isNil(value) {
+    return value == undefined
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1490,5 +1494,6 @@ var talangzhe005 = (function(){
     forInRight: forInRight,
     isNumber: isNumber,
     isNaN: isNaN,
+    isNil: isNil,
   }
 })()
