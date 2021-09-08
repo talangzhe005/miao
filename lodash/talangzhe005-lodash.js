@@ -1362,6 +1362,10 @@ var talangzhe005 = (function(){
     return toString.call(value) == '[object Number]'
   }
 
+  function isNaN(value) {
+    return value !== value
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1484,6 +1488,7 @@ var talangzhe005 = (function(){
     get: get,
     forIn: forIn,
     forInRight: forInRight,
-    isNumber: isNumber
+    isNumber: isNumber,
+    isNaN: isNaN,
   }
 })()
