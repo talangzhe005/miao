@@ -1363,6 +1363,9 @@ var talangzhe005 = (function(){
   }
 
   function isNaN(value) {
+    if(typeof value == 'object') {
+      value = value.valueOf()
+    }
     return value !== value
   }
 
