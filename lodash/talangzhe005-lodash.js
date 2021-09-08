@@ -1358,6 +1358,10 @@ var talangzhe005 = (function(){
 
   }
 
+  function isNumber(value) {
+    return toString.call(value) == '[object Number]'
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1480,5 +1484,6 @@ var talangzhe005 = (function(){
     get: get,
     forIn: forIn,
     forInRight: forInRight,
+    isNumber: isNumber
   }
 })()
