@@ -1385,6 +1385,10 @@ var talangzhe005 = (function(){
     return toString.call(value) == "[object RegExp]"
   }
 
+  function isSafeInteger(value) {
+    return isInteger(value) && value <= Number.MAX_SAFE_INTEGER && value >= Number.MIN_SAFE_INTEGER
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1513,5 +1517,6 @@ var talangzhe005 = (function(){
     isObjectLike: isObjectLike,
     isPlainObject: isPlainObject,
     isRegExp: isRegExp,
+    isSafeInteger: isSafeInteger,
   }
 })()
