@@ -1405,6 +1405,10 @@ var talangzhe005 = (function(){
     return toString.call(value) == "[object Uint8Array]"
   }
 
+  function isWeakMap(value) {
+    return toString.call(value) == "[object WeakMap]"
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1538,5 +1542,6 @@ var talangzhe005 = (function(){
     isString: isString,
     isSymbol: isSymbol,
     isTypedArray: isTypedArray,
+    isWeakMap: isWeakMap,
   }
 })()
