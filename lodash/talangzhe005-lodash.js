@@ -1426,6 +1426,15 @@ var talangzhe005 = (function(){
     return false
   }
 
+  function size(collection) {
+    if (typeof collection == 'string' || Array.isArray(collection)) {
+      return collection.length
+    }
+    if (typeof collection == 'object') {
+      return Object.keys(collection).length
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1563,5 +1572,6 @@ var talangzhe005 = (function(){
     isWeakSet: isWeakSet,
     isNative: isNative,
     conformsTo: conformsTo,
+    size: size,
   }
 })()
