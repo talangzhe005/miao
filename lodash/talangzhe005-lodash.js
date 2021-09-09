@@ -1451,9 +1451,7 @@ var talangzhe005 = (function(){
         if (collection[i][predicate]) {
           return collection[i]
         }
-      }
-
-      if (typeof predicate == 'object') {
+      }else if (typeof predicate == 'object') {
         return filter(collection, matches(predicate))[0]
       }
     }
