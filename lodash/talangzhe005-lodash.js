@@ -1417,6 +1417,15 @@ var talangzhe005 = (function(){
     return typeof value == 'function' && Function.prototype.toString.call(value).includes('[native code]')
   }
 
+  function conformsTo(object, source) {
+    for (let key in  source) {
+      if(source[key](object[key])) {
+        return true
+      }
+    }
+    return false
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1553,5 +1562,6 @@ var talangzhe005 = (function(){
     isWeakMap: isWeakMap,
     isWeakSet: isWeakSet,
     isNative: isNative,
+    conformsTo: conformsTo,
   }
 })()
