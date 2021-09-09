@@ -1459,6 +1459,31 @@ var talangzhe005 = (function(){
 
   }
 
+  function findLast(collection, predicate = identity, fromIndex = collection.length-1) {
+    for(let i = fromIndex; i >= 0; i--) {
+      if(typeof predicate == 'function') {
+        if (predicate(collection[i])){
+          return collection[i]
+        }
+      }
+      
+      if (typeof predicate == 'string') {
+        if (collection[i][predicate]) {
+          return collection[i]
+        }
+      }
+      if (Array.isArray(predicate)) {
+        if (collection[i][predicate[0]] == predicate[1]) {
+          return collection[i]
+        }
+      }else if (typeof predicate == 'object') {
+        return filter(collection, matches(predicate))[0]
+      }
+    }
+
+  
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1598,5 +1623,6 @@ var talangzhe005 = (function(){
     conformsTo: conformsTo,
     size: size,
     find: find,
+    findLast: findLast,
   }
 })()
