@@ -1435,6 +1435,32 @@ var talangzhe005 = (function(){
     }
   }
 
+  function find(collection, predicate = identity, fromIndex = 0) {
+    for(let i = fromIndex; i < collection.length; i++) {
+      if(typeof predicate == 'function') {
+        if (predicate(collection[i])){
+          return collection[i]
+        }
+        if (Array.isArray(predicate)) {
+          if (collection[i][predicate[0]] == predicate[1]) {
+            return collection[i]
+          }
+        }
+        if (typeof predicate == 'string') {
+          if (collection[i][predicate]) {
+            return collection[i]
+          }
+        }
+
+        if (typeof predicate == 'object') {
+          return filter(collection, matches(predicate))[0]
+        }
+
+      }
+    }
+
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1573,5 +1599,6 @@ var talangzhe005 = (function(){
     isNative: isNative,
     conformsTo: conformsTo,
     size: size,
+    find: find,
   }
 })()
