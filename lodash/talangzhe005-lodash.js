@@ -1442,13 +1442,14 @@ var talangzhe005 = (function(){
           return collection[i]
         }
       }
-      if (Array.isArray(predicate)) {
-        if (collection[i][predicate[0]] == predicate[1]) {
+      
+      if (typeof predicate == 'string') {
+        if (collection[i][predicate]) {
           return collection[i]
         }
       }
-      if (typeof predicate == 'string') {
-        if (collection[i][predicate]) {
+      if (Array.isArray(predicate)) {
+        if (collection[i][predicate[0]] == predicate[1]) {
           return collection[i]
         }
       }else if (typeof predicate == 'object') {
