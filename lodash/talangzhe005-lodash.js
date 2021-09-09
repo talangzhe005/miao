@@ -1441,21 +1441,20 @@ var talangzhe005 = (function(){
         if (predicate(collection[i])){
           return collection[i]
         }
-        if (Array.isArray(predicate)) {
-          if (collection[i][predicate[0]] == predicate[1]) {
-            return collection[i]
-          }
+      }
+      if (Array.isArray(predicate)) {
+        if (collection[i][predicate[0]] == predicate[1]) {
+          return collection[i]
         }
-        if (typeof predicate == 'string') {
-          if (collection[i][predicate]) {
-            return collection[i]
-          }
+      }
+      if (typeof predicate == 'string') {
+        if (collection[i][predicate]) {
+          return collection[i]
         }
+      }
 
-        if (typeof predicate == 'object') {
-          return filter(collection, matches(predicate))[0]
-        }
-
+      if (typeof predicate == 'object') {
+        return filter(collection, matches(predicate))[0]
       }
     }
 
