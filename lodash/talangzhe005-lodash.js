@@ -1544,17 +1544,17 @@ var talangzhe005 = (function(){
         if (!(key in res)) {
           res[key] = []
         }
-        res[key].push(array[i])
+        res[key].push(collection[i])
       }
     }
 
     if(typeof iteratee == 'function') {
-      for (let i = 0; i < collection.lenth; i++) {
-        let key = iteratee(array[i])
+      for (let i = 0; i < collection.length; i++) {
+        let key = iteratee(collection[i])
         if(key in res) {
-          res[key].push(array[i])
+          res[key].push(collection[i])
         }else {
-          res[key] = [array[i]]
+          res[key] = [collection[i]]
         }
       }
     }
