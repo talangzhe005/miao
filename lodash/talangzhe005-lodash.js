@@ -1527,6 +1527,15 @@ var talangzhe005 = (function(){
     return collection
   }
 
+  function forEachRight(collection, iteratee = identity) {
+    for (let i = collection.length - 1; i >=0; i--) {
+      if (iteratee(collection[i], i, collection) == false) {
+        break
+      }
+    }
+    return collection
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1671,5 +1680,6 @@ var talangzhe005 = (function(){
     flatMapDeep: flatMapDeep,
     flatMapDepth: flatMapDepth,
     forEach: forEach,
+    forEachRight: forEachRight,
   }
 })()
