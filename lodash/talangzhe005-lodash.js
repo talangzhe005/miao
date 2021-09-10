@@ -1491,6 +1491,18 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function flatMapDeep(collection, iteratee = identity) {
+    let res = []
+    for (let i = 0; i < collection.length; i++) {
+      let arr = iteratee(collection[i])
+      while (Array.isArray(arr)) {
+        arr = arr[0]
+      }
+      res.push(...arr)
+    }
+    return res
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1632,5 +1644,6 @@ var talangzhe005 = (function(){
     find: find,
     findLast: findLast,
     flatMap: flatMap,
+    flatMapDeep: flatMapDeep,
   }
 })()
