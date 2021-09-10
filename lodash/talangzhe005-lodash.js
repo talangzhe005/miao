@@ -1551,10 +1551,11 @@ var talangzhe005 = (function(){
     if(typeof iteratee == 'function') {
       for (let i = 0; i < collection.lenth; i++) {
         let key = iteratee(array[i])
-        if (!(key in res)) {
-          res[key] = []
+        if(key in res) {
+          res[key].push(array[i])
+        }else {
+          res[key] = [array[i]]
         }
-        res[key].push(array[i])
       }
     }
     return res 
