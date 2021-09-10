@@ -1505,11 +1505,13 @@ var talangzhe005 = (function(){
 
   function flatMapDepth(collection, iteratee = identity, depth = 1) {
     let res = []
+    let d = depth
     for (let i = 0; i < collection.length; i++) {
       let arr = iteratee(collection[i])
+      d = depth
       while (Array.isArray(arr[0]) && depth > 0) {
         arr = arr[0]
-        depth--
+        d--
       }
       res.push(arr)
     }
