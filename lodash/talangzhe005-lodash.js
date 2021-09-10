@@ -1503,6 +1503,19 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function flatMapDepth(collection, iteratee = identity, depth = 1) {
+    let res = []
+    for (let i = 0; i < collection.length; i++) {
+      let arr = iteratee(collection[i])
+      while (Array.isArray(arr) && depth > 0) {
+        arr = arr[0]
+        depth--
+      }
+      res.push(arr)
+    }
+    return res 
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1645,5 +1658,6 @@ var talangzhe005 = (function(){
     findLast: findLast,
     flatMap: flatMap,
     flatMapDeep: flatMapDeep,
+    flatMapDepth: flatMapDepth,
   }
 })()
