@@ -1536,6 +1536,30 @@ var talangzhe005 = (function(){
     return collection
   }
 
+  function groupBy(collection, iteratee = identity) {
+    let res = {}
+    if (typeof iteratee == 'string') {
+      for (let i = 0 ; i < collection.length; i++) {
+        let key = collection[i][iteratee]
+        if (!(key in res)) {
+          res[key] = []
+        }
+        res[key].push(array[i])
+      }
+    }
+
+    if(typeof iteratee == 'function') {
+      for (let i = 0; i < collection.lenth; i++) {
+        let key = iteratee(array[i])
+        if (!(key in res)) {
+          res[key] = []
+        }
+        res[key].push(array[i])
+      }
+    }
+    return res 
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1681,5 +1705,6 @@ var talangzhe005 = (function(){
     flatMapDepth: flatMapDepth,
     forEach: forEach,
     forEachRight: forEachRight,
+    groupBy: groupBy,
   }
 })()
