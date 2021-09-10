@@ -1480,8 +1480,15 @@ var talangzhe005 = (function(){
         return filter(collection, matches(predicate))[0]
       }
     }
+  }
 
-  
+  function flatMap(collection, iteratee = identity) {
+    let res = []
+    for (let i = 0; i < collection.length; i++) {
+      let arr = iteratee(collection[i])
+      res.push(...arr)
+    }
+    return res
   }
 
   return {
@@ -1624,5 +1631,6 @@ var talangzhe005 = (function(){
     size: size,
     find: find,
     findLast: findLast,
+    flatMap: flatMap,
   }
 })()
