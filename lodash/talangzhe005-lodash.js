@@ -1495,7 +1495,7 @@ var talangzhe005 = (function(){
     let res = []
     for (let i = 0; i < collection.length; i++) {
       let arr = iteratee(collection[i])
-      while (Array.isArray(arr)) {
+      while (Array.isArray(arr[0])) {
         arr = arr[0]
       }
       res.push(...arr)
@@ -1507,7 +1507,7 @@ var talangzhe005 = (function(){
     let res = []
     for (let i = 0; i < collection.length; i++) {
       let arr = iteratee(collection[i])
-      while (Array.isArray(arr) && depth > 0) {
+      while (Array.isArray(arr[0]) && depth > 0) {
         arr = arr[0]
         depth--
       }
