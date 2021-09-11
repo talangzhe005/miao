@@ -1819,6 +1819,10 @@ var talangzhe005 = (function(){
     return  collection
   }
 
+  function defer(func, ...args) {
+    return setTimeout(func, 1, ...args);
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1977,5 +1981,6 @@ var talangzhe005 = (function(){
     shuffle: shuffle,
     some: some,
     sortBy: sortBy,
+    defer: defer,
   }
 })()
