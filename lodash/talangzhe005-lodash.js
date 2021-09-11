@@ -1583,7 +1583,7 @@ var talangzhe005 = (function(){
   function keyBy(collection, iteratee = identity) {
     let obj = {}
     if (typeof iteratee == 'function') {
-      for (let i = 0; i < collection.lenghth; i++) {
+      for (let i = 0; i < collection.length; i++) {
         let key = iteratee(collection[i])
         obj[key] = collection[i]
       }
