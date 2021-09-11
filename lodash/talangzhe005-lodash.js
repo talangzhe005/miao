@@ -1827,6 +1827,32 @@ var talangzhe005 = (function(){
     return setTimeout(func, wait , ...args) - 1 
   }
 
+  function isEqualWith(value, other, customizer) {
+    if (customizer == undefined) {
+      return isEqual(value, other)
+    }
+
+    if(typeof value == typeof other) {
+      if(typeof value == 'object') {
+        if(Object.keys(value).length == Object.keys(other).length){
+          for (let key in value) {
+            if(customizer(value, other)) {
+              return true 
+            }
+          }
+        }else {
+          return false
+        }
+      }else {
+        return customizer(value, other)
+      }
+    }else {
+      return false
+    }
+    return false 
+  }
+
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1987,5 +2013,6 @@ var talangzhe005 = (function(){
     sortBy: sortBy,
     defer: defer,
     delay: delay,
+    isEqualWith: isEqualWith,
   }
 })()
