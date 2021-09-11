@@ -1262,7 +1262,7 @@ var talangzhe005 = (function(){
   }
 
   function toPath(value) {
-    let reg = /\w/g
+    let reg = /\w+/g
     return value.match(reg)
   }
 
@@ -1323,7 +1323,9 @@ var talangzhe005 = (function(){
   }
 
   function get(object, path, defaultValue) {
-    path = toPath(path)
+    if(!(Array.isArray(path))) {
+      path = toPath(path)
+    }
     for (let i = 0; i < path.length; i++) {
       if (object == undefined) {
         return defaultValue
