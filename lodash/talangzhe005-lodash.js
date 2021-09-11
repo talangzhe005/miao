@@ -1597,7 +1597,7 @@ var talangzhe005 = (function(){
     return obj
   }
 
-  function orderBy(collection, iteratees = [identity], orders = ['asc', 'asc']) {
+  function orderBy(collection, iteratee = [identity], orders = ['asc', 'asc']) {
     let ary = collection.slice()
     for (let i = orders.length - 1; i >= 0; i--) {
       if(orders[i] == 'asc') {
