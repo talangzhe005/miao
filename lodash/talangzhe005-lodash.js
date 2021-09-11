@@ -1762,6 +1762,36 @@ var talangzhe005 = (function(){
     return res 
   }
 
+  function some(collection, predicate = identity) {
+    for (let i = 0; i < collection.length; i++) {
+      if (typeof predicate == 'function') {
+        if (predicate(collection[i])) {
+          return true
+        }
+      }else if (typeof predicate == 'string') {
+        if(collection[i][predicate]) {
+          return true
+        }
+      }else if (Array.isArray(predicate)) {
+        if (collection[i][predicate[0]] == predicate[1]) {
+          return true 
+        }
+      }else if (typeof predicate == 'object') {
+        let flag = true
+        for (let key in predicate) {
+          if((predicate[key] !== collection[i][key])){
+            flag = false
+            break
+          }
+        }
+        if (flag) {
+          return true
+        }
+      }
+    }
+    return false
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1918,5 +1948,6 @@ var talangzhe005 = (function(){
     sample: sample,
     sampleSize: sampleSize,
     shuffle: shuffle,
+    some: some,
   }
 })()
