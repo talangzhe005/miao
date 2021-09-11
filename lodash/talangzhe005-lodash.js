@@ -1683,7 +1683,25 @@ var talangzhe005 = (function(){
       }
     }
     return res
+  }
 
+  function reduceRight(collection, iteratee = identity, accumulator) {
+    let res = accumulator
+    let start = collection.length - 1
+    if (accumulator == undefined) {
+      accumulator = collection[start]
+      start = collection.length - 2
+    }
+    if (Array.isArray(collection)) {
+      for (let i = start; i >= 0; i--) {
+        res = iteratee(accumulator, collection[i], i, collection)
+      }
+    }else if (typeof collection == 'object') {
+      for (let key in collection) {
+        res = iteratee(accumulator, collection[key], key, collection)
+      }
+    }
+    return res
   }
 
   return {
@@ -1837,5 +1855,6 @@ var talangzhe005 = (function(){
     orderBy: orderBy,
     partition: partition,
     reduce: reduce,
+    reduceRight: reduceRight,
   }
 })()
