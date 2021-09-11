@@ -1861,6 +1861,15 @@ var talangzhe005 = (function(){
     return true
   }
 
+  function isMatchWith(object, source, customizer) {
+    for (let key in source) {
+      if (!(customizer(object[key], source[key], key, object, source))){
+        return false
+      }
+    }
+    return true 
+  }
+
 
   return {
     chunk : chunk,
@@ -2024,5 +2033,6 @@ var talangzhe005 = (function(){
     delay: delay,
     isEqualWith: isEqualWith,
     isMatch: isMatch,
+    isMatchWith: isMatchWith,
   }
 })()
