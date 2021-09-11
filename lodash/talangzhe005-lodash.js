@@ -1656,9 +1656,9 @@ var talangzhe005 = (function(){
             flag = false
             break
           }
-          if(flag) {
-            trueArr.push(collection[i])
-          }
+        }
+        if(flag) {
+          trueArr.push(collection[i])
         }
       }
     }
