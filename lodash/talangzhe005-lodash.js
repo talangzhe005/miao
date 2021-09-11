@@ -1882,6 +1882,15 @@ var talangzhe005 = (function(){
     return Math.round(number * Math.pow(10, precision)) / Math.pow(10, precision)
   } 
 
+  function assignIn(object, ...sources) {
+    for (let i = 0; i < sources.length; i++) {
+      for (let key in sources[i]) {
+        object[key] = sources[i][key]
+      }
+    }
+    return object 
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -2048,5 +2057,6 @@ var talangzhe005 = (function(){
     ceil: ceil,
     floor: floor,
     round: round,
+    assignIn: assignIn,
   }
 })()
