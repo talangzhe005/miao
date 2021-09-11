@@ -1675,11 +1675,11 @@ var talangzhe005 = (function(){
     }
     if (Array.isArray(collection)) {
       for (let i = start; i < collection.length; i++) {
-        res = iteratee(accumulator, collection[i], i, collection)
+        res = iteratee(res, collection[i], i, collection)
       }
     }else if (typeof collection == 'object') {
       for (let key in collection) {
-        res = iteratee(accumulator, collection[key], key, collection)
+        res = iteratee(res, collection[key], key, collection)
       }
     }
     return res
@@ -1694,11 +1694,11 @@ var talangzhe005 = (function(){
     }
     if (Array.isArray(collection)) {
       for (let i = start; i >= 0; i--) {
-        res = iteratee(accumulator, collection[i], i, collection)
+        res = iteratee(res, collection[i], i, collection)
       }
     }else if (typeof collection == 'object') {
       for (let key in collection) {
-        res = iteratee(accumulator, collection[key], key, collection)
+        res = iteratee(res, collection[key], key, collection)
       }
     }
     return res
