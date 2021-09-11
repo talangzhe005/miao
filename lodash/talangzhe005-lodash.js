@@ -1792,6 +1792,33 @@ var talangzhe005 = (function(){
     return false
   }
 
+  function sortBy(collection, iteratee = identity) {
+    for (let i = 0; i < iteratee.length; i++) {
+      if (typeof iteratee[i] == 'function') {
+        collection.sort((a,b) => {
+          if (iteratee[i](a) > iteratee[i](b)) {
+            return 1
+          }else if (iteratee[i](a) < iteratee[i](b)) {
+            return -1
+          }else {
+            return 0
+          }
+        })
+      }else if (typeof iteratee[i] == 'string') {
+        collection.sort((a, b) => {
+          if (a[iteratee[i]] > b[iteratee[i]]) {
+            return 1
+          }else if ([iteratee[i]] < b[iteratee[i]]) {
+            return -1
+          }else {
+            return 0
+          }
+        })
+      }
+    }
+    return  collection
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1949,5 +1976,6 @@ var talangzhe005 = (function(){
     sampleSize: sampleSize,
     shuffle: shuffle,
     some: some,
+    sortBy: sortBy,
   }
 })()
