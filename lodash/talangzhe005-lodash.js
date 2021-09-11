@@ -1854,7 +1854,7 @@ var talangzhe005 = (function(){
 
   function isMatch(object, source) {
     for (let key in source) {
-      if (source[key] !== object[key]){
+      if (!(isEqual(source[key], object[key]))){
         return false
       }
     }
