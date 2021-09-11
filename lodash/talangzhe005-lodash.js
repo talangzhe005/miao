@@ -1572,7 +1572,7 @@ var talangzhe005 = (function(){
         res.push(collection[i][path](...args))
       }
     } 
-    if (typeof path == 'object') {
+    if (typeof path == 'function') {
       for (let i = 0; i < collection.length; i++) {
         res.push(path.call(collection[i],...args))
       }
