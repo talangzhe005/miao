@@ -1580,6 +1580,23 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function keyBy(collection, iteratee = identity) {
+    let obj = {}
+    if (typeof iteratee == 'function') {
+      for (let i = 0; i < collection.lenghth; i++) {
+        let key = iteratee(collection[i])
+        obj[key] = collection[i]
+      }
+    }
+    if (typeof iteratee == 'string') {
+      for (let i = 0; i < collection.length; i++) {
+        let key = collection[i][iteratee]
+        obj[key] = collection[i]
+      }
+    }
+    return obj
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1727,5 +1744,6 @@ var talangzhe005 = (function(){
     forEachRight: forEachRight,
     groupBy: groupBy,
     invokeMap: invokeMap,
+    keyBy: keyBy,
   }
 })()
