@@ -1878,6 +1878,10 @@ var talangzhe005 = (function(){
     return Math.floor(number * Math.pow(10, precision)) / Math.pow(10, precision)
   }
 
+  function round(number, precision = 0) {
+    return Math.round(number * Math.pow(10, precision)) / Math.pow(10, precision)
+  } 
+
   return {
     chunk : chunk,
     compact : compact,
@@ -2043,5 +2047,6 @@ var talangzhe005 = (function(){
     isMatchWith: isMatchWith,
     ceil: ceil,
     floor: floor,
+    round: round,
   }
 })()
