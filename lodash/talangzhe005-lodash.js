@@ -1666,6 +1666,26 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function reduce(collection, iteratee = identity, accumulator) {
+    let res = accumulator
+    let start = 0
+    if (accumulator == undefined) {
+      accumulator = collection[start]
+      start = 1
+    }
+    if (Array.isArray(collection)) {
+      for (let i = start; i < collection.length; i++) {
+        res = iteratee(accumulator, collection[i], i, collection)
+      }
+    }else if (typeof collection == 'object') {
+      for (let key in collection) {
+        res = iteratee(accumulator, collection[key], key, collection)
+      }
+    }
+    return res
+
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1816,5 +1836,6 @@ var talangzhe005 = (function(){
     keyBy: keyBy,
     orderBy: orderBy,
     partition: partition,
+    reduce: reduce,
   }
 })()
