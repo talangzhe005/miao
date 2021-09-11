@@ -1836,7 +1836,7 @@ var talangzhe005 = (function(){
       if(typeof value == 'object') {
         if(Object.keys(value).length == Object.keys(other).length){
           for (let key in value) {
-            if(customizer(value, other)) {
+            if(customizer(value[key], other[key])) {
               return true 
             }
           }
