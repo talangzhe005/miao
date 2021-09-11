@@ -1670,7 +1670,7 @@ var talangzhe005 = (function(){
     let res = accumulator
     let start = 0
     if (accumulator == undefined) {
-      accumulator = collection[start]
+      res = collection[start]
       start = 1
     }
     if (Array.isArray(collection)) {
@@ -1689,7 +1689,7 @@ var talangzhe005 = (function(){
     let res = accumulator
     let start = collection.length - 1
     if (accumulator == undefined) {
-      accumulator = collection[start]
+      res = collection[start]
       start = collection.length - 2
     }
     if (Array.isArray(collection)) {
