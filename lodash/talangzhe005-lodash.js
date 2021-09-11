@@ -1736,6 +1736,21 @@ var talangzhe005 = (function(){
     return collection[i]
   }
 
+  function sampleSize(collection, n = 1) {
+    let res = []
+    for (let i = 0; i < n && i < collection.length; i++) {
+      let j = Math.floor(Math.random() * collection.length)
+      if (!(res.includes(collection[j]))) {
+        res.push(collection[j])
+      }else{
+        while (res.includes(collection[j])) {
+          res.push(collection[j])
+        }
+      }
+    }
+    return res 
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1890,5 +1905,6 @@ var talangzhe005 = (function(){
     reduceRight: reduceRight,
     reject: reject,
     sample: sample,
+    sampleSize: sampleSize,
   }
 })()
