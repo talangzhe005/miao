@@ -1561,6 +1561,25 @@ var talangzhe005 = (function(){
     return res 
   }
 
+  function includes(collection, value, fromIndex = 0) {
+
+  }
+
+  function invokeMap(collection, path, ...args) {
+    let res = []
+    if (typeof(path) == 'string') {
+      for (let i = 0; i < collection.length; i++) {
+        res.push(collection[i][path](...args))
+      }
+    } 
+    if (typeof path == 'object') {
+      for (let i = 0; i < collection.length; i++) {
+        res.push(path.call(collection[i],...args))
+      }
+    }
+    return res
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1707,5 +1726,6 @@ var talangzhe005 = (function(){
     forEach: forEach,
     forEachRight: forEachRight,
     groupBy: groupBy,
+    invokeMap: invokeMap,
   }
 })()
