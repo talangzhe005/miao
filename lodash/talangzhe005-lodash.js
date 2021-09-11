@@ -1870,6 +1870,9 @@ var talangzhe005 = (function(){
     return true 
   }
 
+  function ceil(number, precision = 0) {
+    return Math.ceil(number * Math.pow(10, precision)) / Math.pow(10, precision)
+  }
 
   return {
     chunk : chunk,
@@ -2034,5 +2037,6 @@ var talangzhe005 = (function(){
     isEqualWith: isEqualWith,
     isMatch: isMatch,
     isMatchWith: isMatchWith,
+    ceil: ceil,
   }
 })()
