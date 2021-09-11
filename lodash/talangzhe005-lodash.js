@@ -1731,6 +1731,11 @@ var talangzhe005 = (function(){
     return res 
   }
 
+  function sample(collection) {
+    let i = Math.floor(Math.random() * collection.length)
+    return collection[i]
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1884,5 +1889,6 @@ var talangzhe005 = (function(){
     reduce: reduce,
     reduceRight: reduceRight,
     reject: reject,
+    sample: sample,
   }
 })()
