@@ -1704,6 +1704,33 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function reject(collection, predicate = identity) {
+    let res = []
+    for (let i = 0; i < collection.length; i++) {
+      if (typeof predicate == 'function') {
+        if(!(predicate(collection[i]))) {
+          res.push(collection[i])
+        }
+      }else if (typeof predicate == 'string') {
+        if(!(collection[i][predicate])) {
+          res.push(collection[i])
+        }
+      }else if (Array.isArray(predicate)) {
+        if (collection[i][predicate[0]] !== predicate[1]) {
+          res.push(collection[i])
+        }
+      }else if (typeof predicate == 'object') {
+        for (let key in predicate) {
+          if (predicate[key] !== collection[i][key]) {
+            res.push(collection[i])
+            break
+          }
+        }
+      }
+    }
+    return res 
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1856,5 +1883,6 @@ var talangzhe005 = (function(){
     partition: partition,
     reduce: reduce,
     reduceRight: reduceRight,
+    reject: reject,
   }
 })()
