@@ -1751,6 +1751,17 @@ var talangzhe005 = (function(){
     return res 
   }
 
+  function shuffle(collection) {
+    let res = []
+    let arr = collection
+    for (let i = 0; i < collection.length; i++) {
+      let j = Math.floor(Math.random() * arr.length)
+      res.push(arr[j])
+      arr = arr.slice(0, j).concat(arr.slice(j + 1))
+    }
+    return res 
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1906,5 +1917,6 @@ var talangzhe005 = (function(){
     reject: reject,
     sample: sample,
     sampleSize: sampleSize,
+    shuffle: shuffle,
   }
 })()
