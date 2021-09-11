@@ -1824,7 +1824,7 @@ var talangzhe005 = (function(){
   }
 
   function delay(func, wait, ...args) {
-    return setTimeout(func, wait , ...args)
+    return setTimeout(func, wait , ...args) - 1 
   }
 
   return {
