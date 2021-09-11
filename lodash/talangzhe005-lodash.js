@@ -1820,7 +1820,7 @@ var talangzhe005 = (function(){
   }
 
   function defer(func, ...args) {
-    return setTimeout(func, 1, ...args);
+    return setTimeout(func, 1, ...args) - 1 
   }
 
   function delay(func, wait, ...args) {
