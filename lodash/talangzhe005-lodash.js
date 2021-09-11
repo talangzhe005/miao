@@ -1625,6 +1625,47 @@ var talangzhe005 = (function(){
     return ary
   }
 
+  function partition(collection, predicate = identity) {
+    let res = []
+    let trueArr = []
+    let falseArr = []
+    for (let i = 0; i < collection.length; i++) {
+      if(typeof predicate == 'function') {
+        if(predicate(collection[i])){
+          trueArr.push(collection[i])
+        }else {
+          falseArr.push(collection[i])
+        }
+      } else if (typeof predicate == 'string') {
+        if(collection[i][predicate]) {
+          trueArr.push(collection[i])
+        }else {
+          falseArr.push(collection[i])
+        }
+      }else if (Array.isArray(predicate)) {
+        if(collection[i][predicate[0]] == predicate[1]) {
+          trueArr.push(collection[i])
+        }else {
+          falseArr.push(collection[i])
+        }
+      }else if (typeof predicate == 'object') {
+        let flag = true
+        for (let key in predicate) {
+          if (predicate[key] !== collection[i][key]){
+            falseArr.push(collection[i])
+            flag = false
+            break
+          }
+          if(flag) {
+            trueArr.push(collection[i])
+          }
+        }
+      }
+    }
+    res.push(trueArr, falseArr)
+    return res
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1774,5 +1815,6 @@ var talangzhe005 = (function(){
     invokeMap: invokeMap,
     keyBy: keyBy,
     orderBy: orderBy,
+    partition: partition,
   }
 })()
