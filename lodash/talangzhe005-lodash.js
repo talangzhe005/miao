@@ -1597,6 +1597,34 @@ var talangzhe005 = (function(){
     return obj
   }
 
+  function orderBy(collection, iteratees = [identity], orders = ['asc', 'asc']) {
+    let ary = collection.slice()
+    for (let i = orders.length - 1; i >= 0; i--) {
+      if(orders[i] == 'asc') {
+        ary.sort((a,b) => {
+          if(a[iteratee[i]] > b[iteratee[i]]) {
+            return 1
+          }else if(a[iteratee[i]] < b[iteratee[i]]) {
+            return -1
+          }else {
+            return 0
+          }
+        })
+      }else {
+        ary.sort((a, b) => {
+          if (a[iteratee[i]] < b[iteratee[i]]) {
+            return 1
+          }else if (a[iteratee[i]] > b[iteratee[i]]) {
+            return -1
+          }else {
+            return 0
+          }
+        })
+      }
+    }
+    return ary
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -1745,5 +1773,6 @@ var talangzhe005 = (function(){
     groupBy: groupBy,
     invokeMap: invokeMap,
     keyBy: keyBy,
+    orderBy: orderBy,
   }
 })()
