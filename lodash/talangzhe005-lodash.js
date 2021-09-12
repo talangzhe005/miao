@@ -1912,6 +1912,21 @@ var talangzhe005 = (function(){
     return object
   }
 
+  function defaultsDeep(object, ...sources) {
+    for (let i = 0; i < sources.length; i++) {
+      for (let key in sources[i]) {
+        if(key in object) {
+          if (typeof object[key] == 'object'){
+            defaultsDeep(object[key], sources[i][key]) 
+          }
+        } else {
+          object[key] = sources[i][key]
+        }
+      }
+    }
+    return object
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -2081,5 +2096,6 @@ var talangzhe005 = (function(){
     assignIn: assignIn,
     at: at,
     defaults: defaults,
+    defaultsDeep: defaultsDeep,
   }
 })()
