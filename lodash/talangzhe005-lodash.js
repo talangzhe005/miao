@@ -2047,7 +2047,7 @@ var talangzhe005 = (function(){
     if (!(Array.isArray(path))) {
       path = toPath(path)
     }
-    path = path.map(it => Number.isNaN( parseInt(it)) ? [it] : [parseInt(it)])
+    //path = path.map(it => Number.isNaN( parseInt(it)) ? [it] : [parseInt(it)])
     let str = 'object'
     for (let i = 0; i < path.length; i++) {
       if(Number.isNaN(parseInt(path[i]))) {
