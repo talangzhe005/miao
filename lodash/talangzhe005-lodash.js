@@ -2047,16 +2047,21 @@ var talangzhe005 = (function(){
     if (!(Array.isArray(path))) {
       path = toPath(path)
     }
+   console.log(path)
     //path = path.map(it => Number.isNaN( parseInt(it)) ? [it] : [parseInt(it)])
-    let str = 'object'
-    for (let i = 0; i < path.length; i++) {
-      if(Number.isNaN(parseInt(path[i]))) {
-        path[i] = "'" +  path[i]  + "'"
+    // let str = 'object'
+    let temp = object
+    for (var  i = 0; i < path.length - 1; i++) {
+      if(temp[path[i]] == undefined) {
+        if(!(Number.isNaN(parseInt(path[i +1 ])))){
+          temp[path[i]] ={}
+        }else {
+          temp[path[i]] = []
+        }
       }
-      str = str + '[' + path[i] + ']'
+      temp = temp[path[i]]
     }
-    str = str + '=' + value
-    eval(str)
+    temp[path[i]] = value
     return object
   }
 
