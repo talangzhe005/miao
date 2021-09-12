@@ -2030,7 +2030,7 @@ var talangzhe005 = (function(){
     let res = get(object, path)
     if(typeof res == 'function') {
       return res()
-    }else if (typeof res == undefined) {
+    }else if (typeof res == 'undefined') {
       if(typeof defaultValue == 'function') {
         return defaultValue()
       }else {
