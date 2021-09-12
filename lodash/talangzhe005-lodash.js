@@ -2041,6 +2041,20 @@ var talangzhe005 = (function(){
     }
   }
 
+  function set(object, path, value) {
+    if (!(Array.isArray(path))) {
+      path = toPath(path)
+    }
+    path = path.map(it => Number.isNaN( parseInt(it)) ? [it] : [parseInt(it)])
+    let str = 'object'
+    for (let i = 0; i < path.length; i++) {
+      str += path[i]
+    }
+    str += value
+    eval(str)
+    return object
+  }
+
   function has(object, path) {
 
   }
@@ -2224,5 +2238,6 @@ var talangzhe005 = (function(){
     functions: functions,
     functionsIn: functionsIn,
     result: result,
+    set: set,
   }
 })()
