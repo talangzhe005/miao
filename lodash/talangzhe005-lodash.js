@@ -1986,6 +1986,15 @@ var talangzhe005 = (function(){
     }
   }
 
+  function forOwn(object, iteratee = identity) {
+    for (let key in object) {
+      if (!(iteratee(object[key], key, object))){
+        break
+      }
+    }
+    return object
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -2158,5 +2167,6 @@ var talangzhe005 = (function(){
     defaultsDeep: defaultsDeep,
     findKey: findKey,
     findLastKey: findLastKey,
+    forOwn: forOwn,
   }
 })()
