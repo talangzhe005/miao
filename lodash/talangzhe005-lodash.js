@@ -1893,7 +1893,7 @@ var talangzhe005 = (function(){
     return object 
   }
 
-  function at(object, ...path) {
+  function at(object, path) {
     let res = []
     for (let i = 0; i < path.length; i++){
       res.push(get(object, path[i]))
