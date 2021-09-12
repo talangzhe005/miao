@@ -1901,6 +1901,17 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function defaults(object, sources) {
+    for (let i = 0; i < sources.length; i++) {
+      for (let key in sources[i]) {
+        if (!(key in object)) {
+          object[key] = sources[i][key]
+        }
+      }
+    }
+    return object
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -2069,5 +2080,6 @@ var talangzhe005 = (function(){
     round: round,
     assignIn: assignIn,
     at: at,
+    defaults: defaults,
   }
 })()
