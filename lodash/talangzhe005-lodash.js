@@ -2005,6 +2005,16 @@ var talangzhe005 = (function(){
     return object
   }
 
+  function functions(object) {
+    let res = []
+    for (let key in object) {
+      if (typeof object[key] == 'function') {
+        res.push(key)
+      }
+    }
+    return res
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -2179,5 +2189,6 @@ var talangzhe005 = (function(){
     findLastKey: findLastKey,
     forOwn: forOwn,
     forOwnRight: forOwnRight,
+    functions: functions,
   }
 })()
