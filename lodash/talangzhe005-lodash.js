@@ -1927,6 +1927,35 @@ var talangzhe005 = (function(){
     return object
   }
 
+  function findKey(object, predicate = identity) {
+    for (let key in object) {
+      if (typeof predicate == 'function') {
+        if(predicate(object[key])){
+          return key
+        }
+      }else if (typeof predicate == 'string') {
+        if(object[key][predicate]) {
+          return key
+        }
+      }else if(Array.isArray(predicate)){
+        if(object[key][predicate[0]] == predicate[1]) {
+          return key
+        }
+      }else if (typeof predicate == 'object') {
+        let flag = true
+        for (let preKey in predicate) {
+          if (object[key][preKey] !== predicate[preKey]) {
+            flag = false
+            break
+          }
+        }
+        if (flag) {
+          return key
+        }
+      }
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -2097,5 +2126,6 @@ var talangzhe005 = (function(){
     at: at,
     defaults: defaults,
     defaultsDeep: defaultsDeep,
+    findKey: findKey,
   }
 })()
