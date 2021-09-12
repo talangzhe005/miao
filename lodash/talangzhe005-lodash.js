@@ -1998,7 +1998,7 @@ var talangzhe005 = (function(){
   function forOwnRight(object, iteratee = identity) {
     let keyArr = Object.keys(object)
     for (let i = keyArr.length - 1; i >= 0; i--) {
-      if (!(iteratee(object[key], key, object))){
+      if (!(iteratee(object[keyArr[i]], keyArr[i], object))){
         break
       }
     }
