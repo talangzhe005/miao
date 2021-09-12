@@ -2050,9 +2050,12 @@ var talangzhe005 = (function(){
     path = path.map(it => Number.isNaN( parseInt(it)) ? [it] : [parseInt(it)])
     let str = 'object'
     for (let i = 0; i < path.length; i++) {
-      str += path[i]
+      if(Number.isNaN(parseInt(path[i]))) {
+        path[i] = "'" +  path[i]  + "'"
+      }
+      str = str + '[' + path[i] + ']'
     }
-    str += value
+    str = str + '=' + value
     eval(str)
     return object
   }
