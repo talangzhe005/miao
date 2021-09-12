@@ -1995,6 +1995,16 @@ var talangzhe005 = (function(){
     return object
   }
 
+  function forOwnRight(object, iteratee = identity) {
+    let keyArr = Object.keys(object)
+    for (let i = keyArr.length - 1; i >= 0; i--) {
+      if (!(iteratee(object[key], key, object))){
+        break
+      }
+    }
+    return object
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -2168,5 +2178,6 @@ var talangzhe005 = (function(){
     findKey: findKey,
     findLastKey: findLastKey,
     forOwn: forOwn,
+    forOwnRight: forOwnRight,
   }
 })()
