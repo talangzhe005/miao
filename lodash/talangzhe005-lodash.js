@@ -2025,6 +2025,28 @@ var talangzhe005 = (function(){
     return res
   }
 
+
+  function result(object, path, defaultValue) {
+    let res = get(object, path)
+    if(typeof res == 'function') {
+      return res()
+    }else if (typeof res == undefined) {
+      if(typeof defaultValue == 'function') {
+        return defaultValue()
+      }else {
+        return defaultValue
+      }
+    }else {
+      return res
+    }
+  }
+
+  function has(object, path) {
+
+  }
+
+  
+
   return {
     chunk : chunk,
     compact : compact,
@@ -2201,5 +2223,6 @@ var talangzhe005 = (function(){
     forOwnRight: forOwnRight,
     functions: functions,
     functionsIn: functionsIn,
+    result: result,
   }
 })()
