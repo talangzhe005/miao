@@ -870,7 +870,9 @@ var talangzhe005 = (function(){
   function toPairs(object) {
     let res = []
     for (let k in object) {
-      res.push([k, object[k]])
+      if(object.hasOwnProperty(k)){
+        res.push([k, object[k]])
+      }
     }
     return res 
   }
@@ -2055,6 +2057,14 @@ var talangzhe005 = (function(){
     return object
   }
 
+  function toPairsIn(object) {
+    let res = []
+    for (let k in object) {
+      res.push([k, object[k]])
+    }
+    return res 
+  }
+
   function has(object, path) {
 
   }
@@ -2239,5 +2249,6 @@ var talangzhe005 = (function(){
     functionsIn: functionsIn,
     result: result,
     set: set,
+    toPairsIn: toPairsIn,
   }
 })()
