@@ -1901,7 +1901,7 @@ var talangzhe005 = (function(){
     return res
   }
 
-  function defaults(object, sources) {
+  function defaults(object, ...sources) {
     for (let i = 0; i < sources.length; i++) {
       for (let key in sources[i]) {
         if (!(key in object)) {
