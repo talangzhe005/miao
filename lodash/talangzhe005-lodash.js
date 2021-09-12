@@ -1956,6 +1956,36 @@ var talangzhe005 = (function(){
     }
   }
 
+  function findLastKey(object, predicate = identity) {
+    let keyArr = Object.keys(object) 
+    for (let i = keyArr.length - 1; i >= 0; i--) {
+      if (typeof predicate == 'function') {
+        if(predicate(object[keyArr[i]])){
+          return keyArr[i]
+        }
+      }else if (typeof predicate == 'string') {
+        if(object[keyArr[i]][predicate]) {
+          return keyArr[i]
+        }
+      }else if(Array.isArray(predicate)){
+        if(object[keyArr[i]][predicate[0]] == predicate[1]) {
+          return keyArr[i]
+        }
+      }else if (typeof predicate == 'object') {
+        let flag = true
+        for (let preKey in predicate) {
+          if (object[keyArr[i]][preKey] !== predicate[preKey]) {
+            flag = false
+            break
+          }
+        }
+        if (flag) {
+          return keyArr[i]
+        }
+      }
+    }
+  }
+
   return {
     chunk : chunk,
     compact : compact,
@@ -2127,5 +2157,6 @@ var talangzhe005 = (function(){
     defaults: defaults,
     defaultsDeep: defaultsDeep,
     findKey: findKey,
+    findLastKey: findLastKey,
   }
 })()
