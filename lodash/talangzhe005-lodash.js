@@ -2109,7 +2109,7 @@ var talangzhe005 = (function(){
   }
 
   function kebabCase(string='') {
-    return string.match(/[a-z]+|[A-z]+[a-z]*/g).join('-').toLowerCase()
+    return string.match(/[a-z]+|[A-Z]+[a-z]*/g).join('-').toLowerCase()
   }
 
   function lowerCase(string = '') {
@@ -2118,6 +2118,24 @@ var talangzhe005 = (function(){
 
   function lowerFirst(string = '') {
     return string.replace(/^\w/, it => it.toLowerCase())
+  }
+
+  function pad(string = '', length = 0, chars = ' ') {
+    if (string.length == length ){
+      return string
+    }
+    let right = true
+    while (string.length < length) {
+      if(right) {
+        string = string + chars
+      } else {
+        string = chars + strings
+      }
+      right = !right
+    }
+
+    return string.slice(0, length)
+
   }
 
   function has(object, path) {
@@ -2313,5 +2331,6 @@ var talangzhe005 = (function(){
     kebabCase: kebabCase,
     lowerCase: lowerCase,
     lowerFirst: lowerFirst,
+    pad: pad,
   }
 })()
