@@ -2129,7 +2129,7 @@ var talangzhe005 = (function(){
       if(right) {
         string = string + chars
       } else {
-        string = chars + strings
+        string = chars + string
       }
       right = !right
     }
