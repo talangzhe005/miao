@@ -2160,6 +2160,20 @@ var talangzhe005 = (function(){
     return Number.parseInt(string, radix)
   }
 
+  function snakeCase(string = '') {
+    return string.match(/[a-z]+|[A-Z]+[a-z]*/g).join('_').toLowerCase()
+  }
+
+  function split(string = '', separator, limit) {
+    let arr = []
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] !== separator) {
+        arr.push(string[i])
+      }
+    }
+    return arr.slice(0, limit)
+  }
+
   function has(object, path) {
 
   }
@@ -2357,5 +2371,7 @@ var talangzhe005 = (function(){
     padEnd: padEnd,
     padStart: padStart,
     parseInt: parseInt,
+    snakeCase: snakeCase,
+    split: split,
   }
 })()
