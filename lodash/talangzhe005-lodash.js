@@ -2178,6 +2178,10 @@ var talangzhe005 = (function(){
     return string.match(/[a-z]+|[A-Z]+[a-z]*/g).join(' ').replace(/^\w/, it => it.toUpperCase())
   }
 
+  function startsWith(string = '', target, position = 0) {
+    return string[position] == target
+  }
+
   function has(object, path) {
 
   }
@@ -2378,5 +2382,6 @@ var talangzhe005 = (function(){
     snakeCase: snakeCase,
     split: split,
     startCase: startCase,
+    startsWith: startsWith,
   }
 })()
