@@ -2145,6 +2145,17 @@ var talangzhe005 = (function(){
     return string.slice(0, length)
   }
 
+  function padStart(string = '', length = 0, chars = ' ') {
+      if (string.length == length) {
+        return string
+      }
+      let c = length - string.length
+      while(chars.length < c) {
+        chars += chars
+      }
+      return chars.slice(0, c) + string
+  }
+
   function has(object, path) {
 
   }
@@ -2340,5 +2351,6 @@ var talangzhe005 = (function(){
     lowerFirst: lowerFirst,
     pad: pad,
     padEnd: padEnd,
+    padStart: padStart,
   }
 })()
