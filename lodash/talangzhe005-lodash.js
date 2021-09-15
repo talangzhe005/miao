@@ -2108,6 +2108,10 @@ var talangzhe005 = (function(){
     return res 
   }
 
+  function kebabCase(string='') {
+    return string.match(/[a-z]+|[A-z]+[a-z]*/g).join('-').toLowerCase()
+  }
+
   function has(object, path) {
 
   }
@@ -2298,5 +2302,6 @@ var talangzhe005 = (function(){
     deburr: deburr,
     endsWith: endsWith,
     escapeRegExp: escapeRegExp,
+    kebabCase: kebabCase,
   }
 })()
