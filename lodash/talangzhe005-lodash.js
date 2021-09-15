@@ -2086,6 +2086,10 @@ var talangzhe005 = (function(){
     return string.replace(/^\w/, (it) => it.toUpperCase())
   }
 
+  function deburr(string='') {
+    return string.replace('é' , 'e').replace('à', 'a')
+  }
+
   function has(object, path) {
 
   }
@@ -2273,5 +2277,6 @@ var talangzhe005 = (function(){
     toPairsIn: toPairsIn,
     valuesIn: valuesIn,
     capitalize: capitalize,
+    deburr: deburr,
   }
 })()
