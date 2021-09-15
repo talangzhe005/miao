@@ -2094,6 +2094,20 @@ var talangzhe005 = (function(){
     return string[position - 1] == target
   }
 
+  //转义 RegExp 字符串中特殊的字符 "^", "$", "", ".", "*", "+", "?", "(", ")", "[", "]", ", ", 和 "|" in .
+  function escapeRegExp(string = '') {
+    let res = ''
+    for (let i = 0; i < string.length; i++) {
+      if(string[i] == "^" || string[i] == "$" || string[i] == "." || string[i] == "*" || string == "+" || string == "?" || string[i] == "(" ||
+      string[i] == ")" || string[i] == "[" || string[i] == "]" || string[i] ==  "|") {
+        res += '\\' + string[i]
+      }else {
+        res += string[i]
+      }
+    }
+    return res 
+  }
+
   function has(object, path) {
 
   }
@@ -2283,5 +2297,6 @@ var talangzhe005 = (function(){
     capitalize: capitalize,
     deburr: deburr,
     endsWith: endsWith,
+    escapeRegExp: escapeRegExp,
   }
 })()
