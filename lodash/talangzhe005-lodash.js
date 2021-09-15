@@ -2174,6 +2174,10 @@ var talangzhe005 = (function(){
     return arr.slice(0, limit)
   }
 
+  function startCase(string = '') {
+    return string.match(/[a-z]+|[A-Z]+[a-z]*/g).join(' ').replace(/^\w/, it => it.toUpperCase())
+  }
+
   function has(object, path) {
 
   }
@@ -2373,5 +2377,6 @@ var talangzhe005 = (function(){
     parseInt: parseInt,
     snakeCase: snakeCase,
     split: split,
+    startCase: startCase,
   }
 })()
