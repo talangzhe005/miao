@@ -2182,6 +2182,18 @@ var talangzhe005 = (function(){
     return string[position] == target
   }
 
+  function toLower(string='') {
+    let res = ''
+    for (let i = 0; i < string.length; i++) {
+      if(string[i].charCodeAt() >= 65 || string[i].charCodeAt() <= 90) {
+        res += String.fromCharCode(string[i].charCodeAt() + 32)
+      }esle {
+        res += string[i]
+      }
+    }
+    return res 
+  }
+
   function has(object, path) {
 
   }
@@ -2383,5 +2395,6 @@ var talangzhe005 = (function(){
     split: split,
     startCase: startCase,
     startsWith: startsWith,
+    toLower: toLower,
   }
 })()
