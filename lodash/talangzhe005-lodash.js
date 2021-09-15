@@ -2187,11 +2187,23 @@ var talangzhe005 = (function(){
     for (let i = 0; i < string.length; i++) {
       if(string[i].charCodeAt() >= 65 && string[i].charCodeAt() <= 90) {
         res += String.fromCharCode(string[i].charCodeAt() + 32)
-      }esle {
+      }else {
         res += string[i]
       }
     }
     return res 
+  }
+
+  function toUpper(string = '') {
+    let res = ''
+    for (let i = 0; i < string.length; i++) {
+      if(string[i].charCodeAt() >= 97 && string[i].charCodeAt() <= 122) {
+        res += String.fromCharCode(string[i].charCodeAt() - 32)
+      }else {
+        res += string[i]
+      }
+    }
+    return res
   }
 
   function has(object, path) {
@@ -2396,5 +2408,6 @@ var talangzhe005 = (function(){
     startCase: startCase,
     startsWith: startsWith,
     toLower: toLower,
+    toUpper: toUpper,
   }
 })()
