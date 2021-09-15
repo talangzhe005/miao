@@ -855,6 +855,14 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function valuesIn(object) {
+    let res =  []
+    for (let k in object) {
+      res.push(object[k])
+    }
+    return res
+  }
+
   function repeat(string='', n = 1) {
     let res = ''
     for (let i = 0; i < n; i++) {
@@ -2258,5 +2266,6 @@ var talangzhe005 = (function(){
     result: result,
     set: set,
     toPairsIn: toPairsIn,
+    valuesIn: valuesIn,
   }
 })()
