@@ -2156,6 +2156,10 @@ var talangzhe005 = (function(){
       return chars.slice(0, c) + string
   }
 
+  function parseInt(string, radix = 10) {
+    return parseInt(string, radix)
+  }
+
   function has(object, path) {
 
   }
@@ -2352,5 +2356,6 @@ var talangzhe005 = (function(){
     pad: pad,
     padEnd: padEnd,
     padStart: padStart,
+    parseInt: parseInt,
   }
 })()
