@@ -2157,7 +2157,7 @@ var talangzhe005 = (function(){
   }
 
   function parseInt(string, radix = 10) {
-    return parseInt(string, radix)
+    return Number.parseInt(string, radix)
   }
 
   function has(object, path) {
