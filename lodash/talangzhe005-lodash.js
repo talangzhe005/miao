@@ -2185,7 +2185,7 @@ var talangzhe005 = (function(){
   function toLower(string='') {
     let res = ''
     for (let i = 0; i < string.length; i++) {
-      if(string[i].charCodeAt() >= 65 || string[i].charCodeAt() <= 90) {
+      if(string[i].charCodeAt() >= 65 && string[i].charCodeAt() <= 90) {
         res += String.fromCharCode(string[i].charCodeAt() + 32)
       }esle {
         res += string[i]
