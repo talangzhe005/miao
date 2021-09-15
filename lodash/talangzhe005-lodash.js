@@ -2081,6 +2081,11 @@ var talangzhe005 = (function(){
     return res 
   }
 
+  function capitalize(string = '') { 
+    string = string.toLowerCase()
+    return string.replace(/^\w/, (it) => it.toUpperCase())
+  }
+
   function has(object, path) {
 
   }
@@ -2267,5 +2272,6 @@ var talangzhe005 = (function(){
     set: set,
     toPairsIn: toPairsIn,
     valuesIn: valuesIn,
+    capitalize: capitalize,
   }
 })()
