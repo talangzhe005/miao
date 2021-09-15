@@ -2206,6 +2206,16 @@ var talangzhe005 = (function(){
     return res
   }
 
+  function trim(string = '', chars = ' ') {
+    let res = ''
+    for (let i =0; i < string.length; i++) {
+      if (!chars.includes(string[i])) {
+        res +=  string[i]
+      }
+    }
+    return res
+  }
+
   function has(object, path) {
 
   }
@@ -2409,5 +2419,6 @@ var talangzhe005 = (function(){
     startsWith: startsWith,
     toLower: toLower,
     toUpper: toUpper,
+    trim: trim,
   }
 })()
