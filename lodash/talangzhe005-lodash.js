@@ -2090,6 +2090,10 @@ var talangzhe005 = (function(){
     return string.replace('é' , 'e').replace('à', 'a')
   }
 
+  function endsWith(string = '', target, position=string.length) {
+    return string[position - 1] == target
+  }
+
   function has(object, path) {
 
   }
@@ -2278,5 +2282,6 @@ var talangzhe005 = (function(){
     valuesIn: valuesIn,
     capitalize: capitalize,
     deburr: deburr,
+    endsWith: endsWith,
   }
 })()
