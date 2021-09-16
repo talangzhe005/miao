@@ -2219,7 +2219,7 @@ var talangzhe005 = (function(){
 
 function trimEnd(string = '', chars = '\\s') {
   let regex = new RegExp('[' + chars + ']')
-  for (let i = string.length; i >= 0; i--) {
+  for (let i = string.length - 1; i >= 0; i--) {
     if (!regex.test(string[i])) {
       return string.slice(0, i + 1)
     }
