@@ -2209,7 +2209,6 @@ var talangzhe005 = (function(){
   function trim(string = '', chars = '\\s') {
     let res = ''
    	let regex = new RegExp('[' + chars + ']') 
-    console.log(regex)
     for (let i = 0; i < string.length; i++) {
         if (!regex.test(string[i])) {
             res += string[i]
@@ -2218,6 +2217,14 @@ var talangzhe005 = (function(){
     return res
 }
 
+function trimEnd(string = '', chars = '\\s') {
+  let regex = new RegExp('[' + chars + ']')
+  for (let i = string.length; i >= 0; i--) {
+    if (!regex.test(string[i])) {
+      return string.slice(0, i + 1)
+    }
+  }
+}
 
   function has(object, path) {
 
@@ -2423,5 +2430,6 @@ var talangzhe005 = (function(){
     toLower: toLower,
     toUpper: toUpper,
     trim: trim,
+    trimEnd: trimEnd,
   }
 })()
