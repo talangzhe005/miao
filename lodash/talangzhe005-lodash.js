@@ -2226,6 +2226,16 @@ function trimEnd(string = '', chars = '\\s') {
   }
 }
 
+function trimStart(string = '', chars = '\\s') {
+  let regex = new RegExp('[' + chars + ']')
+  for (let i = 0; i < string.length; i++) {
+    if (!regex.test(string[i])) {
+      return string.slice(i)
+    }
+  }
+
+}
+
   function has(object, path) {
 
   }
@@ -2431,5 +2441,6 @@ function trimEnd(string = '', chars = '\\s') {
     toUpper: toUpper,
     trim: trim,
     trimEnd: trimEnd,
+    trimStart: trimStart,
   }
 })()
