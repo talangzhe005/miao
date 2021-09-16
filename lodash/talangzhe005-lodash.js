@@ -2206,7 +2206,7 @@ var talangzhe005 = (function(){
     return res
   }
 
-  function trim(string = '', chars = ' ') {
+  function trim(string = '', chars = '\\s') {
     let res = ''
     for (let i =0; i < string.length; i++) {
       if (!chars.includes(string[i])) {
