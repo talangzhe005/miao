@@ -2236,6 +2236,41 @@ function trimStart(string = '', chars = '\\s') {
 
 }
 
+//这个方法转换string字符串中的 HTML 实体 &amp;, &lt;, &gt;, &quot;, &#39;, 和 &#96; 为对应的字符
+function unescape(string = '') {
+  return string.replace(/(&amp;|&lt;|&gt;|&quot;|&#39;|&#96;)/g, it => {
+    if (it == '&amp;') {
+      return '&'
+    }else if (it == '&lt;') {
+      return '<'
+    }else if (it == '&gt') {
+      return '>'
+    }else if(it == '&quot;') {
+      return '"'
+    }else if (it == '&#39;') {
+      return '\''
+    }
+  })
+}
+
+
+
+
+
+function truncate(string = '', options = {}) {
+  if (options['length'] == undefined) {
+    options['length'] = 30
+  }
+  if (options['omission'] == undefined) {
+    options['omission'] = '...'
+  }
+  if(options['separator'] == undefined) {
+    options['separator'] = ''
+  }
+
+  //return string.slice(0, options['length'] - options['omission'].length) + options['omission']
+}
+
   function has(object, path) {
 
   }
@@ -2442,5 +2477,6 @@ function trimStart(string = '', chars = '\\s') {
     trim: trim,
     trimEnd: trimEnd,
     trimStart: trimStart,
+    unescape: unescape,
   }
 })()
