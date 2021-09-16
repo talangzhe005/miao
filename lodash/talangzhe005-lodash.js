@@ -2253,6 +2253,10 @@ function unescape(string = '') {
   })
 }
 
+function upperCase(string = '') {
+  return string.match(/[a-z]+|[A-Z]+[a-z]*/g).join(' ').toUpperCase()
+}
+
 
 
 
@@ -2478,5 +2482,6 @@ function truncate(string = '', options = {}) {
     trimEnd: trimEnd,
     trimStart: trimStart,
     unescape: unescape,
+    upperCase: upperCase,
   }
 })()
