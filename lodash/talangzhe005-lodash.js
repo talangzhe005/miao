@@ -2208,13 +2208,16 @@ var talangzhe005 = (function(){
 
   function trim(string = '', chars = '\\s') {
     let res = ''
-    for (let i =0; i < string.length; i++) {
-      if (!chars.includes(string[i])) {
-        res +=  string[i]
-      }
+   	let regex = new RegExp('[' + chars + ']') 
+    console.log(regex)
+    for (let i = 0; i < string.length; i++) {
+        if (!regex.test(string[i])) {
+            res += string[i]
+        }
     }
     return res
-  }
+}
+
 
   function has(object, path) {
 
