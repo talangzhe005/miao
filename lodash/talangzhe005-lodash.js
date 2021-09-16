@@ -2257,6 +2257,9 @@ function upperCase(string = '') {
   return string.match(/[a-z]+|[A-Z]+[a-z]*/g).join(' ').toUpperCase()
 }
 
+function upperFirst(string = '') {
+  return string.replace(string[0], it => it.toUpperCase())
+}
 
 
 
@@ -2483,5 +2486,6 @@ function truncate(string = '', options = {}) {
     trimStart: trimStart,
     unescape: unescape,
     upperCase: upperCase,
+    upperFirst: upperFirst,
   }
 })()
