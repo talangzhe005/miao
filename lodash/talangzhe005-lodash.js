@@ -2175,7 +2175,7 @@ var talangzhe005 = (function(){
   }
 
   function startCase(string = '') {
-    return string.match(/[a-z]+|[A-Z]+[a-z]*/g).join(' ').replace(/^\w/, it => it.toUpperCase())
+    return string.match(/[a-z]+|[A-Z]+[a-z]*/g).join(' ').replace(/^\w| \w/g, it => it.toUpperCase())
   }
 
   function startsWith(string = '', target, position = 0) {
