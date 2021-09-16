@@ -2261,6 +2261,10 @@ function upperFirst(string = '') {
   return string.replace(string[0], it => it.toUpperCase())
 }
 
+function words(string = '', pattern = /\w+/g) {
+  return string.match(pattern)
+}
+
 
 
 
@@ -2487,5 +2491,6 @@ function truncate(string = '', options = {}) {
     unescape: unescape,
     upperCase: upperCase,
     upperFirst: upperFirst,
+    words: words,
   }
 })()
