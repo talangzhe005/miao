@@ -2265,6 +2265,18 @@ function words(string = '', pattern = /\w+/g) {
   return string.match(pattern)
 }
 
+function defaultTo(value, defaultValue) {
+  if (value) {
+    return value
+  }else {
+    return defaultValue
+  }
+}
+
+function bindAll(object, methodNames) {
+  
+}
+
 
 
 
@@ -2492,5 +2504,6 @@ function truncate(string = '', options = {}) {
     upperCase: upperCase,
     upperFirst: upperFirst,
     words: words,
+    defaultTo: defaultTo,
   }
 })()
