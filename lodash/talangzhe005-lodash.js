@@ -2300,6 +2300,10 @@ function range(start = 0, end, step = 1) {
   return res
 }
 
+function rangeRight(start = 0, end, step = 1) {
+  return range(start = 0, end, step = 1).reverse()
+}
+
 
 function bindAll(object, methodNames) {
   
@@ -2534,5 +2538,6 @@ function truncate(string = '', options = {}) {
     words: words,
     defaultTo: defaultTo,
     range: range,
+    rangeRight: rangeRight,
   }
 })()
