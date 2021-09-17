@@ -2273,6 +2273,34 @@ function defaultTo(value, defaultValue) {
   }
 }
 
+/*创建一个包含从 start 到 end，但不包含 end 本身范围数字的数组。
+  如果 start 是负数，而 end 或 step 没有指定，那么 step 从 -1 为开始。
+  如果 end 没有指定，start 设置为 0。 如果 end 小于 start ，会创建一个空数组，除非指定了 step。
+*/
+function range(start = 0, end, step = 1) {
+  let res = []
+  if (start < 0 && end == undefined && (arguments.length == 2 || arguments.length == 1)) {
+    step = -1
+  }
+  if (end == undefined) {
+    end = start
+    start = 0
+  }
+  if (step == 0) {
+    for (let i = start; i < end ; i++) {
+      res.push (start)
+    }
+  }
+  if(start == 0 && arguments.length == 1) {
+    return []
+  }
+  for (let i = start ; step > 0 ? i < end : i > end ; i=  i + step) {
+    res.push(i)
+  }
+  return res
+}
+
+
 function bindAll(object, methodNames) {
   
 }
@@ -2505,5 +2533,6 @@ function truncate(string = '', options = {}) {
     upperFirst: upperFirst,
     words: words,
     defaultTo: defaultTo,
+    range: range,
   }
 })()
