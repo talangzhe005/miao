@@ -2302,7 +2302,28 @@ if (end == undefined) {
 }
 
 function rangeRight(start = 0, end, step = 1) {
-  return range(start, end, step).reverse()
+  
+  let res = []
+  if(start == 0 && arguments.length == 1) {
+    return []
+  }
+  if (start < 0 && end == undefined && (arguments.length == 2 || arguments.length == 1)) {
+    step = -1
+  }
+if (end == undefined) {
+    end = start
+    start = 0
+  }
+  if (step == 0) {
+    for (let i = start; i < end ; i++) {
+      res.push (start)
+    }
+  }
+  
+  for (let i = end > 0? end - Math.abs(step): end + Math.abs(step) ; step > 0 ? i >= start : i <= start ; i=  i - step) {
+    res.push(i)
+  }
+  return res
 }
 
 var n = 10
