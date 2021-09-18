@@ -2302,7 +2302,7 @@ if (end == undefined) {
 }
 
 function rangeRight(start = 0, end, step = 1) {
-  return range(start = 0, end, step = 1).reverse()
+  return range(start, end, step).reverse()
 }
 
 
