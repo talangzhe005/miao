@@ -2305,6 +2305,10 @@ function rangeRight(start = 0, end, step = 1) {
   return range(start, end, step).reverse()
 }
 
+var n = 10
+function uniqueId(prefix = '') {
+  return prefix + (++n)
+}
 
 function bindAll(object, methodNames) {
   
@@ -2540,5 +2544,6 @@ function truncate(string = '', options = {}) {
     defaultTo: defaultTo,
     range: range,
     rangeRight: rangeRight,
+    uniqueId: uniqueId,
   }
 })()
