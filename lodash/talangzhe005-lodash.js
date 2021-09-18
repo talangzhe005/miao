@@ -2279,10 +2279,13 @@ function defaultTo(value, defaultValue) {
 */
 function range(start = 0, end, step = 1) {
   let res = []
+  if(start == 0 && arguments.length == 1) {
+    return []
+  }
   if (start < 0 && end == undefined && (arguments.length == 2 || arguments.length == 1)) {
     step = -1
   }
-  if (end == undefined) {
+if (end == undefined) {
     end = start
     start = 0
   }
@@ -2291,9 +2294,7 @@ function range(start = 0, end, step = 1) {
       res.push (start)
     }
   }
-  if(start == 0 && arguments.length == 1) {
-    return []
-  }
+  
   for (let i = start ; step > 0 ? i < end : i > end ; i=  i + step) {
     res.push(i)
   }
