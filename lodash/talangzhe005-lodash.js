@@ -2257,6 +2257,18 @@ function upperCase(string = '') {
   return string.match(/[a-z]+|[A-Z]+[a-z]*/g).join(' ').toUpperCase()
 }
 
+function camelCase(string = '') {
+  return string.match(/[a-z]+|[A-Z]+[a-z]*/g).map((curVal, i) => {
+    curVal = curVal.toLowerCase()
+    if(i % 2){
+      return curVal[0].toUpperCase() + curVal.slice(1)
+    }else {
+      return curVal
+    }
+  }).join('')
+}
+
+
 function upperFirst(string = '') {
   return string.replace(string[0], it => it.toUpperCase())
 }
@@ -2329,6 +2341,14 @@ if (end == undefined) {
 var n = 10
 function uniqueId(prefix = '') {
   return prefix + (++n)
+}
+
+function merge(object, sources) {
+  
+}
+
+function cloneDeep(value) {
+  
 }
 
 function bindAll(object, methodNames) {
@@ -2566,5 +2586,6 @@ function truncate(string = '', options = {}) {
     range: range,
     rangeRight: rangeRight,
     uniqueId: uniqueId,
+    camelCase: camelCase,
   }
 })()
