@@ -2351,6 +2351,14 @@ function keys(object) {
   return res
 }
 
+function keysIn(object) {
+  let res = []
+  for (let key in object) {
+    res.push(key)
+  }
+  return res
+}
+
 function merge(object, sources) {
   
 }
@@ -2596,5 +2604,6 @@ function truncate(string = '', options = {}) {
     uniqueId: uniqueId,
     camelCase: camelCase,
     keys: keys,
+    keysIn: keysIn,
   }
 })()
