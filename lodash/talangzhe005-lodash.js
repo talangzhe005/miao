@@ -2359,6 +2359,14 @@ function keysIn(object) {
   return res
 }
 
+function invert(object) {
+  let res = {}
+  for (let key in object) {
+    res[object[key]] = key
+  }
+  return res 
+}
+
 function merge(object, sources) {
   
 }
@@ -2605,5 +2613,6 @@ function truncate(string = '', options = {}) {
     camelCase: camelCase,
     keys: keys,
     keysIn: keysIn,
+    invert: invert,
   }
 })()
