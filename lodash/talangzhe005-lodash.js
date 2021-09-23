@@ -2367,6 +2367,24 @@ function invert(object) {
   return res 
 }
 
+function invertBy(object, iteratee = identity) {
+  let res = {}
+  let newKey
+  for (let key in object) {
+    if (iteratee !== undefined) {
+      newKey = iteratee(object[key])
+    }else {
+      newKey = object[key]
+    }
+    if (newKey in o) {
+      res[newKey].push(key)
+    }else {
+      res[newKey] = [key]
+    }
+  }
+  return res
+}
+
 function merge(object, sources) {
   
 }
@@ -2614,5 +2632,6 @@ function truncate(string = '', options = {}) {
     keys: keys,
     keysIn: keysIn,
     invert: invert,
+    invertBy: invertBy,
   }
 })()
