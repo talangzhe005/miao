@@ -2376,7 +2376,7 @@ function invertBy(object, iteratee = identity) {
     }else {
       newKey = object[key]
     }
-    if (newKey in o) {
+    if (newKey in object) {
       res[newKey].push(key)
     }else {
       res[newKey] = [key]
