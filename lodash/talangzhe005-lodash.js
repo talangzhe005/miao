@@ -2385,6 +2385,14 @@ function invertBy(object, iteratee = identity) {
   return res
 }
 
+function invoke(object, path, args) {
+  let ary = path.split('.')
+  let f = ary.pop()
+  path = ary.join('.')
+  let res = get(object, path)
+  return val[f](...args)
+}
+
 function merge(object, sources) {
   
 }
@@ -2633,5 +2641,6 @@ function truncate(string = '', options = {}) {
     keysIn: keysIn,
     invert: invert,
     invertBy: invertBy,
+    invoke: invoke,
   }
 })()
