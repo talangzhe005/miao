@@ -2343,6 +2343,14 @@ function uniqueId(prefix = '') {
   return prefix + (++n)
 }
 
+function keys(object) {
+  let res = []
+  for (let key in object) {
+    res.push(key)
+  }
+  return res
+}
+
 function merge(object, sources) {
   
 }
@@ -2587,5 +2595,6 @@ function truncate(string = '', options = {}) {
     rangeRight: rangeRight,
     uniqueId: uniqueId,
     camelCase: camelCase,
+    keys: keys,
   }
 })()
