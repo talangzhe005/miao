@@ -2390,7 +2390,7 @@ function invoke(object, path, args) {
   let f = ary.pop()
   path = ary.join('.')
   let res = get(object, path)
-  return val[f](...args)
+  return res[f](...args)
 }
 
 function merge(object, sources) {
