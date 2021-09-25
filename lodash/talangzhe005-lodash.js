@@ -2385,7 +2385,7 @@ function invertBy(object, iteratee = identity) {
   return res
 }
 
-function invoke(object, path, args) {
+function invoke(object, path, ...args) {
   let ary = path.split('.')
   let f = ary.pop()
   path = ary.join('.')
