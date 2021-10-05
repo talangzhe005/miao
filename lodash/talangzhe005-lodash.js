@@ -2208,7 +2208,7 @@ var talangzhe005 = (function(){
 
   function trim(string = '', chars = '\\s') {
     let res = ''
-   	let regex = new RegExp('[' + chars + ']') 
+    let regex = new RegExp('[' + chars + ']') 
     for (let i = 0; i < string.length; i++) {
         if (!regex.test(string[i])) {
             res += string[i]
@@ -2391,6 +2391,24 @@ function invoke(object, path, ...args) {
   path = ary.join('.')
   let res = get(object, path)
   return res[f](...args)
+}
+
+function cloneDeep(value) {
+  if (typeof value !== 'object' || value == null) {
+    return obj
+  }
+  let result
+  if (value instanceof Array) {
+    result = []
+  }else {
+    result = {}
+  }
+  for (let key in value) {
+    if(value.hasOwnProperty(key)) {
+      result[key] = cloneDeep(value[key])
+    }
+  }
+  return result
 }
 
 function merge(object, sources) {
@@ -2642,5 +2660,6 @@ function truncate(string = '', options = {}) {
     invert: invert,
     invertBy: invertBy,
     invoke: invoke,
+    cloneDeep: cloneDeep,
   }
 })()
