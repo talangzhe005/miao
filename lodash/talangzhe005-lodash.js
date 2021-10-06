@@ -2415,9 +2415,7 @@ function merge(object, sources) {
   
 }
 
-function cloneDeep(value) {
-  
-}
+
 
 function bindAll(object, methodNames) {
   
