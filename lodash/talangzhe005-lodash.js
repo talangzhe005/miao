@@ -2439,7 +2439,7 @@ function truncate(string = '', options = {}) {
 }
 
   function has(object, path) {
-
+	console.log(111)
   }
 
   
