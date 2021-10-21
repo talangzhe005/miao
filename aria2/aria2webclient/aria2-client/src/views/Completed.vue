@@ -23,7 +23,8 @@ export default {
       
     },
   },
-  mounted() {
+ async mounted() {
+      this.tasks = await window.aria2.tellStopped(0, 1000)
       this.intervalId = setInterval(async () => {
         this.tasks = await window.aria2.tellStopped(0, 1000)
         console.log(this.tasks)

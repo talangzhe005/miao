@@ -4,6 +4,12 @@ class Aria2Client {
   constructor(options) {
     this.options = options
     this.websocket = new WebSocket(`ws://${options.host}:${options.port}/jsonrpc`)
+    //解决websocket 没有连接上 得不到数据报错,所有方法等promise  resolve以后再执行
+    this.connectPromise = new Promise(resolve => {
+      this.websocket.addEventListener('open', () => {
+        resolve()
+      })
+    })
     this.lastId = 1
 
     this.callbacks = {} //存放每个请求的回调函数
@@ -103,21 +109,23 @@ class Aria2Client {
     "saveSession"
   ].forEach(methodName => {
     Aria2Client.prototype[methodName] = function(...args) {
-      return new Promise((resolve, reject) => {
-      let id = this.lastId++
-      this.callbacks[id] = function(data) {
-        if(data.error) {
-          reject(data.error)
-        }else {
-          resolve(data.result)
-        }
-      }
-      this.websocket.send(JSON.stringify({
-        jsonrpc: '2.0',
-        id: id,
-        method: `aria2.${methodName}`,
-        params: [`token:${this.options.secret}`, ...args]
-      }))
+      return this.connectPromise.then(() => {
+        return new Promise((resolve, reject) => {
+          let id = this.lastId++
+          this.callbacks[id] = function(data) {
+            if(data.error) {
+              reject(data.error)
+            }else {
+              resolve(data.result)
+            }
+          }
+          this.websocket.send(JSON.stringify({
+            jsonrpc: '2.0',
+            id: id,
+            method: `aria2.${methodName}`,
+            params: [`token:${this.options.secret}`, ...args]
+          }))
+        })
     })
     }
   })
