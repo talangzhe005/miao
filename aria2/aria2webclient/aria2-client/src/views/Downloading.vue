@@ -6,15 +6,16 @@
       <button @click="execSelected('unpause')">开始</button>
       <button @click="execSelected('remove')">删除</button>
       <button @click="selectAll">全选</button>
+      搜索: <input type="text" v-model="searchText" />
     </div>
     <ul>
-      <li v-for="task of tasks" :class="{selected: selected.includes(task.gid)}" :key="task.gid" @click="toggleSelect(task)">
+      <li v-for="task of visibleTasks" :class="{selected: selected.includes(task.gid)}" :key="task.gid" @click="toggleSelect(task)">
         <input type="checkbox" :checked="selected.includes(task.gid)">
         <span>{{ getFileName(task) }}</span>  
         / 
         <span>{{ getPercent(task) | fixed }}%</span>
         /
-        <span>{{ task.downloadSpeed /1024  | fixed}}k/s</span>
+        <span>{{ task.downloadSpeed /1024  | fixed }}k/s</span>
         /
         <span>{{ task.status }}</span>
         /
@@ -23,15 +24,65 @@
       </li>
     </ul>
     <img alt="Vue logo" src="../assets/logo.png" />
+    <el-table
+      :data="visibleTasks"
+      style="width: 100%"
+    >
+      <el-table-column
+        prop="gid"
+        label="日期"
+        sortable
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="completedLength"
+        label="下载进度"
+        sortable
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="downloadSpeed"
+        label="进度"
+        :formatter='getSpeed'
+        sortable
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="status"
+        label="状态"
+        sortable
+        width="180">
+      </el-table-column>
+    </el-table>
   </div>
 </template>
 
 <script>
 export default {
+  name: "Downloading",
+  props: ['aria2'],
   data() {
     return {
       tasks: [],
       selected: [],
+      searchText: '',
+    }
+  },
+  watch: {
+    aria2() {
+      this.tasks = []
+      this.updateList()
+    }
+  },
+  computed: {
+    visibleTasks() {
+      if(this.searchText == '') {
+        return this.tasks
+      } else {
+        return this.tasks.filter(it => {
+          return it.files[0].path.toLowerCase().includes(this.searchText)
+        })
+      }
     }
   },
   methods: {
@@ -56,11 +107,34 @@ export default {
     
     // 对选中的任务执行某种操作： 开始，暂停，删除
     async execSelected(action) {
-      for (let gid of this.selected) {
-        await window.aria2[action](gid)
-        this.updateList()
+      if (action == 'remove') {
+        try{
+          await this.$confirm('确定删除吗？')
+        } catch (e) {
+          return 
+        }
       }
-    },
+
+      let selectedTask = this.tasks.filter(task => {
+        return this.selected.includes(task.gid)
+      })
+      for (let task of selectedTask) {
+        try {
+          if(action == 'pause' && task.status == 'paused') {
+            continue
+          }
+          if(action == 'unpause' && task.status == 'active') {
+            continue
+          }
+        
+          await this.aria2[action](task.gid)
+        } catch (e) {
+          this.$alert(e.message)
+        }
+      }
+        this.updateList()
+    }, 
+    
     selectAll() {
       if (this.selected.length == this.tasks.length) {
         return this.selected = []
@@ -78,6 +152,7 @@ export default {
 
     getFileName(task) {
       if(task.files?.[0].path) {
+        console.log(task.files[0].path)
         return task.files[0].path.split('/').at(-1)
       } else {
         return task.files?.uris?.[0]?.url.split('/').at(-1) ?? '未知'
@@ -92,19 +167,35 @@ export default {
       }
     },
     async updateList() {
-      this.tasks = [
-          ...await window.aria2.tellActive(), 
-          ...await window.aria2.tellWaiting(0, 1000)
+      try {
+        this.tasks = [
+          ...await this.aria2.tellActive(),
+          ...await this.aria2.tellWaiting(0, 100)
         ]
+      } catch(e) {
+        this.tasks = []
+        throw e
+      }
     },
     // goDetail(task) {
     //   this.$router.push('/task/' + task.gid)
     // }
+
+    getSpeed(row) {
+      return (row.completedLength / row.totalLength * 100).toFixed(2) + '%'
+    }
   },
   mounted() {
-    this.updateList()
-    this.intervalId = setInterval(() => {
-      this.updateList()
+    this.intervalId = setInterval(async () => {
+      try{
+        await this.updateList()
+      } catch(e) {
+        if(e == 'WS_CONNECTION_ERROR') {
+          clearInterval(this.intervalId)
+        } else {
+          throw e
+        }
+      }
     },1000)
   },
   beforeDestroy() {

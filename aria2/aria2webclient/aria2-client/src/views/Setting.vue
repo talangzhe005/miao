@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>设置</h2>
     {{settings}}
     <dl>
       <template v-for="(val, key) in settings">
@@ -184,6 +185,8 @@ let optionDesc = {
   "truncate-console-readout": "缩短控制台输出内容",
 }
 export default {
+  name: 'NewTask',
+  props: ['aria2'],
   data() {
     return {
       settings: null,
@@ -191,13 +194,13 @@ export default {
     }
   },
   async mounted() {
-    this.settings = await window.aria2.getGlobalOption()
+    this.settings = await this.aria2.getGlobalOption()
     // 有些选项是修改不成功的，所以重新从服务器加载一次最新配置项
-    await window.aria2.changeGlobalOption(this.settings)
+    await this.aria2.changeGlobalOption(this.settings)
   },
   methods: {
     async changeGlobalOption() {
-      await window.aria2.changeGlobalOption(this.settings)
+      await this.aria2.changeGlobalOption(this.settings)
     }
   }
 }

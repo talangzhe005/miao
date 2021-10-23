@@ -1,13 +1,14 @@
-const exp = require("constants")
-
 class Aria2Client {
   constructor(options) {
     this.options = options
     this.websocket = new WebSocket(`ws://${options.host}:${options.port}/jsonrpc`)
     //解决websocket 没有连接上 得不到数据报错,所有方法等promise  resolve以后再执行
-    this.connectPromise = new Promise(resolve => {
+    this.connectPromise = new Promise((resolve, reject) => {
       this.websocket.addEventListener('open', () => {
         resolve()
+      })
+      this.websocket.addEventListener('error', (e) => {
+        reject('WS_CONNECTION_ERROR')
       })
     })
     this.lastId = 1
@@ -30,6 +31,20 @@ class Aria2Client {
     // this.websocket.addEventListener('close', () => {
     //   this.connected = false
     // })
+  }
+  ready() {
+    return this.connectPromise
+  }
+  close() {
+    this.websocket.close()
+    return new Promise((resolve, reject) => {
+      this.websocket.addEventListener('close', () => {
+        resolve()
+      })
+      this.websocket.addEventListener('error', (e) => {
+        reject(e)
+      })
+    })
   }
 
   

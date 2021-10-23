@@ -34,6 +34,11 @@ const routes = [
     name: "Setting",
     component: () => import(/* webpackChunkName: "setting" */ "../views/Setting.vue")
   },
+  {
+    path: "/servers",
+    name: "Servers",
+    component: () => import(/* webpackChunkName: "servers" */ "../views/Servers.vue")
+  },
 ];
 
 const router = new VueRouter({

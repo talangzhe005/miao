@@ -12,6 +12,8 @@
 </template>
 <script>
 export default {
+  name: 'Completed',
+  props: ['aria2'],
   data() {
     return {
       tasks: [],
@@ -23,10 +25,10 @@ export default {
       
     },
   },
- async mounted() {
-      this.tasks = await window.aria2.tellStopped(0, 1000)
+  async mounted() {
+      this.tasks = await this.aria2.tellStopped(0, 1000)
       this.intervalId = setInterval(async () => {
-        this.tasks = await window.aria2.tellStopped(0, 1000)
+        this.tasks = await this.aria2.tellStopped(0, 1000)
         console.log(this.tasks)
       },1000)
   },
